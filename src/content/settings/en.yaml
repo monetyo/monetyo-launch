@@ -1,0 +1,74 @@
+siteName: Monetyo
+skipLink: Skip to content
+contactEmail: hello@monetyo.com
+
+header:
+  homeLabel: Monetyo home
+  navLabel: Main
+  menuLabel: Menu
+  cta: Get early updates
+  nav:
+    - label: For households
+      href: /#household
+    - label: AI assistant
+      href: /#ai
+    - label: Roadmap
+      href: /#roadmap
+    - label: Privacy
+      href: /#privacy
+    - label: Questions
+      href: /#faq
+
+languages:
+  label: Language
+  names:
+    en: English
+    es: Castellano
+    ca: Català
+    it: Italiano
+
+footer:
+  copyright: © {year} Monetyo. The smart way to manage family money.
+  linksLabel: Legal
+  links:
+    - label: Legal notice
+      href: /legal-notice/
+    - label: Privacy
+      href: /privacy/
+    - label: Cookies
+      href: /cookies/
+    - label: Security
+      href: /security/
+    - label: AI content
+      href: /ai-content/
+
+waitlist:
+  emailLabel: Email address
+  emailPlaceholder: Your email address
+  consent: Launch news and the occasional short survey. Unsubscribe anytime.
+  privacyLink: Privacy policy
+  submit: Get early updates
+  sending: Sending
+  noscript: The waitlist needs JavaScript to keep spam out. Please turn it on, or write to hello@monetyo.com.
+  successHeading: Almost there. Check your inbox.
+  successBody: We’ve sent you a confirmation link. One click and you’re in.
+  errors:
+    required: Enter your email address.
+    email: That doesn't look like an email address.
+    tooLong: That address is too long.
+    verification: We couldn't confirm you're human. Reload the page and try again.
+    rateLimited: Too many attempts. Wait a minute and try again.
+    generic: Something went wrong on our side. Please try again in a moment.
+  notice:
+    heading: Data protection
+    items:
+      - term: Controller
+        description: Luca Pipolo, Barcelona, Spain.
+      - term: Purpose
+        description: Sending you launch news and short surveys about Monetyo.
+      - term: Legal basis
+        description: Your consent, which you can withdraw at any time with the link in every email.
+      - term: Recipients
+        description: The providers that host the site and its database, send our emails and collect survey answers, all under contract. Nobody else.
+      - term: Your rights
+        description: Access, rectification, erasure, objection and portability, by writing to privacy@monetyo.com.

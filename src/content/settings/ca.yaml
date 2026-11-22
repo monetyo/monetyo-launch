@@ -1,0 +1,74 @@
+siteName: Monetyo
+skipLink: Vés al contingut
+contactEmail: hello@monetyo.com
+
+header:
+  homeLabel: Inici de Monetyo
+  navLabel: Principal
+  menuLabel: Menú
+  cta: Rep les novetats
+  nav:
+    - label: Per a llars
+      href: /#household
+    - label: Assistent IA
+      href: /#ai
+    - label: Full de ruta
+      href: /#roadmap
+    - label: Privadesa
+      href: /#privacy
+    - label: Preguntes
+      href: /#faq
+
+languages:
+  label: Idioma
+  names:
+    en: English
+    es: Castellano
+    ca: Català
+    it: Italiano
+
+footer:
+  copyright: © {year} Monetyo. La manera intel·ligent de portar els comptes de casa.
+  linksLabel: Legal
+  links:
+    - label: Avís legal
+      href: /legal-notice/
+    - label: Privadesa
+      href: /privacy/
+    - label: Galetes
+      href: /cookies/
+    - label: Seguretat
+      href: /security/
+    - label: Contingut IA
+      href: /ai-content/
+
+waitlist:
+  emailLabel: Correu electrònic
+  emailPlaceholder: El teu correu electrònic
+  consent: Novetats del llançament i alguna enquesta breu. Dona’t de baixa quan vulguis.
+  privacyLink: Política de privadesa
+  submit: Rep les novetats
+  sending: Enviant
+  noscript: La llista d’espera necessita JavaScript per frenar l’spam. Activa’l o escriu-nos a hello@monetyo.com.
+  successHeading: Ja gairebé està. Mira el correu.
+  successBody: T’hem enviat un enllaç de confirmació. Un clic i ja hi ets.
+  errors:
+    required: Escriu el teu correu.
+    email: Això no sembla una adreça de correu.
+    tooLong: L’adreça és massa llarga.
+    verification: No hem pogut confirmar que ets una persona. Recarrega la pàgina i torna-hi.
+    rateLimited: Massa intents. Espera un minut i torna-ho a provar.
+    generic: Hi ha hagut un error per part nostra. Torna-hi d’aquí a un moment.
+  notice:
+    heading: Protecció de dades
+    items:
+      - term: Responsable
+        description: Luca Pipolo, Barcelona, Espanya.
+      - term: Finalitat
+        description: Enviar-te novetats del llançament i enquestes curtes sobre Monetyo.
+      - term: Legitimació
+        description: El teu consentiment, que pots retirar quan vulguis amb l’enllaç de cada correu.
+      - term: Destinataris
+        description: Els proveïdors que allotgen el web i la base de dades, envien els correus i recullen les respostes de les enquestes, tots sota contracte. Ningú més.
+      - term: Drets
+        description: Accés, rectificació, supressió, oposició i portabilitat, escrivint a privacy@monetyo.com.

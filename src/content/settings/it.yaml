@@ -1,0 +1,74 @@
+siteName: Monetyo
+skipLink: Vai al contenuto
+contactEmail: hello@monetyo.com
+
+header:
+  homeLabel: Home di Monetyo
+  navLabel: Principale
+  menuLabel: Menu
+  cta: Ricevi le novità
+  nav:
+    - label: Per le famiglie
+      href: /#household
+    - label: Assistente IA
+      href: /#ai
+    - label: Roadmap
+      href: /#roadmap
+    - label: Privacy
+      href: /#privacy
+    - label: Domande
+      href: /#faq
+
+languages:
+  label: Lingua
+  names:
+    en: English
+    es: Castellano
+    ca: Català
+    it: Italiano
+
+footer:
+  copyright: © {year} Monetyo. I conti di casa, gestiti con intelligenza.
+  linksLabel: Informazioni legali
+  links:
+    - label: Note legali
+      href: /legal-notice/
+    - label: Privacy
+      href: /privacy/
+    - label: Cookie
+      href: /cookies/
+    - label: Sicurezza
+      href: /security/
+    - label: Contenuti IA
+      href: /ai-content/
+
+waitlist:
+  emailLabel: Indirizzo email
+  emailPlaceholder: La tua email
+  consent: Novità sul lancio e qualche breve sondaggio. Ti cancelli quando vuoi.
+  privacyLink: Informativa sulla privacy
+  submit: Ricevi le novità
+  sending: Invio in corso
+  noscript: La lista d’attesa usa JavaScript per bloccare lo spam. Attivalo, oppure scrivi a hello@monetyo.com.
+  successHeading: Quasi fatto. Controlla la posta.
+  successBody: Ti abbiamo mandato un link di conferma. Un clic e ci sei.
+  errors:
+    required: Inserisci la tua email.
+    email: Questo non sembra un indirizzo email.
+    tooLong: Indirizzo troppo lungo.
+    verification: Non siamo riusciti a verificare che tu sia una persona. Ricarica la pagina e riprova.
+    rateLimited: Troppi tentativi. Aspetta un minuto e riprova.
+    generic: Qualcosa è andato storto da parte nostra. Riprova tra un momento.
+  notice:
+    heading: Protezione dei dati
+    items:
+      - term: Titolare
+        description: Luca Pipolo, Barcellona, Spagna.
+      - term: Finalità
+        description: Inviarti novità sul lancio e brevi sondaggi su Monetyo.
+      - term: Base giuridica
+        description: Il tuo consenso, revocabile in qualsiasi momento con il link in ogni email.
+      - term: Destinatari
+        description: I fornitori che ospitano il sito e il database, inviano le email e raccolgono le risposte ai sondaggi, tutti sotto contratto. Nessun altro.
+      - term: I tuoi diritti
+        description: Accesso, rettifica, cancellazione, opposizione e portabilità, scrivendo a privacy@monetyo.com.

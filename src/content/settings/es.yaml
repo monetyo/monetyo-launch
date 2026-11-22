@@ -1,0 +1,74 @@
+siteName: Monetyo
+skipLink: Ir al contenido
+contactEmail: hello@monetyo.com
+
+header:
+  homeLabel: Inicio de Monetyo
+  navLabel: Principal
+  menuLabel: Menú
+  cta: Recibe novedades
+  nav:
+    - label: Para hogares
+      href: /#household
+    - label: Asistente IA
+      href: /#ai
+    - label: Hoja de ruta
+      href: /#roadmap
+    - label: Privacidad
+      href: /#privacy
+    - label: Preguntas
+      href: /#faq
+
+languages:
+  label: Idioma
+  names:
+    en: English
+    es: Castellano
+    ca: Català
+    it: Italiano
+
+footer:
+  copyright: © {year} Monetyo. El dinero de casa, gestionado con cabeza.
+  linksLabel: Legal
+  links:
+    - label: Aviso legal
+      href: /legal-notice/
+    - label: Privacidad
+      href: /privacy/
+    - label: Cookies
+      href: /cookies/
+    - label: Seguridad
+      href: /security/
+    - label: Contenido IA
+      href: /ai-content/
+
+waitlist:
+  emailLabel: Correo electrónico
+  emailPlaceholder: Tu correo electrónico
+  consent: Novedades del lanzamiento y alguna encuesta corta. Te das de baja cuando quieras.
+  privacyLink: Política de privacidad
+  submit: Recibe novedades
+  sending: Enviando
+  noscript: La lista de espera necesita JavaScript para frenar el spam. Actívalo o escríbenos a hello@monetyo.com.
+  successHeading: Ya casi está. Revisa tu correo.
+  successBody: Te hemos enviado un enlace para confirmar. Un clic y estás dentro.
+  errors:
+    required: Falta tu correo electrónico.
+    email: Eso no parece un correo electrónico.
+    tooLong: Esa dirección es muy larga.
+    verification: No hemos podido comprobar que eres una persona. Recarga y prueba otra vez.
+    rateLimited: Demasiados intentos. Prueba otra vez en un minuto.
+    generic: Algo ha fallado por nuestra parte. Inténtalo de nuevo en un rato.
+  notice:
+    heading: Protección de datos
+    items:
+      - term: Responsable
+        description: Luca Pipolo, Barcelona, España.
+      - term: Finalidad
+        description: Enviarte novedades del lanzamiento y encuestas cortas sobre Monetyo.
+      - term: Legitimación
+        description: Tu consentimiento, que puedes retirar cuando quieras con el enlace de cada correo.
+      - term: Destinatarios
+        description: Los proveedores que alojan la web y su base de datos, envían nuestros correos y recogen las respuestas a las encuestas, todos bajo contrato. Nadie más.
+      - term: Derechos
+        description: Acceso, rectificación, supresión, oposición y portabilidad, escribiendo a privacy@monetyo.com.

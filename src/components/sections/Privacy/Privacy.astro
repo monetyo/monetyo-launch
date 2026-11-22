@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import { Icon } from "astro-icon/components"
+
+import TextWithTerms from "@/components/common/TextWithTerms.astro"
+
+import { getAnchor } from "@/libs/i18n"
+import { cn } from "@/libs/utils"
+
+interface Props {
+  privacy: CollectionEntry<"home">["data"]["privacy"]
+}
+
+const { privacy } = Astro.props
+
+// The cells fill in reading order, each a beat after the one before.
+const STAGGER = [
+  "delay-100",
+  "delay-150",
+  "delay-200",
+  "delay-250",
+  "delay-300",
+  "delay-[350ms]",
+]
+---
+
+<section class="section" id={getAnchor("privacy", Astro.currentLocale)}>
+  <div class="container-page">
+    <div
+      class="reveal flex flex-wrap items-end justify-between gap-x-16 gap-y-[1.125rem]"
+      data-reveal
+    >
+      <h2 class="flex-[1_1_26.25rem] heading-2">{privacy.heading}</h2>
+      <p class="max-w-[30em] flex-[1_1_23.75rem] lead text-sand-750">
+        {privacy.lead}
+      </p>
+    </div>
+
+    {/* The 1px gaps over a grey ground draw the lines between the cells. */}
+    <ul
+      class="mt-intro grid grid-cols-[repeat(auto-fit,minmax(min(20rem,100%),1fr))] gap-px overflow-hidden rounded-[1.75rem] bg-sand-300"
+      data-reveal
+    >
+      {privacy.items.map(({ body, heading, icon, terms }, index) => (
+        <li class="flex flex-col gap-2 bg-white p-[clamp(1.375rem,2.2vw,1.875rem)]">
+          <div
+            class={cn(
+              "appear flex flex-col gap-2",
+              STAGGER[index % STAGGER.length]
+            )}
+          >
+            <Icon
+              aria-hidden="true"
+              class="mb-2.5 size-[1.625rem] text-blue-500"
+              name={`local:privacy-${icon}`}
+            />
+            <h3 class="text-[1.3125rem] font-medium tracking-[-0.02em]">
+              {heading}
+            </h3>
+            <p class="body-4 text-sand-750">
+              <TextWithTerms terms={terms} text={body} />
+            </p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

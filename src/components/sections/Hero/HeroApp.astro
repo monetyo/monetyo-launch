@@ -1,0 +1,296 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import { Icon } from "astro-icon/components"
+
+import Bar from "@/components/common/Bar.astro"
+
+import { CATEGORY_BACKGROUNDS, TINT_CLASSES } from "@/libs/palette"
+import { cn } from "@/libs/utils"
+
+interface Props {
+  app: CollectionEntry<"home">["data"]["app"]
+}
+
+const { app } = Astro.props
+
+const NAV_ICONS = [
+  "local:app-overview",
+  "local:app-transactions",
+  "local:app-budgets",
+  "local:app-accounts",
+  "local:app-reports",
+  "local:app-ask",
+]
+
+const card = "rounded-[0.875rem] border border-sand-200"
+const label = "text-[0.78125rem] text-sand-700"
+const figure = "text-[1.6875rem] leading-[1.1] font-semibold tracking-[-0.03em]"
+
+// Once the window has risen into place, the budgets fill one after another,
+// top to bottom. Written out in full so Tailwind generates each class.
+const STAGGER = [
+  "delay-[800ms]",
+  "delay-[880ms]",
+  "delay-[960ms]",
+  "delay-[1040ms]",
+  "delay-[1120ms]",
+  "delay-[1200ms]",
+]
+---
+
+{/* A picture of the app, not the app: one image to assistive technology,
+  described by its label, rather than a maze of unlabelled controls. */}
+<div
+  aria-label={app.label}
+  class="mt-[clamp(2.25rem,3.4vw,3rem)] flex animate-enter [animation-delay:280ms] w-full max-w-[72.5rem] overflow-hidden rounded-t-[1.25rem] bg-white text-left text-[0.8125rem] leading-[1.35] text-ink tabular-nums shadow-[0_40px_90px_-20px_rgba(8,14,80,0.6)]"
+  data-reveal
+  role="img"
+>
+  <div class="hidden flex-[0_0_13rem] flex-col gap-[1.125rem] border-r border-sand-200 bg-sand-50 px-3 py-[1.125rem] min-[821px]:flex">
+    <div class="flex items-center gap-2.5 px-1.5">
+      <span class="flex h-[1.875rem] flex-[0_0_1.875rem] items-center justify-center rounded-[0.5625rem] bg-ink text-[0.71875rem] font-semibold text-white">
+        {app.initials}
+      </span>
+      <span class="flex min-w-0 flex-1 flex-col">
+        <span class="truncate font-semibold">{app.household}</span>
+        <span class="text-xs text-sand-700">{app.members}</span>
+      </span>
+      <Icon class="size-3.5 text-sand-700" name="local:updown" />
+    </div>
+
+    <div class="flex flex-col gap-0.5 font-medium text-sand-750">
+      {app.nav.map((item, index) => (
+        <span
+          class={cn(
+            "flex items-center gap-2.5 rounded-[0.625rem] px-2.5 py-2",
+            index === 0 &&
+              "bg-white text-ink shadow-[0_1px_2px_rgba(27,25,22,0.08)]"
+          )}
+        >
+          <Icon class="size-4" name={NAV_ICONS[index]} />
+          {item}
+        </span>
+      ))}
+    </div>
+
+    <div class="mt-auto flex items-center gap-[0.5625rem] rounded-xl border border-sand-200 bg-white p-2.5 text-xs text-sand-750">
+      <span class="relative h-2 flex-[0_0_0.5rem]">
+        <span class="absolute inset-0 animate-soft-ping rounded-full bg-green-500"></span>
+        <span class="absolute inset-0 rounded-full bg-green-500"></span>
+      </span>
+      <span>{app.sync}</span>
+    </div>
+  </div>
+
+  <div class="flex min-w-0 flex-1 flex-col gap-3.5 px-[1.375rem] pt-5 pb-[1.625rem]">
+    <div class="flex flex-wrap items-center justify-between gap-2.5">
+      <span class="text-[1.1875rem] font-semibold tracking-[-0.02em]">
+        {app.title}
+      </span>
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-2 rounded-full border border-sand-300 px-2.5 py-1.5 font-medium">
+          <Icon class="size-3 text-sand-700" name="local:chevron-left" />
+          {app.period}
+          <Icon class="size-3 text-sand-700" name="local:chevron-right" />
+        </span>
+        <span class="flex">
+          {app.people.map(({ initial, tint }, index) => (
+            <span
+              class={cn(
+                "flex size-7 items-center justify-center rounded-full border-2 border-white text-[0.6875rem] font-semibold",
+                index > 0 && "-ml-2",
+                TINT_CLASSES[tint]
+              )}
+            >
+              {initial}
+            </span>
+          ))}
+        </span>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <div
+        class={cn(
+          card,
+          "flex flex-[1.3_1_10.625rem] flex-col gap-1 px-4 py-3.5"
+        )}
+      >
+        <span class={label}>{app.spent.label}</span>
+        <span class={figure}>
+          {app.spent.value}{" "}
+          <span class="text-[0.8125rem] font-normal tracking-normal text-sand-700">
+            {app.spent.of}
+          </span>
+        </span>
+        <Bar
+          class="mt-1.5"
+          delay="delay-[700ms]"
+          fill="fill-blue-500"
+          percent={app.spent.percent}
+        />
+      </div>
+      {app.stats.map(({ label: name, note, positive, value }) => (
+        <div
+          class={cn(
+            card,
+            "flex flex-[1_1_8.125rem] flex-col gap-1 px-4 py-3.5"
+          )}
+        >
+          <span class={label}>{name}</span>
+          <span class={figure}>{value}</span>
+          <span
+            class={cn(
+              "mt-0.5 text-[0.78125rem]",
+              positive ? "text-green-700" : "text-sand-700"
+            )}
+          >
+            {note}
+          </span>
+        </div>
+      ))}
+    </div>
+
+    <div class="flex flex-wrap gap-3">
+      <div
+        class={cn(
+          card,
+          "flex min-w-0 flex-[1_1_15.625rem] flex-col gap-[0.8125rem] p-4"
+        )}
+      >
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-semibold">{app.budgets.heading}</span>
+          <span class={label}>{app.budgets.more}</span>
+        </div>
+        {app.budgets.items.map(
+          ({ category, name, note, percent, state }, index) => (
+            <div class="flex items-center gap-2.5">
+              <span
+                class={cn(
+                  "h-2 flex-[0_0_0.5rem] rounded-full",
+                  CATEGORY_BACKGROUNDS[category]
+                )}
+              />
+              <span class="flex-[0_0_5.25rem] font-medium">{name}</span>
+              <Bar
+                class="flex-1"
+                delay={STAGGER[index % STAGGER.length]}
+                fill={
+                  state === "paid"
+                    ? "fill-ink"
+                    : state === "over"
+                      ? "fill-coral-500"
+                      : "fill-blue-500"
+                }
+                percent={percent}
+              />
+              <span
+                class={cn(
+                  "flex-[0_0_4.125rem] text-right whitespace-nowrap",
+                  state === "over"
+                    ? "font-semibold text-coral-700"
+                    : "text-sand-700"
+                )}
+              >
+                {note}
+              </span>
+            </div>
+          )
+        )}
+      </div>
+
+      <div
+        class={cn(
+          card,
+          "flex min-w-0 flex-[1.15_1_16.875rem] flex-col px-4 pt-4 pb-1.5"
+        )}
+      >
+        <div class="flex items-center justify-between pb-1.5">
+          <span class="text-sm font-semibold">{app.latest.heading}</span>
+          <span class={label}>{app.latest.note}</span>
+        </div>
+        {app.latest.items.map(
+          ({ amount, converted, detail, initial, name, tint }) => (
+            <div class="flex items-center gap-2.5 border-b border-sand-150 py-[0.5625rem] last:border-b-0">
+              <span
+                class={cn(
+                  "flex h-[1.875rem] flex-[0_0_1.875rem] items-center justify-center rounded-full text-xs font-semibold",
+                  TINT_CLASSES[tint]
+                )}
+              >
+                {initial}
+              </span>
+              <span class="flex min-w-0 flex-1 flex-col">
+                <span class="truncate font-medium">{name}</span>
+                <span class="text-xs text-sand-700">{detail}</span>
+              </span>
+              {converted ? (
+                <span class="flex flex-col items-end whitespace-nowrap">
+                  <span class="font-medium">{amount}</span>
+                  <span class="text-xs text-sand-700">{converted}</span>
+                </span>
+              ) : (
+                <span class="font-medium whitespace-nowrap">{amount}</span>
+              )}
+            </div>
+          )
+        )}
+      </div>
+    </div>
+  </div>
+
+  <div class="hidden flex-[0_0_19rem] flex-col gap-3 border-l border-sand-200 bg-sand-50 px-4 pt-5 pb-4 min-[1181px]:flex">
+    <div class="flex items-center gap-[0.5625rem] pb-1">
+      <Icon class="h-4 w-6" name="local:mark" />
+      <span class="text-sm font-semibold">{app.assistant.heading}</span>
+    </div>
+    <span class="appear max-w-[88%] self-end rounded-[1rem_1rem_0.25rem_1rem] delay-[900ms] bg-ink px-[0.8125rem] py-2.5 text-white">
+      {app.assistant.question}
+    </span>
+    <div class="appear flex flex-col gap-2.5 rounded-[0.25rem_1rem_1rem_1rem] delay-[1400ms] border border-sand-200 bg-white p-[0.8125rem]">
+      <span>
+        <strong class="font-semibold">{app.assistant.answer.lead}</strong>{" "}
+        {app.assistant.answer.rest}
+      </span>
+      <div class="flex flex-col gap-1.5 text-xs text-sand-700">
+        {app.assistant.bars.map(
+          ({ highlight, label: name, percent, value }) => (
+            <div class="flex items-center gap-2">
+              <span class="flex-[0_0_1.625rem]">{name}</span>
+              <Bar
+                class="h-2 flex-1"
+                delay="delay-[1600ms]"
+                fill={highlight ? "fill-blue-500" : "fill-sand-400"}
+                percent={percent}
+                radius={4}
+                track={false}
+              />
+              <span
+                class={cn(
+                  "flex-[0_0_2.125rem] text-right",
+                  highlight && "font-semibold text-ink"
+                )}
+              >
+                {value}
+              </span>
+            </div>
+          )
+        )}
+      </div>
+    </div>
+    <div class="appear mt-auto flex flex-wrap gap-1.5 text-[0.78125rem] font-medium delay-[1900ms]">
+      {app.assistant.suggestions.map((suggestion) => (
+        <span class="rounded-full border border-sand-350 bg-white px-[0.6875rem] py-1.5">
+          {suggestion}
+        </span>
+      ))}
+    </div>
+    <div class="flex items-center justify-between gap-2 rounded-full border border-sand-350 bg-white py-[0.4375rem] pr-[0.4375rem] pl-3.5 text-sand-700">
+      <span>{app.assistant.placeholder}</span>
+      <span class="flex h-7 flex-[0_0_1.75rem] items-center justify-center rounded-full bg-blue-500 text-white">
+        <Icon class="size-3" name="local:arrow-up" />
+      </span>
+    </div>
+  </div>
+</div>

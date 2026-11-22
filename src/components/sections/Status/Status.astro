@@ -1,0 +1,156 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import ButtonLink from "@/components/common/ButtonLink.astro"
+
+import { localizeHref } from "@/libs/i18n"
+import { cn } from "@/libs/utils"
+
+type Home = CollectionEntry<"home">["data"]
+
+interface Props {
+  ideas: Home["roadmap"]["ideas"]["items"]
+  status: Home["status"]
+}
+
+const { ideas, status } = Astro.props
+
+const locale = Astro.currentLocale
+
+// The stage under way in blue, the next in ink, the rest faded; past the last
+// stage the line turns dashed and fades out, because the road doesn't end.
+const DOTS = [
+  "bg-blue-500 shadow-[0_0_0_5px_var(--color-blue-100)]",
+  "border-2 border-ink bg-sand-100",
+  "border-2 border-sand-600 bg-sand-100",
+]
+const STAGES = ["text-blue-500", "text-ink", "text-sand-750"]
+
+// The stages arrive left to right, as the road reads.
+const STAGGER = ["delay-100", "delay-200", "delay-300", "delay-[400ms]"]
+
+// Notes off the fridge, stacked until the strip is hovered or focused; on a
+// phone, where nothing hovers, they're fanned from the start.
+const PAPER = {
+  everywhere: "bg-blue-50",
+  family: "bg-coral-50",
+  money: "bg-lemon-50",
+  power: "bg-green-50",
+} as const
+
+const MAGNET = {
+  everywhere: "bg-blue-500",
+  family: "bg-coral-500",
+  money: "bg-category-groceries",
+  power: "bg-green-500",
+} as const
+
+const FAN = [
+  "z-10 -translate-x-[4.5rem] -rotate-[8deg] md:-translate-x-5 md:-rotate-[6deg] md:group-focus-within:-translate-x-[9.5rem] md:group-focus-within:translate-y-3 md:group-focus-within:-rotate-[8deg] md:group-hover:-translate-x-[9.5rem] md:group-hover:translate-y-3 md:group-hover:-rotate-[8deg]",
+  "z-30 -translate-y-2 rotate-1 md:translate-y-0 md:rotate-2 md:group-focus-within:-translate-y-3 md:group-focus-within:rotate-0 md:group-hover:-translate-y-3 md:group-hover:rotate-0",
+  "z-20 translate-x-[4.5rem] rotate-[8deg] md:translate-x-5 md:rotate-[6deg] md:group-focus-within:translate-x-[9.5rem] md:group-focus-within:translate-y-3 md:group-focus-within:rotate-[8deg] md:group-hover:translate-x-[9.5rem] md:group-hover:translate-y-3 md:group-hover:rotate-[8deg]",
+]
+
+const teaser = ideas.slice(0, FAN.length)
+---
+
+<section aria-labelledby="status-heading" class="section">
+  <div class="container-page">
+    <h2 class="reveal heading-3" data-reveal id="status-heading">
+      {status.heading}
+    </h2>
+    <ol
+      class="mt-intro grid grid-cols-[repeat(auto-fit,minmax(min(13.75rem,100%),1fr))] gap-y-8"
+      data-reveal
+    >
+      {status.items.map(({ body, stage, title }, index) => (
+        <li class={cn("appear flex flex-col gap-2 pr-8", STAGGER[index])}>
+          <span aria-hidden="true" class="mb-3.5 flex items-center">
+            <span
+              class={cn(
+                "relative size-3.5 flex-none rounded-full",
+                DOTS[Math.min(index, DOTS.length - 1)]
+              )}
+            >
+              {/* The stage under way breathes, quietly: work is happening. */}
+              {index === 0 && (
+                <span class="absolute inset-0 animate-soft-ping rounded-full bg-blue-500" />
+              )}
+            </span>
+            <span
+              class={cn(
+                "ml-2.5 h-0.5 flex-1",
+                index === 0 && "grow-x bg-blue-500 delay-[600ms]",
+                index > 0 && index < status.items.length - 1 && "bg-sand-400",
+                index === status.items.length - 1 &&
+                  "bg-[repeating-linear-gradient(90deg,var(--color-sand-500)_0_0.375rem,transparent_0.375rem_0.75rem)] mask-[linear-gradient(90deg,#000,transparent)]"
+              )}
+            />
+          </span>
+          <span
+            class={cn(
+              "text-sm font-semibold",
+              STAGES[Math.min(index, STAGES.length - 1)]
+            )}
+          >
+            {stage}
+          </span>
+          <span class="text-[1.375rem] font-medium tracking-[-0.02em]">
+            {title}
+          </span>
+          <span class="min-h-[3lh] text-[0.96875rem] text-sand-750">
+            {body}
+          </span>
+        </li>
+      ))}
+    </ol>
+
+    {/* What comes after the road: not another stage, but the board of ideas
+      families are shaping. */}
+    <div
+      class="group reveal mt-[clamp(3rem,5vw,4.5rem)] grid items-center gap-x-10 gap-y-10 overflow-hidden rounded-[1.75rem] bg-ink p-[clamp(1.5rem,3.5vw,2.75rem)] text-sand-100 md:grid-cols-[minmax(0,1fr)_minmax(0,30rem)]"
+      data-reveal
+    >
+      <div class="flex flex-col items-start gap-3">
+        <p class="eyebrow text-coral-200">{status.more.stage}</p>
+        <h3 class="heading-4">{status.more.title}</h3>
+        <p class="max-w-[30em] text-[1.0625rem] text-sand-450">
+          {status.more.body}
+        </p>
+        <ButtonLink
+          class="mt-3 bg-white text-ink hover:bg-sand-150"
+          href={localizeHref("/#roadmap", locale)}
+        >
+          {status.more.cta}
+        </ButtonLink>
+      </div>
+
+      <div
+        aria-hidden="true"
+        class="relative mx-auto h-[10.5rem] w-full max-w-[30rem]"
+      >
+        {teaser.map(({ group, title }, index) => (
+          <span
+            class={cn(
+              "absolute top-4 left-1/2 -ml-[4.5rem] flex w-36 flex-col gap-2 rounded-[0.3125rem] px-3.5 pt-5 pb-4 text-[0.9375rem] leading-tight font-medium text-ink shadow-[0_14px_24px_-12px_rgba(0,0,0,0.6)] transition-[translate,rotate] duration-700 ease-out-expo md:-ml-[5.25rem] md:w-[10.5rem]",
+              PAPER[group],
+              FAN[index]
+            )}
+          >
+            <span
+              class={cn(
+                "absolute top-[-0.4375rem] left-1/2 size-3.5 -translate-x-1/2 rounded-full shadow-[inset_0_-2px_3px_rgba(0,0,0,0.25),inset_0_2px_2px_rgba(255,255,255,0.55),0_3px_5px_rgba(0,0,0,0.4)]",
+                MAGNET[group]
+              )}
+            />
+            {title}
+            <span class="flex flex-col gap-1.5">
+              <span class="h-1 w-full rounded-full bg-ink/10" />
+              <span class="h-1 w-2/3 rounded-full bg-ink/10" />
+            </span>
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

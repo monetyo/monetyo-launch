@@ -1,0 +1,311 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import { Icon } from "astro-icon/components"
+
+import Bar from "@/components/common/Bar.astro"
+
+import { getAnchor } from "@/libs/i18n"
+import { CATEGORY_BACKGROUNDS } from "@/libs/palette"
+import { cn } from "@/libs/utils"
+
+interface Props {
+  ai: CollectionEntry<"home">["data"]["ai"]
+}
+
+const { ai } = Astro.props
+const { ask, insights, receipts, sort } = ai
+
+// Each card is a coloured tile: its words on top, its picture of the product
+// at the bottom.
+const tile =
+  "reveal flex min-w-0 flex-col justify-between gap-9 rounded-[1.75rem] p-[clamp(1.5rem,2.8vw,2.5rem)]"
+const copy = "flex flex-col gap-2.5"
+const body = "text-sand-800"
+const chip = "rounded-full border border-sand-350 px-3 py-1.5"
+---
+
+<section class="section" id={getAnchor("ai", Astro.currentLocale)}>
+  <div class="container-page">
+    <div
+      class="reveal flex flex-col items-center gap-[1.125rem] text-center"
+      data-reveal
+    >
+      <p class="eyebrow text-coral-700">{ai.eyebrow}</p>
+      <h2 class="max-w-[15em] heading-2">{ai.heading}</h2>
+      <p class="max-w-[34em] lead text-balance text-sand-750">{ai.lead}</p>
+    </div>
+
+    <div class="mt-intro flex flex-col gap-5">
+      <div class="flex flex-wrap gap-5">
+        <div class={cn(tile, "flex-[1.35_1_30rem] bg-blue-50")} data-reveal>
+          <div class={cn(copy, "max-w-[30em]")}>
+            <h3 class="heading-5">{ask.heading}</h3>
+            <p class={body}>{ask.body}</p>
+          </div>
+          <div
+            aria-label={ask.label}
+            class="flex flex-col gap-3 text-[0.9375rem] leading-[1.4] tabular-nums"
+            role="img"
+          >
+            <span class="appear max-w-[80%] self-end rounded-[1.25rem_1.25rem_0.375rem_1.25rem] delay-300 bg-ink px-4 py-3 text-white">
+              {ask.question}
+            </span>
+            <div class="appear flex w-full max-w-[27.5rem] flex-col gap-3.5 self-start delay-[800ms] rounded-[0.375rem_1.25rem_1.25rem_1.25rem] bg-white p-[1.125rem] shadow-[0_12px_32px_-14px_rgba(35,65,245,0.35)]">
+              <span>
+                <strong class="font-semibold">{ask.answer.lead}</strong>{" "}
+                {ask.answer.rest}
+              </span>
+              <div class="flex flex-col gap-[0.5625rem] text-[0.84375rem]">
+                {ask.bars.map(({ highlight, label, percent, value }) => (
+                  <div class="flex items-center gap-2.5">
+                    <span class="flex-[0_0_6.5rem] text-sand-750">{label}</span>
+                    <Bar
+                      class="h-2 flex-1"
+                      delay="delay-[1000ms]"
+                      fill={highlight ? "fill-coral-500" : "fill-blue-500"}
+                      percent={percent}
+                      radius={4}
+                      track={false}
+                    />
+                    <span class="flex-[0_0_2.75rem] text-right font-medium">
+                      {value}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div class="appear flex flex-wrap gap-1.5 text-[0.8125rem] font-medium delay-[1300ms]">
+                {ask.suggestions.map((text) => (
+                  <span class={chip}>{text}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class={cn(tile, "flex-[1_1_23.75rem] bg-sand-250 delay-100")}
+          data-reveal
+        >
+          <div class={copy}>
+            <h3 class="heading-5">{sort.heading}</h3>
+            <p class={body}>{sort.body}</p>
+          </div>
+          <div
+            aria-label={sort.label}
+            class="flex flex-col rounded-[1.125rem] bg-white px-4 py-1 text-sm leading-[1.35] tabular-nums shadow-[0_12px_32px_-16px_rgba(27,25,22,0.3)]"
+            role="img"
+          >
+            {sort.items.map(
+              ({ category, categoryName, learned, name, raw }) => (
+                <div class="flex flex-col gap-2 border-b border-sand-150 py-3 last:border-b-0">
+                  <div class="flex items-center gap-3">
+                    <span class="flex min-w-0 flex-1 flex-col">
+                      <span class="font-medium">{name}</span>
+                      <span class="truncate text-[0.71875rem] text-sand-700">
+                        {raw}
+                      </span>
+                    </span>
+                    <span
+                      class={cn(
+                        "inline-flex items-center gap-1.5 rounded-full py-1 pr-2.5 pl-2 text-[0.78125rem] font-medium",
+                        learned
+                          ? "bg-blue-50 shadow-[0_0_0_1.5px_var(--color-blue-500)]"
+                          : "bg-sand-100"
+                      )}
+                    >
+                      <span
+                        class={cn(
+                          "size-[0.4375rem] rounded-full",
+                          CATEGORY_BACKGROUNDS[category]
+                        )}
+                      />
+                      {categoryName}
+                    </span>
+                  </div>
+                  {learned && (
+                    <span class="appear text-[0.78125rem] text-blue-500 delay-[900ms]">
+                      {learned}
+                    </span>
+                  )}
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap gap-5">
+        <div class={cn(tile, "flex-[1_1_23.75rem] bg-coral-50")} data-reveal>
+          <div class={copy}>
+            <h3 class="heading-5">{receipts.heading}</h3>
+            <p class={body}>{receipts.body}</p>
+          </div>
+          <div
+            aria-label={receipts.label}
+            class="flex flex-wrap items-center justify-center gap-3.5 tabular-nums"
+            role="img"
+          >
+            <div class="appear flex flex-[0_0_7.625rem] -rotate-4 flex-col delay-300 gap-[0.1875rem] bg-white px-3 pt-3.5 pb-4 text-[0.59375rem] leading-[1.35] text-sand-750 shadow-[0_10px_22px_-10px_rgba(120,50,20,0.45)]">
+              <span class="text-center text-[0.8125rem] font-bold tracking-[0.04em] text-ink">
+                {receipts.receipt.store}
+              </span>
+              <span class="border-b border-dashed border-sand-500 pb-[0.3125rem] text-center">
+                {receipts.receipt.address}
+              </span>
+              {receipts.receipt.lines.map(({ item, price }, index) => (
+                <span
+                  class={cn(
+                    "flex justify-between",
+                    index === 0 && "pt-[0.1875rem]",
+                    index === receipts.receipt.lines.length - 1 &&
+                      "border-b border-dashed border-sand-500 pb-[0.3125rem]"
+                  )}
+                >
+                  <span>{item}</span>
+                  <span>{price}</span>
+                </span>
+              ))}
+              <span class="flex justify-between pt-[0.1875rem] text-[0.6875rem] font-bold text-ink">
+                <span>{receipts.receipt.totalLabel}</span>
+                <span>{receipts.receipt.total}</span>
+              </span>
+            </div>
+            <Icon
+              class="appear h-3.5 w-[1.375rem] flex-none delay-[600ms]"
+              name="local:arrow-right"
+            />
+            <div class="appear flex min-w-0 flex-[1_1_11.25rem] flex-col gap-2.5 rounded-[1.125rem] bg-white p-4 delay-[800ms] text-sm leading-[1.35] shadow-[0_12px_32px_-16px_rgba(120,50,20,0.4)]">
+              <div class="flex items-baseline justify-between gap-2 font-semibold">
+                <span>{receipts.result.store}</span>
+                <span>{receipts.result.amount}</span>
+              </div>
+              <div class="flex flex-col gap-[0.4375rem] border-t border-sand-150 pt-2.5 text-[0.84375rem]">
+                {receipts.result.splits.map(({ amount, category, name }) => (
+                  <span class="flex items-center gap-2">
+                    <span
+                      class={cn(
+                        "h-[0.4375rem] flex-[0_0_0.4375rem] rounded-full",
+                        CATEGORY_BACKGROUNDS[category]
+                      )}
+                    />
+                    <span class="flex-1">{name}</span>
+                    <span>{amount}</span>
+                  </span>
+                ))}
+              </div>
+              <span class="text-[0.78125rem] text-sand-700">
+                {receipts.result.meta}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class={cn(tile, "flex-[1.35_1_30rem] bg-white delay-100")}
+          data-reveal
+        >
+          <div class={cn(copy, "max-w-[30em]")}>
+            <h3 class="heading-5">{insights.heading}</h3>
+            <p class={body}>{insights.body}</p>
+          </div>
+          <div class="flex flex-wrap items-stretch gap-3.5 tabular-nums">
+            <div class="flex min-w-0 flex-[1.5_1_17.5rem] flex-col gap-2.5 rounded-[1.125rem] border border-sand-300 p-[1.125rem]">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <span class="inline-flex items-center gap-2 text-sm font-semibold">
+                  <span class="size-2 rounded-full bg-category-groceries"></span>
+                  {insights.chart.title}
+                </span>
+                <span class="appear rounded-full bg-coral-50 px-2.5 py-1 text-[0.78125rem] font-semibold text-coral-800 delay-[1900ms]">
+                  {insights.chart.warning}
+                </span>
+              </div>
+              <svg
+                aria-label={insights.chart.label}
+                class="block h-auto w-full text-[11px]"
+                role="img"
+                viewBox="0 0 320 124"
+              >
+                <path
+                  class="stroke-sand-500"
+                  d="M0 30h320"
+                  stroke-dasharray="3 4"
+                  stroke-width="1"
+                ></path>
+                <text class="fill-sand-700" x="0" y="21">
+                  {insights.chart.budget}
+                </text>
+                <path
+                  class="appear fill-blue-50 delay-[1200ms]"
+                  d="M0 114L20 108L45 100L70 93L95 84L120 78L150 66L170 62L188 56V114Z"
+                ></path>
+                <path
+                  class="draw stroke-blue-500 delay-300"
+                  d="M0 114L20 108L45 100L70 93L95 84L120 78L150 66L170 62L188 56"
+                  fill="none"
+                  pathLength="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2.2"
+                ></path>
+                <path
+                  class="appear stroke-coral-500 delay-[1500ms]"
+                  d="M188 56L320 24"
+                  stroke-dasharray="2 6"
+                  stroke-linecap="round"
+                  stroke-width="2.2"
+                ></path>
+                <circle
+                  class="appear fill-white stroke-blue-500 delay-[1300ms]"
+                  cx="188"
+                  cy="56"
+                  r="4.5"
+                  stroke-width="2.2"
+                ></circle>
+                <circle
+                  class="appear fill-coral-500 delay-[1700ms]"
+                  cx="316"
+                  cy="25"
+                  r="4"
+                ></circle>
+                <text
+                  class="appear fill-ink font-semibold delay-[1300ms]"
+                  x="198"
+                  y="76"
+                >
+                  {insights.chart.today}
+                </text>
+                <text
+                  class="appear fill-coral-800 font-semibold delay-[1700ms]"
+                  text-anchor="end"
+                  x="320"
+                  y="64"
+                >
+                  {insights.chart.forecast}
+                </text>
+                <path
+                  class="stroke-sand-300"
+                  d="M0 114h320"
+                  stroke-width="1"
+                ></path>
+              </svg>
+            </div>
+            <div class="flex min-w-0 flex-[1_1_11.25rem] flex-col gap-2.5 text-sm leading-[1.4]">
+              {insights.notes.map(({ body: text, heading }, index) => (
+                <div
+                  class={cn(
+                    "appear flex flex-auto flex-col justify-center gap-1 rounded-2xl bg-sand-100 px-4 py-3.5",
+                    index === 0 ? "delay-[600ms]" : "delay-[750ms]"
+                  )}
+                >
+                  <span class="font-semibold">{heading}</span>
+                  <span class="text-sand-750">{text}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

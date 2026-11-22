@@ -1,0 +1,58 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import Layout from "@/layouts/main.astro"
+
+import Ai from "@/components/sections/Ai/Ai.astro"
+
+import Facts from "@/components/sections/Facts/Facts.astro"
+
+import Faq from "@/components/sections/Faq/Faq.astro"
+
+import Hero from "@/components/sections/Hero/Hero.astro"
+
+import Household from "@/components/sections/Household/Household.astro"
+
+import Join from "@/components/sections/Join/Join.astro"
+
+import Privacy from "@/components/sections/Privacy/Privacy.astro"
+
+import Roadmap from "@/components/sections/Roadmap/Roadmap.astro"
+
+import Status from "@/components/sections/Status/Status.astro"
+
+import Team from "@/components/sections/Team/Team.astro"
+
+import { getLocalizedStaticPaths } from "@/libs/content"
+import { getAlternates } from "@/libs/i18n"
+
+/**
+ * Builds the home page in every language.
+ */
+export async function getStaticPaths() {
+  return getLocalizedStaticPaths("home")
+}
+
+interface Props {
+  entry: CollectionEntry<"home">
+}
+
+const { data } = Astro.props.entry
+---
+
+<Layout
+  alternates={getAlternates("/")}
+  description={data.description}
+  title={data.title}
+>
+  <Hero home={data} />
+  <Facts facts={data.facts} />
+  <Household household={data.household} />
+  <Ai ai={data.ai} />
+  <Roadmap roadmap={data.roadmap} />
+  <Status ideas={data.roadmap.ideas.items} status={data.status} />
+  <Privacy privacy={data.privacy} />
+  <Team team={data.team} />
+  <Faq faq={data.faq} />
+  <Join join={data.join} />
+</Layout>

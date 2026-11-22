@@ -1,0 +1,218 @@
+---
+/**
+ * A flat, abstract portrait of one of the team, drawn from the site's own
+ * shapes: the logo's two overlapping circles behind, a few plain shapes for
+ * the person. Just enough of the real face (hair, glasses, colours) to be
+ * recognisable, never a likeness.
+ *
+ * Decorative: the name sits right next to it, so it's hidden from screen
+ * readers.
+ */
+interface Props {
+  id: "joan" | "luca" | "susanna"
+}
+
+const { id } = Astro.props
+
+const INK = "#1b1916"
+
+// Behind each person, the logo's circles in their own colour pair.
+const BACKDROP = {
+  joan: { a: "#2f9e64", b: "#2341f5", paper: "#e3f3ea" },
+  luca: { a: "#2341f5", b: "#ff6a3d", paper: "#e6eaff" },
+  susanna: { a: "#ff6a3d", b: "#e0527a", paper: "#ffe6da" },
+} as const
+
+const { a, b, paper } = BACKDROP[id]
+---
+
+<svg
+  aria-hidden="true"
+  class="block size-full"
+  focusable="false"
+  viewBox="0 0 240 240"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <rect fill={paper} height="240" width="240" />
+  <circle
+    class="[transform-box:fill-box] motion-safe:animate-drift-a"
+    cx="78"
+    cy="70"
+    fill={a}
+    opacity="0.18"
+    r="62"
+  />
+  <circle
+    class="[transform-box:fill-box] motion-safe:animate-drift-b"
+    cx="168"
+    cy="86"
+    fill={b}
+    opacity="0.16"
+    r="56"
+  />
+
+  {id === "luca" && (
+    <g>
+      {/* A light blue button-down: shoulders, then the open collar. */}
+      <path d="M32 240c0-50 40-72 88-72s88 22 88 72Z" fill="#a9c1ee" />
+      <rect fill="#dba582" height="40" rx="11" width="26" x="107" y="136" />
+      <path d="M106 168 120 192 134 168Z" fill="#dba582" />
+      <path d="M104 164 120 192 98 186 94 170Z" fill="#eef2fd" />
+      <path d="M136 164 120 192 142 186 146 170Z" fill="#eef2fd" />
+      <circle cx="81" cy="110" fill="#e1ab89" r="8" />
+      <circle cx="159" cy="110" fill="#e1ab89" r="8" />
+      {/* A longer face with a jaw, rather than a round baby face. */}
+      <path
+        d="M82 98c0-27 16-42 38-42s38 15 38 42l-1 24c-2 23-17 38-37 38s-35-15-37-38Z"
+        fill="#efc3a1"
+      />
+      <path
+        d="M84 126c4 20 17 34 36 34s32-14 36-34c-8 13-20 20-36 20s-28-7-36-20Z"
+        fill={INK}
+        opacity="0.07"
+      />
+      {/* Short dark hair, parted on one side, with the forehead showing. */}
+      <path
+        d="M80 104c-4-26 4-46 24-54 20-8 44-5 54 10 6 10 6 26 3 42-3-12-9-20-18-24-15-4-30-1-42-8-7 10-14 20-21 34Z"
+        fill="#3a2a22"
+      />
+      <path
+        d="M97 100q8-4 15-1M128 99q7-3 15 1"
+        fill="none"
+        stroke="#3a2a22"
+        stroke-linecap="round"
+        stroke-width="3.5"
+      />
+      <g class="blink" fill={INK}>
+        <ellipse cx="105" cy="110" rx="3" ry="3.6" />
+        <ellipse cx="135" cy="110" rx="3" ry="3.6" />
+      </g>
+      <path
+        d="M120 112q-1 11-5 15q3 2 7 1"
+        fill="none"
+        stroke="#c98d6c"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2.5"
+      />
+      <path
+        d="M110 138q10 5 20 0"
+        fill="none"
+        stroke={INK}
+        stroke-linecap="round"
+        stroke-width="3"
+      />
+    </g>
+  )}
+
+  {id === "joan" && (
+    <g>
+      <path d="M30 240c0-54 42-76 90-76s90 22 90 76Z" fill="#56624f" />
+      <rect fill="#c8916f" height="36" rx="12" width="32" x="104" y="138" />
+      <circle cx="75" cy="112" fill="#cd9575" r="10" />
+      <circle cx="165" cy="112" fill="#cd9575" r="10" />
+      <ellipse cx="120" cy="104" fill="#d9a383" rx="46" ry="55" />
+      <path
+        d="M76 116c4 30 22 42 44 42s40-12 44-42c-10 18-26 26-44 26s-34-8-44-26Z"
+        fill={INK}
+        opacity="0.09"
+      />
+      <path
+        d="M96 62q24-12 48 0"
+        fill="none"
+        opacity="0.35"
+        stroke="#fff"
+        stroke-linecap="round"
+        stroke-width="6"
+      />
+      <g class="blink" fill={INK}>
+        <ellipse cx="101" cy="110" rx="3.5" ry="4.5" />
+        <ellipse cx="139" cy="110" rx="3.5" ry="4.5" />
+      </g>
+      <g fill="#ffffff" fill-opacity="0.22" stroke="#2b2622" stroke-width="5">
+        <rect height="24" rx="7" width="32" x="84" y="98" />
+        <rect height="24" rx="7" width="32" x="124" y="98" />
+      </g>
+      <path
+        d="M116 106h8M84 104l-9 2M156 104l9 2"
+        fill="none"
+        stroke="#2b2622"
+        stroke-linecap="round"
+        stroke-width="5"
+      />
+      <path
+        d="M108 137q12 4 24 0"
+        fill="none"
+        stroke={INK}
+        stroke-linecap="round"
+        stroke-width="3.5"
+      />
+    </g>
+  )}
+
+  {id === "susanna" && (
+    <g>
+      <path
+        d="M64 112c-4-50 26-72 58-70 34 2 60 24 56 70-2 38 10 58 2 84-10-10-20-6-24-20H84c-4 14-14 10-24 20-8-26 6-46 4-84Z"
+        fill="#d48577"
+      />
+      <path
+        d="M70 122c-6 20 4 36-4 56M172 122c6 20-4 38 4 58"
+        fill="none"
+        stroke="#f28aa3"
+        stroke-linecap="round"
+        stroke-width="6"
+      />
+      <path d="M42 240c2-38 34-62 78-62s76 24 78 62Z" fill="#ecbfa3" />
+      <path d="M48 240c4-22 30-34 72-34s68 12 72 34Z" fill="#f6b3c0" />
+      <path
+        d="m92 208-3-30m59 30 3-30"
+        fill="none"
+        stroke="#f6b3c0"
+        stroke-linecap="round"
+        stroke-width="5"
+      />
+      <rect fill="#e9b99c" height="34" rx="12" width="28" x="106" y="138" />
+      <g fill="#ffffff">
+        <circle cx="102" cy="172" r="2.6" />
+        <circle cx="108" cy="177" r="2.6" />
+        <circle cx="114" cy="180" r="2.6" />
+        <circle cx="120" cy="181" r="2.6" />
+        <circle cx="126" cy="180" r="2.6" />
+        <circle cx="132" cy="177" r="2.6" />
+        <circle cx="138" cy="172" r="2.6" />
+      </g>
+      <ellipse cx="120" cy="106" fill="#f1c8ac" rx="40" ry="48" />
+      <path
+        d="M80 102c2-34 22-48 42-48 24 0 40 16 38 44-10-16-22-24-38-22-18 0-32 10-42 26Z"
+        fill="#d48577"
+      />
+      <path
+        d="M96 66q22-14 46 0"
+        fill="none"
+        stroke="#f28aa3"
+        stroke-linecap="round"
+        stroke-width="6"
+      />
+      <path
+        d="M81 120v10M159 120v10"
+        stroke="#c9c3c4"
+        stroke-linecap="round"
+        stroke-width="2"
+      />
+      <circle cx="81" cy="133" fill="#f28aa3" r="4" />
+      <circle cx="159" cy="133" fill="#f28aa3" r="4" />
+      <g class="blink" fill={INK}>
+        <ellipse cx="105" cy="108" rx="4" ry="5" />
+        <ellipse cx="135" cy="108" rx="4" ry="5" />
+      </g>
+      <path
+        d="M104 126q16 18 32 0Z"
+        fill="#ffffff"
+        stroke={INK}
+        stroke-linejoin="round"
+        stroke-width="3.5"
+      />
+    </g>
+  )}
+</svg>

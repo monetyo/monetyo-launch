@@ -1,0 +1,232 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import { Icon } from "astro-icon/components"
+
+import { getAnchor, localizeHref } from "@/libs/i18n"
+import { cn } from "@/libs/utils"
+
+interface Props {
+  roadmap: CollectionEntry<"home">["data"]["roadmap"]
+}
+
+type Group = Props["roadmap"]["ideas"]["items"][number]["group"]
+
+const { roadmap } = Astro.props
+const { ideas } = roadmap
+
+const locale = Astro.currentLocale
+
+// Each theme has its own paper and its own magnet, so the board reads as
+// sorted even before anyone filters it.
+const PAPER: Record<Group, string> = {
+  everywhere: "bg-blue-50",
+  family: "bg-coral-50",
+  money: "bg-lemon-50",
+  power: "bg-green-50",
+}
+
+const MAGNET: Record<Group, string> = {
+  everywhere: "bg-blue-500",
+  family: "bg-coral-500",
+  money: "bg-category-groceries",
+  power: "bg-green-500",
+}
+
+// Notes stuck on by hand are never quite straight, and never crooked the
+// same way twice in a row.
+const TILT = [
+  "-rotate-2",
+  "rotate-1",
+  "-rotate-1",
+  "rotate-2",
+  "rotate-[0.5deg]",
+  "-rotate-[1.5deg]",
+]
+
+// They land one after another once the door is in view.
+const STAGGER = [
+  "[animation-delay:150ms]",
+  "[animation-delay:220ms]",
+  "[animation-delay:290ms]",
+  "[animation-delay:360ms]",
+  "[animation-delay:430ms]",
+  "[animation-delay:500ms]",
+  "[animation-delay:570ms]",
+  "[animation-delay:640ms]",
+  "[animation-delay:710ms]",
+  "[animation-delay:780ms]",
+  "[animation-delay:850ms]",
+  "[animation-delay:920ms]",
+  "[animation-delay:990ms]",
+  "[animation-delay:1060ms]",
+  "[animation-delay:1130ms]",
+  "[animation-delay:1200ms]",
+]
+
+const note =
+  "stick relative w-[15.5rem] flex-none snap-center rounded-[0.375rem] px-5 pt-7 pb-5 text-ink shadow-[0_1px_1px_rgba(27,25,22,0.08),0_14px_24px_-14px_rgba(27,25,22,0.45)] transition-[rotate,translate,scale,opacity,filter,box-shadow] duration-500 ease-out-expo hover:-translate-y-1.5 hover:rotate-0 hover:shadow-[0_2px_2px_rgba(27,25,22,0.06),0_22px_34px_-16px_rgba(27,25,22,0.5)] data-dim:scale-[0.97] data-dim:opacity-35 data-dim:saturate-0 data-lit:-translate-y-1.5 data-lit:rotate-0 data-lit:shadow-[0_2px_2px_rgba(27,25,22,0.06),0_22px_34px_-16px_rgba(27,25,22,0.5)] sm:w-auto"
+
+const magnet =
+  "absolute top-[-0.5625rem] left-1/2 size-[1.125rem] -translate-x-1/2 rounded-full shadow-[inset_0_-2px_3px_rgba(0,0,0,0.25),inset_0_2px_2px_rgba(255,255,255,0.55),0_3px_5px_rgba(27,25,22,0.35)]"
+---
+
+<section class="px-3 pt-section" id={getAnchor("roadmap", locale)}>
+  <div class="band bg-ink text-sand-100">
+    <div class="container-page px-[clamp(1.25rem,4vw,2.5rem)] py-[clamp(3rem,6vw,5.5rem)]">
+      <div class="flex flex-wrap items-end gap-x-[clamp(2.5rem,6vw,6rem)] gap-y-8">
+        <div
+          class="reveal flex min-w-0 flex-[1_1_25rem] flex-col gap-[1.125rem]"
+          data-reveal
+        >
+          <p class="eyebrow text-coral-200">{roadmap.eyebrow}</p>
+          <h2 class="heading-2">{roadmap.heading}</h2>
+          <p class="max-w-[31em] lead text-sand-450">{roadmap.lead}</p>
+        </div>
+
+        <ol
+          class="reveal flex min-w-0 flex-[1_1_22rem] flex-col delay-150"
+          data-reveal
+        >
+          {roadmap.steps.map(({ body, title }, index) => (
+            <li class="flex gap-[1.125rem] border-t border-sand-900 py-[1.125rem] last:border-b">
+              <span class="flex h-7 flex-[0_0_1.75rem] items-center justify-center rounded-full bg-sand-100 text-sm font-semibold text-ink">
+                {index + 1}
+              </span>
+              <span>
+                <strong class="font-semibold">{title}</strong>{" "}
+                <span class="text-sand-450">{body}</span>
+              </span>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      {/* The fridge: themes on the freezer door, notes on the main door.
+        Without scripting the themes stay hidden and every note shows. */}
+      <div
+        class="relative mt-[clamp(3rem,6vw,4.5rem)] rounded-[2.25rem] bg-[linear-gradient(100deg,#f4f2ee_0%,#ffffff_40%,#e5e2db_100%)] text-ink shadow-[inset_0_0_0_1px_rgba(255,255,255,0.7),inset_0_-12px_24px_-12px_rgba(27,25,22,0.18),0_40px_70px_-35px_rgba(0,0,0,0.75)]"
+        data-reveal
+        x-data="ideaBoard"
+      >
+        {/* The handle, running down the door's opening edge. */}
+        <span
+          aria-hidden="true"
+          class="absolute top-[clamp(7.5rem,14vw,9rem)] right-[clamp(0.75rem,2vw,1.5rem)] hidden h-[min(45%,20rem)] w-3 rounded-full bg-[linear-gradient(90deg,#b8b2a7,#ffffff_45%,#cfcac0)] shadow-[0_6px_12px_-4px_rgba(27,25,22,0.45)] sm:block"
+        />
+
+        <div class="flex flex-wrap items-center justify-between gap-x-8 gap-y-4 border-b border-sand-350 px-[clamp(1.25rem,3.5vw,2.75rem)] pt-[clamp(1.5rem,3vw,2.25rem)] pb-[clamp(1.25rem,2.5vw,1.75rem)] shadow-[0_1px_0_rgba(255,255,255,0.9)]">
+          <h3 class="heading-6 tracking-[-0.025em] sm:text-[1.625rem]">
+            {ideas.heading}
+          </h3>
+          <div
+            aria-label={ideas.filterLabel}
+            class="-mx-[clamp(1.25rem,3.5vw,2.75rem)] flex w-[calc(100%+2*clamp(1.25rem,3.5vw,2.75rem))] gap-2 overflow-x-auto px-[clamp(1.25rem,3.5vw,2.75rem)] py-1 sm:mx-0 sm:w-auto sm:flex-wrap sm:overflow-visible sm:px-0"
+            hidden
+            role="group"
+            x-bind:hidden="false"
+          >
+            <button
+              aria-pressed="true"
+              class="flex-none rounded-full bg-white px-4 py-2 text-[0.9375rem] font-medium shadow-[0_1px_2px_rgba(27,25,22,0.12),0_4px_10px_-6px_rgba(27,25,22,0.4)] transition-colors hover:bg-sand-150 aria-pressed:bg-ink aria-pressed:text-white"
+              type="button"
+              x-bind:aria-pressed="pressed('all')"
+              x-on:click="select('all')"
+            >
+              {ideas.all}
+            </button>
+            {ideas.groups.map(({ id, label }) => (
+              <button
+                aria-pressed="false"
+                class="flex flex-none items-center gap-2 rounded-full bg-white px-4 py-2 whitespace-nowrap text-[0.9375rem] font-medium shadow-[0_1px_2px_rgba(27,25,22,0.12),0_4px_10px_-6px_rgba(27,25,22,0.4)] transition-colors hover:bg-sand-150 aria-pressed:bg-ink aria-pressed:text-white"
+                type="button"
+                x-bind:aria-pressed={`pressed('${id}')`}
+                x-on:click={`select('${id}')`}
+              >
+                <span
+                  aria-hidden="true"
+                  class={cn("size-2.5 rounded-full", MAGNET[id])}
+                />
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Filled row by row, so the content's order decides which colours sit
+          side by side; the top padding leaves room for the magnets. */}
+        <ul
+          class="flex snap-x snap-mandatory gap-4 overflow-x-auto px-[clamp(1.25rem,3.5vw,2.75rem)] pt-9 pb-8 sm:grid sm:grid-cols-2 sm:gap-x-7 sm:gap-y-10 sm:overflow-visible sm:pr-[clamp(3rem,6vw,4.5rem)] sm:pb-[clamp(1.75rem,3.5vw,2.5rem)] lg:grid-cols-4 lg:gap-x-6"
+          x-ref="notes"
+        >
+          {ideas.items.map(({ group, icon, note: body, title }, index) => (
+            <li
+              class={cn(
+                note,
+                PAPER[group],
+                TILT[index % TILT.length],
+                STAGGER[index % STAGGER.length]
+              )}
+              x-bind:data-dim={`dim('${group}')`}
+              x-bind:data-lit={`lit('${group}')`}
+            >
+              <span aria-hidden="true" class={cn(magnet, MAGNET[group])} />
+              <Icon
+                aria-hidden="true"
+                class="mb-3 size-6 text-ink/70"
+                name={`ph:${icon}`}
+              />
+              {/* Two lines reserved for every title, so the notes' texts
+                start level across a row, in every language. */}
+              <p class="min-h-[2lh] text-[1.0625rem] leading-tight font-medium tracking-[-0.015em]">
+                {title}
+              </p>
+              <p class="mt-1.5 text-[0.9375rem] leading-[1.4] text-sand-800">
+                {body}
+              </p>
+            </li>
+          ))}
+
+          {/* The empty slot at the end, waiting for someone's idea. */}
+          <li
+            class={cn(
+              note,
+              "border-2 border-dashed border-sand-500 bg-white/70 shadow-none hover:border-coral-500 hover:bg-white",
+              TILT[ideas.items.length % TILT.length],
+              STAGGER[ideas.items.length % STAGGER.length]
+            )}
+          >
+            <span aria-hidden="true" class={cn(magnet, "bg-ink")} />
+            <a
+              class="group flex min-h-[8.5rem] flex-col justify-between gap-6 outline-offset-4 after:absolute after:inset-0"
+              href={localizeHref("/#join", locale)}
+            >
+              <Icon
+                aria-hidden="true"
+                class="size-6 text-coral-500"
+                name="ph:plus"
+              />
+              <span>
+                <span class="block text-[1.0625rem] leading-tight font-medium tracking-[-0.015em]">
+                  {ideas.blank.title}
+                </span>
+                <span class="mt-1.5 block text-[0.9375rem] leading-[1.4] text-coral-700">
+                  {ideas.blank.note}{" "}
+                  <Icon
+                    aria-hidden="true"
+                    class="inline size-4 align-[-0.1875rem] transition-transform duration-300 ease-out-expo group-hover:translate-x-1"
+                    name="ph:arrow-right"
+                  />
+                </span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import "@/scripts/idea-board"
+</script>

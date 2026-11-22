@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import { Icon } from "astro-icon/components"
+
+interface Props {
+  facts: CollectionEntry<"home">["data"]["facts"]
+}
+
+const { facts } = Astro.props
+---
+
+<section aria-label={facts.label} class="px-6 pt-[1.875rem]">
+  <ul class="mx-auto flex max-w-page flex-wrap justify-center gap-x-11 gap-y-3 text-[0.96875rem] text-sand-750">
+    {facts.items.map(({ icon, text }) => (
+      <li class="flex items-center gap-2.5">
+        <Icon
+          aria-hidden="true"
+          class="size-[1.125rem] text-ink"
+          name={`local:${icon}`}
+        />
+        {text}
+      </li>
+    ))}
+  </ul>
+</section>

@@ -1,0 +1,49 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import { Icon } from "astro-icon/components"
+
+import TextWithTerms from "@/components/common/TextWithTerms.astro"
+
+import { getAnchor } from "@/libs/i18n"
+
+interface Props {
+  faq: CollectionEntry<"home">["data"]["faq"]
+}
+
+const { faq } = Astro.props
+---
+
+<section class="section" id={getAnchor("faq", Astro.currentLocale)}>
+  <div class="container-page flex flex-wrap items-start gap-x-16 gap-y-8">
+    <h2 class="reveal flex-[1_1_18.75rem] heading-2" data-reveal>
+      {faq.heading}
+    </h2>
+    {/* Details sharing a name: opening one closes the others, keyboard
+      included, with no script. The first rule is in ink, topping the list. */}
+    <div
+      class="reveal flex min-w-0 flex-[2_1_35rem] flex-col delay-150"
+      data-reveal
+    >
+      {faq.items.map(({ answer, question, terms }, index) => (
+        <details
+          class="group border-t border-sand-400 first:border-ink last:border-b"
+          name="faq"
+          open={index === 0}
+        >
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-[1.375rem] heading-6 hover:text-blue-500 [&::-webkit-details-marker]:hidden">
+            {question}
+            <Icon
+              aria-hidden="true"
+              class="size-5 flex-none transition-transform duration-300 ease-out-expo group-open:rotate-45"
+              name="ph:plus"
+            />
+          </summary>
+          <p class="-mt-1 max-w-[40em] rich-text pb-[1.625rem] text-sand-750">
+            <TextWithTerms html terms={terms} text={answer} />
+          </p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

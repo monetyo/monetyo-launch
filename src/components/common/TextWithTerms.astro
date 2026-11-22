@@ -1,0 +1,42 @@
+---
+import { splitPlaceholders } from "@/libs/template"
+
+export interface Term {
+  id: string
+  label: string
+  tip: string
+}
+
+interface Props {
+  /** Our own content: may hold links when `html` is set. */
+  html?: boolean
+  /** Names each term at its `{id}` placeholder. */
+  terms?: Term[]
+  text: string
+}
+
+const { html = false, terms = [], text } = Astro.props
+---
+
+{splitPlaceholders(text).map((part) => {
+  const term = terms.find(({ id }) => `{${id}}` === part)
+  if (!term) return html ? <Fragment set:html={part} /> : part
+
+  // Explained on hover, tap or keyboard focus for readers who don't know
+  // it; screen readers hear the explanation as part of the sentence.
+  return (
+    <button
+      class="group/term relative cursor-help font-medium text-ink underline decoration-sand-500 decoration-dotted underline-offset-4 outline-offset-2"
+      type="button"
+    >
+      {term.label}
+      <span class="sr-only"> ({term.tip})</span>
+      <span
+        aria-hidden="true"
+        class="pointer-events-none invisible absolute bottom-full left-1/2 z-10 mb-2 w-60 -translate-x-1/2 rounded-xl bg-ink px-3 py-2 text-left text-xs leading-snug font-normal text-white no-underline opacity-0 shadow-lg transition-opacity duration-300 group-hover/term:visible group-hover/term:opacity-100 group-focus/term:visible group-focus/term:opacity-100"
+      >
+        {term.tip}
+      </span>
+    </button>
+  )
+})}

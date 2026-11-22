@@ -1,0 +1,202 @@
+---
+import Button from "@/components/common/Button.astro"
+
+import { getSettings } from "@/libs/content"
+import { localizeHref } from "@/libs/i18n"
+import { cn } from "@/libs/utils"
+
+interface Props {
+  class?: string
+  /** Sets this form's ids apart from any other on the same page. */
+  id: string
+}
+
+const { class: className, id } = Astro.props
+
+const locale = Astro.currentLocale
+const { waitlist } = await getSettings(locale)
+const privacyHref = localizeHref("/privacy/", locale)
+
+const field = (name: string) => `${id}-${name}`
+
+// Errors sit on the blue panel as white pills, so they read as clearly as
+// the form they belong to.
+const pill =
+  "self-center rounded-full bg-white px-4 py-2 text-sm font-medium text-coral-800"
+import { protectText } from "@/libs/obfuscate"
+---
+
+<div
+  class={cn("w-full", className)}
+  data-errors={JSON.stringify(waitlist.errors)}
+  x-data="waitlistForm"
+>
+  <noscript>
+    <p class="body-5" set:html={protectText(waitlist.noscript)} />
+  </noscript>
+
+  {/* Hidden until Alpine runs: the form can't keep spam out without it, so
+    without it there's nothing to fill in and the noscript note shows. */}
+  <form
+    class="flex flex-col items-center gap-4"
+    hidden
+    novalidate
+    x-bind:hidden="sent()"
+    x-on:submit.prevent="submit()"
+  >
+    <div class="flex w-full flex-col gap-2">
+      <label class="sr-only" for={field("email")}>
+        {waitlist.emailLabel}
+      </label>
+      <div class="flex w-full items-center gap-1.5 rounded-full bg-white p-1.5 transition-shadow duration-200 ease-out-expo focus-within:shadow-[0_0_0_4px_rgba(27,25,22,0.3)]">
+        <input
+          aria-describedby={field("email-error")}
+          autocomplete="email"
+          class="h-12 min-w-0 flex-1 bg-transparent pr-2 pl-5 text-base text-ink placeholder:text-sand-700 focus-visible:outline-none"
+          data-field="email"
+          id={field("email")}
+          inputmode="email"
+          name="email"
+          placeholder={waitlist.emailPlaceholder}
+          type="email"
+          x-bind:aria-invalid="hasError($el)"
+          x-model="email"
+          x-on:blur="check()"
+          x-on:input="recheck($el)"
+        />
+        <Button
+          aria-describedby={field("consent")}
+          class="disabled:cursor-wait"
+          type="submit"
+          x-bind:aria-busy="sending()"
+          x-bind:disabled="sending()"
+        >
+          <span x-show="!sending()">{waitlist.submit}</span>
+          <span
+            class="inline-flex items-center gap-2"
+            x-cloak
+            x-show="sending()"
+          >
+            <span aria-hidden="true" class="flex gap-1">
+              <span class="size-1.5 animate-pulse rounded-full bg-current"></span>
+              <span class="size-1.5 animate-pulse rounded-full bg-current [animation-delay:150ms]"></span>
+              <span class="size-1.5 animate-pulse rounded-full bg-current [animation-delay:300ms]"></span>
+            </span>
+            {waitlist.sending}
+          </span>
+        </Button>
+      </div>
+      <p
+        class={pill}
+        data-field="email"
+        hidden
+        id={field("email-error")}
+        x-bind:hidden="!hasError($el)"
+        x-text="errorFor($el)"
+      ></p>
+    </div>
+
+    {/* A field only a script would fill in: people never see it, and screen
+      readers and keyboards skip it. */}
+    <div aria-hidden="true" class="sr-only">
+      <label for={field("website")}>Website</label>
+      <input
+        autocomplete="off"
+        id={field("website")}
+        name="website"
+        tabindex="-1"
+        type="text"
+        x-model="website"
+      />
+    </div>
+
+    {/* No checkbox: sending a form that only subscribes is the consent. The
+      button points here, so screen readers announce this with it. */}
+    {/* The notice floats above both lines, centred, so it never runs off a
+      narrow screen. */}
+    <div
+      class="relative flex flex-col items-center gap-1 text-center body-5"
+      x-on:click.outside="closeNotice($event)"
+      x-on:keydown.escape="closeNotice($event)"
+    >
+      <p id={field("consent")}>{waitlist.consent}</p>
+
+      <p class="flex items-baseline gap-2">
+        <a
+          class="text-white/85 underline decoration-white/40 underline-offset-4 hover:text-white"
+          href={privacyHref}
+        >
+          {waitlist.privacyLink}
+        </a>
+        <span aria-hidden="true" class="text-white/60">
+          ·
+        </span>
+        <button
+          aria-controls={field("notice")}
+          aria-expanded="false"
+          class="cursor-pointer whitespace-nowrap text-white/85 underline decoration-white/40 underline-offset-4 hover:text-white"
+          type="button"
+          x-bind:aria-expanded="notice"
+          x-on:click="toggleNotice()"
+          x-ref="noticeButton"
+        >
+          {waitlist.notice.heading}
+        </button>
+      </p>
+      <div
+        aria-label={waitlist.notice.heading}
+        class="absolute bottom-full left-1/2 z-10 mb-3 w-[min(30rem,calc(100vw-2.5rem))] -translate-x-1/2 animate-enter rounded-2xl bg-white p-4 text-left text-ink shadow-[0_24px_48px_-16px_rgba(8,14,80,0.45)]"
+        id={field("notice")}
+        role="region"
+        x-cloak
+        x-show="notice"
+      >
+        <dl class="grid gap-x-4 gap-y-2 text-[0.8125rem] leading-[1.4] text-sand-750 sm:grid-cols-[auto_1fr]">
+          {waitlist.notice.items.map(({ description, term }) => (
+            <>
+              <dt class="font-semibold text-ink">{term}</dt>
+              <dd set:html={protectText(description)} />
+            </>
+          ))}
+        </dl>
+        {/* A small point under the panel, aimed at the link it belongs to. */}
+        <span
+          aria-hidden="true"
+          class="absolute top-full left-1/2 size-3 -translate-x-1/2 -translate-y-1.5 rotate-45 rounded-[2px] bg-white"
+        ></span>
+      </div>
+    </div>
+
+    {/* Cloudflare Turnstile draws here only when it needs the Visitor to
+      prove they're human; most never see it. */}
+    <div x-ref="turnstile"></div>
+
+    <p
+      class="rounded-2xl bg-white px-4 py-3 text-sm font-medium text-coral-800"
+      hidden
+      role="alert"
+      x-bind:hidden="!failed()"
+      x-text="failure"
+    ></p>
+  </form>
+
+  <div
+    class="flex flex-col items-center gap-1.5 rounded-3xl bg-white px-[1.625rem] py-[1.375rem] text-ink"
+    hidden
+    role="status"
+    x-bind:hidden="!sent()"
+  >
+    <h2
+      class="text-xl font-semibold tracking-[-0.02em] focus:outline-none"
+      tabindex="-1"
+      x-ref="success"
+    >
+      {waitlist.successHeading}
+    </h2>
+    <p class="body-5 text-sand-750">{waitlist.successBody}</p>
+  </div>
+</div>
+
+<script>
+  import "@/scripts/waitlist"
+</script>

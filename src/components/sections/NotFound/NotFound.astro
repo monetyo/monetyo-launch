@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import ButtonLink from "@/components/common/ButtonLink.astro"
+
+import { localizeHref } from "@/libs/i18n"
+
+interface Props {
+  notFound: CollectionEntry<"notFound">["data"]
+}
+
+const { notFound } = Astro.props
+---
+
+<section class="section pb-section">
+  <div class="mx-auto flex max-w-[34rem] flex-col items-center gap-4 text-center">
+    <p class="display-1 text-blue-500">404</p>
+    <h1 class="heading-2 text-balance">{notFound.heading}</h1>
+    <p class="lead text-sand-750">{notFound.body}</p>
+    <ButtonLink class="mt-4" href={localizeHref("/", Astro.currentLocale)}>
+      {notFound.back}
+    </ButtonLink>
+  </div>
+</section>

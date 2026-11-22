@@ -1,0 +1,30 @@
+---
+import { getEntry } from "astro:content"
+
+import Layout from "@/layouts/main.astro"
+
+import NotFound from "@/components/sections/NotFound/NotFound.astro"
+
+import { DEFAULT_LOCALE, isLocale } from "@/libs/i18n"
+
+/**
+ * We decided the built `404.html` is in the default language, because Vercel
+ * serves it for every missing path that no rewrite in `vercel.json` sends to
+ * `api/not-found`, which answers a translated path with its language's page
+ * (`[...locale]/not-found.astro`). The dev server renders this page for the
+ * path itself, so there it follows the path's language too.
+ */
+const locale = isLocale(Astro.currentLocale)
+  ? Astro.currentLocale
+  : DEFAULT_LOCALE
+const entry = await getEntry("notFound", locale)
+if (!entry) {
+  throw new Error(
+    `No not-found entry for \`${locale}\`. Add src/content/pages/not-found/${locale}.yaml.`
+  )
+}
+---
+
+<Layout description={entry.data.description} noindex title={entry.data.title}>
+  <NotFound notFound={entry.data} />
+</Layout>

@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import { getCollection } from "astro:content"
+
+import Layout from "@/layouts/main.astro"
+
+import NotFound from "@/components/sections/NotFound/NotFound.astro"
+
+import { DEFAULT_LOCALE } from "@/libs/i18n"
+
+/**
+ * Builds the 404 page in every language but the default one, whose page is
+ * `404.html`, for `api/not-found` to serve under a translated path.
+ */
+export async function getStaticPaths() {
+  const entries = await getCollection("notFound")
+  return entries
+    .filter((entry) => entry.id !== DEFAULT_LOCALE)
+    .map((entry) => ({ params: { locale: entry.id }, props: { entry } }))
+}
+
+interface Props {
+  entry: CollectionEntry<"notFound">
+}
+
+const { data } = Astro.props.entry
+---
+
+<Layout description={data.description} noindex title={data.title}>
+  <NotFound notFound={data} />
+</Layout>

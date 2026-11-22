@@ -1,0 +1,13 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist", "coverage"],
+  "compilerOptions": {
+    // Vercel overrides `target` when it type-checks middleware.ts and api/, so
+    // `lib` is set explicitly instead of being derived from it.
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

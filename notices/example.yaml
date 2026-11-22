@@ -1,0 +1,46 @@
+# An example notice for `bun run notify policy`. Copy it to a new file named
+# after the date and the change (notices/2027-03-01-new-processor.yaml), write
+# the subject and the body in every language, and commit it, so the repository
+# keeps what was sent.
+#
+# `page` is the legal page that changed, written in English and without a
+# locale: /privacy/ (the default), /cookies/, /legal-notice/, /security/ or
+# /ai-content/. The button links to it in each recipient's language.
+#
+# The body is plain text: paragraphs separated by a blank line, no markup. Why
+# the recipient is getting it, how to object, the link to the page and the
+# footer are added for you, from src/content/emails/policy/.
+
+page: /privacy/
+
+en:
+  subject: "[What changed, in a few words]"
+  body: |
+    [What changed on the page, in a sentence or two.]
+
+    [How it affects the data you gave us when you joined the waitlist, and
+    the date the change takes effect.]
+
+es:
+  subject: "[Qué ha cambiado, en pocas palabras]"
+  body: |
+    [Qué ha cambiado en la página, en una o dos frases.]
+
+    [Cómo afecta a los datos que nos diste al apuntarte a la lista de espera,
+    y la fecha en que se aplica el cambio.]
+
+ca:
+  subject: "[Què ha canviat, en poques paraules]"
+  body: |
+    [Què ha canviat a la pàgina, en una o dues frases.]
+
+    [Com afecta les dades que ens vas donar en apuntar-te a la llista
+    d'espera, i la data en què s'aplica el canvi.]
+
+it:
+  subject: "[Cosa è cambiato, in poche parole]"
+  body: |
+    [Cosa è cambiato nella pagina, in una o due frasi.]
+
+    [In che modo riguarda i dati che ci hai dato iscrivendoti alla lista
+    d'attesa, e la data da cui si applica la modifica.]

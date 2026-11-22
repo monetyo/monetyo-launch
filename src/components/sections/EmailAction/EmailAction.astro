@@ -1,0 +1,96 @@
+---
+import { Icon } from "astro-icon/components"
+
+import Button from "@/components/common/Button.astro"
+import ButtonLink from "@/components/common/ButtonLink.astro"
+
+import { localizeHref } from "@/libs/i18n"
+import { protectText } from "@/libs/obfuscate"
+
+interface Props {
+  copy: {
+    back: string
+    body: string
+    button: string
+    failedBody: string
+    failedHeading: string
+    genericError: string
+    heading: string
+    noscript: string
+    sending: string
+    successBody: string
+    successHeading: string
+  }
+  /** The function the button posts the link's parameters to. */
+  endpoint: string
+}
+
+const { copy, endpoint } = Astro.props
+const home = localizeHref("/", Astro.currentLocale)
+---
+
+{/* One action an email link asks for, taken only once the Visitor presses
+  the button: see `scripts/email-action`. */}
+<section class="section pb-section">
+  <div
+    class="mx-auto flex max-w-[34rem] flex-col items-center gap-6 text-center"
+    data-endpoint={endpoint}
+    x-data="emailAction"
+    x-ref="action"
+  >
+    <div class="flex flex-col gap-4" x-show="waiting()">
+      <h1 class="heading-2 text-balance">{copy.heading}</h1>
+      <p class="lead text-sand-750">{copy.body}</p>
+      <noscript>
+        <p class="text-sand-750" set:html={protectText(copy.noscript)} />
+      </noscript>
+      <Button
+        class="mt-2 self-center"
+        hidden
+        type="button"
+        x-bind:disabled="sending()"
+        x-bind:hidden="false"
+        x-on:click="submit()"
+      >
+        <span x-show="ready()">{copy.button}</span>
+        <span x-cloak x-show="sending()">
+          {copy.sending}
+        </span>
+      </Button>
+    </div>
+
+    <div class="flex flex-col items-center gap-4" x-cloak x-show="is('done')">
+      <Icon
+        aria-hidden="true"
+        class="size-12 text-green-500"
+        name="ph:check-circle"
+      />
+      <h1 class="heading-2 text-balance">{copy.successHeading}</h1>
+      <p class="lead text-sand-750">{copy.successBody}</p>
+    </div>
+
+    <div class="flex flex-col items-center gap-4" x-cloak x-show="linkFailed()">
+      <h1 class="heading-2 text-balance">{copy.failedHeading}</h1>
+      <p class="lead text-sand-750" set:html={protectText(copy.failedBody)} />
+    </div>
+
+    <p
+      class="rounded-2xl bg-coral-50 px-4 py-3 font-medium text-coral-800"
+      role="alert"
+      x-cloak
+      x-show="is('generic')"
+    >
+      {copy.genericError}
+    </p>
+
+    <p aria-live="polite" class="sr-only" x-text="state"></p>
+
+    <ButtonLink class="mt-4" href={home} variant="quiet">
+      {copy.back}
+    </ButtonLink>
+  </div>
+</section>
+
+<script>
+  import "@/scripts/email-action"
+</script>

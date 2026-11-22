@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from "astro:content"
+
+import Layout from "@/layouts/main.astro"
+
+import EmailAction from "@/components/sections/EmailAction/EmailAction.astro"
+
+import { getLocalizedStaticPaths } from "@/libs/content"
+import { getAlternates } from "@/libs/i18n"
+
+/**
+ * Builds the page in every language, each at its translated path.
+ */
+export async function getStaticPaths() {
+  return getLocalizedStaticPaths("confirm", "confirm")
+}
+
+interface Props {
+  entry: CollectionEntry<"confirm">
+}
+
+const { data } = Astro.props.entry
+---
+
+<Layout
+  alternates={getAlternates("/confirm/")}
+  description={data.description}
+  noindex
+  title={data.title}
+>
+  <EmailAction
+    copy={{
+      ...data,
+      failedBody: data.expiredBody,
+      failedHeading: data.expiredHeading,
+    }}
+    endpoint="/api/confirm/"
+  />
+</Layout>

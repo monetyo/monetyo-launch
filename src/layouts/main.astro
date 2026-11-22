@@ -1,0 +1,89 @@
+---
+import "@/styles/global.css"
+
+import SiteFooter from "@/components/sections/SiteFooter/SiteFooter.astro"
+
+import SiteHeader from "@/components/sections/SiteHeader/SiteHeader.astro"
+
+import { getSettings } from "@/libs/content"
+import {
+  type Alternates,
+  DEFAULT_LOCALE,
+  getOpenGraphLocale,
+  isLocale,
+  LOCALES,
+} from "@/libs/i18n"
+
+interface Props {
+  alternates?: Alternates
+  description: string
+  noindex?: boolean
+  title: string
+}
+
+const { alternates = {}, description, noindex = false, title } = Astro.props
+
+const locale = isLocale(Astro.currentLocale)
+  ? Astro.currentLocale
+  : DEFAULT_LOCALE
+
+const settings = await getSettings(locale)
+
+const absolute = (href: string) => new URL(href, Astro.site).href
+
+const canonical = absolute(alternates[locale] ?? Astro.url.pathname)
+const translations = LOCALES.flatMap((code) => {
+  const href = alternates[code]
+  return href ? [{ code, href: absolute(href) }] : []
+})
+const fallback = alternates[DEFAULT_LOCALE]
+---
+
+<!doctype html>
+<html class="scroll-smooth" lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>{title}</title>
+    <meta content={description} name="description" />
+    {noindex && <meta content="noindex" name="robots" />}
+    <link href={canonical} rel="canonical" />
+    {translations.map(({ code, href }) => (
+      <link href={href} hreflang={code} rel="alternate" />
+    ))}
+    {fallback && (
+      <link href={absolute(fallback)} hreflang="x-default" rel="alternate" />
+    )}
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    <meta content="#4f46e5" name="theme-color" />
+    <meta content="website" property="og:type" />
+    <meta content={settings.siteName} property="og:site_name" />
+    <meta content={title} property="og:title" />
+    <meta content={description} property="og:description" />
+    <meta content={canonical} property="og:url" />
+    <meta content={getOpenGraphLocale(locale)} property="og:locale" />
+    <meta content="summary" name="twitter:card" />
+  </head>
+  <body>
+    <a
+      class="sr-only z-50 rounded-full bg-ink px-4 py-2 text-sm font-medium text-white focus:not-sr-only focus:fixed focus:top-3 focus:left-3"
+      href="#main"
+    >
+      {settings.skipLink}
+    </a>
+
+    <SiteHeader alternates={alternates} />
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <SiteFooter />
+
+    <script>
+      import "@/scripts/reveal"
+      import "@/scripts/protected"
+      import "@/scripts/favicon"
+    </script>
+  </body>
+</html>

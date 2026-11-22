@@ -1,0 +1,35 @@
+---
+import Logo from "@/components/common/Logo.astro"
+
+import { getSettings } from "@/libs/content"
+import { localizeHref } from "@/libs/i18n"
+import { fillPlaceholders } from "@/libs/template"
+
+const locale = Astro.currentLocale
+const { footer } = await getSettings(locale)
+const year = String(new Date().getFullYear())
+---
+
+<footer class="px-[clamp(1rem,3vw,1.5rem)] pt-10 pb-6">
+  <div class="container-page flex flex-wrap items-center justify-between gap-x-10 gap-y-3.5 text-[0.90625rem] text-sand-750">
+    <div class="flex flex-wrap items-center gap-x-[1.125rem] gap-y-2.5">
+      <Logo size="sm" />
+      <p>{fillPlaceholders(footer.copyright, { year })}</p>
+    </div>
+
+    <nav aria-label={footer.linksLabel}>
+      <ul class="flex flex-wrap gap-x-7 gap-y-1 font-medium">
+        {footer.links.map(({ href, label }) => (
+          <li>
+            <a
+              class="block py-3 text-ink hover:text-blue-500"
+              href={localizeHref(href, locale)}
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</footer>

@@ -1,0 +1,43 @@
+---
+import type { HTMLAttributes } from "astro/types"
+
+import {
+  BUTTON_BASE,
+  BUTTON_SIZES,
+  BUTTON_VARIANTS,
+  type ButtonSize,
+  type ButtonVariant,
+} from "@/libs/button"
+import { cn } from "@/libs/utils"
+
+interface Props extends HTMLAttributes<"a"> {
+  href: string
+  size?: ButtonSize
+  variant?: ButtonVariant
+}
+
+const {
+  href,
+  size = "md",
+  variant = "primary",
+  class: className,
+  ...rest
+} = Astro.props
+
+if (!Astro.slots.has("default")) {
+  throw new Error("<ButtonLink> requires a label.")
+}
+---
+
+<a
+  class={cn(
+    BUTTON_BASE,
+    BUTTON_SIZES[size],
+    BUTTON_VARIANTS[variant],
+    className
+  )}
+  href={href}
+  {...rest}
+>
+  <slot />
+</a>

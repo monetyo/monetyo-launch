@@ -1,0 +1,126 @@
+---
+import ButtonLink from "@/components/common/ButtonLink.astro"
+import Logo from "@/components/common/Logo.astro"
+
+import LanguageSwitch from "@/components/sections/SiteHeader/LanguageSwitch.astro"
+
+import { getSettings } from "@/libs/content"
+import { type Alternates, localizeHref } from "@/libs/i18n"
+
+interface Props {
+  alternates: Alternates
+}
+
+const { alternates } = Astro.props
+
+const locale = Astro.currentLocale
+const { header } = await getSettings(locale)
+const nav = header.nav.map((item) => ({
+  ...item,
+  href: localizeHref(item.href, locale),
+}))
+const join = localizeHref("/#join", locale)
+
+// The open menu's links arrive one after another, 40ms apart.
+const STAGGER = [
+  "[animation-delay:0ms]",
+  "[animation-delay:40ms]",
+  "[animation-delay:80ms]",
+  "[animation-delay:120ms]",
+  "[animation-delay:160ms]",
+]
+---
+
+{/* Starts 36px down, 24px inside the hero's panel; sticking 24px above the top
+  brings it to 12px once scrolled. The gap around it lets clicks through. */}
+<header
+  class="pointer-events-none sticky -top-6 z-40 px-6 pt-9 pb-3"
+  x-data="siteMenu"
+  x-on:keydown.escape.window="close()"
+>
+  <div class="pointer-events-auto mx-auto flex h-16 max-w-[77.5rem] items-center justify-between gap-x-6 gap-y-2 rounded-[1.125rem] bg-white py-2.5 pr-2.5 pl-5 shadow-[0_1px_2px_rgba(27,25,22,0.06),0_8px_24px_-12px_rgba(27,25,22,0.18)]">
+    <a aria-label={header.homeLabel} href={localizeHref("/", locale)}>
+      <Logo />
+    </a>
+
+    <nav aria-label={header.navLabel} class="hidden lg:block">
+      <ul class="flex items-center gap-8 text-[0.96875rem] font-medium">
+        {nav.map(({ href, label }) => (
+          <li>
+            <a class="block py-3 hover:text-blue-500" href={href}>
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <LanguageSwitch alternates={alternates} class="hidden md:block" />
+      <ButtonLink class="hidden sm:inline-flex" href={join} size="sm">
+        {header.cta}
+      </ButtonLink>
+      <button
+        aria-controls="site-menu"
+        aria-expanded="false"
+        class="group relative flex size-11 items-center justify-center rounded-full hover:bg-sand-150 lg:hidden"
+        type="button"
+        x-bind:aria-expanded="open"
+        x-on:click="toggle()"
+        x-ref="button"
+      >
+        <span class="sr-only">{header.menuLabel}</span>
+        {/* Two lines that turn into a cross, rather than one icon swapped
+          for another. */}
+        <span
+          aria-hidden="true"
+          class="absolute h-[1.5px] w-5 -translate-y-1 rounded-full bg-ink transition-transform duration-500 ease-out-expo group-aria-expanded:translate-y-0 group-aria-expanded:rotate-45"
+        ></span>
+        <span
+          aria-hidden="true"
+          class="absolute h-[1.5px] w-5 translate-y-1 rounded-full bg-ink transition-transform duration-500 ease-out-expo group-aria-expanded:translate-y-0 group-aria-expanded:-rotate-45"
+        ></span>
+      </button>
+    </div>
+  </div>
+
+  {/* Drops over the page below the bar rather than pushing it down. */}
+  <div
+    class="pointer-events-auto absolute inset-x-6 top-full rounded-[1.125rem] bg-white p-5 shadow-[0_24px_48px_-24px_rgba(27,25,22,0.35)] lg:hidden"
+    id="site-menu"
+    x-cloak
+    x-ref="panel"
+    x-show="open"
+  >
+    <nav aria-label={header.navLabel} class="flex flex-col gap-6">
+      <ul class="flex flex-col">
+        {nav.map(({ href, label }, index) => (
+          <li class:list={["animate-enter", STAGGER[index]]}>
+            <a
+              class="block border-b border-sand-150 py-3.5 text-xl font-medium tracking-[-0.02em] hover:text-blue-500"
+              href={href}
+              x-on:click="close()"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <LanguageSwitch
+          alternates={alternates}
+          class="w-full md:hidden"
+          variant="list"
+        />
+        <ButtonLink class="sm:hidden" href={join} x-on:click="close()">
+          {header.cta}
+        </ButtonLink>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  import "@/scripts/site-menu"
+  import "@/scripts/locale"
+</script>

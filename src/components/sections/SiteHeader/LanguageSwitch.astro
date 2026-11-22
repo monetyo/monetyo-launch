@@ -1,0 +1,131 @@
+---
+import type { HTMLAttributes } from "astro/types"
+
+import { Icon } from "astro-icon/components"
+
+import { getSettings } from "@/libs/content"
+import {
+  type Alternates,
+  DEFAULT_LOCALE,
+  isLocale,
+  LOCALES,
+  localizeHref,
+} from "@/libs/i18n"
+import { cn } from "@/libs/utils"
+
+interface Props extends HTMLAttributes<"div"> {
+  alternates: Alternates
+  /**
+   * `menu` opens from a button, for the header. `list` shows every language
+   * at once, for the narrow-screen menu, which is already a panel of its own.
+   */
+  variant?: "list" | "menu"
+}
+
+const { alternates, class: className, variant = "menu", ...rest } = Astro.props
+
+const current = isLocale(Astro.currentLocale)
+  ? Astro.currentLocale
+  : DEFAULT_LOCALE
+const { languages } = await getSettings(current)
+
+// A locale without this page is switched to its home page instead. Each
+// language is named in itself, so it can be found by whoever reads it.
+const links = LOCALES.map((code) => ({
+  code,
+  current: code === current,
+  href: alternates[code] ?? localizeHref("/", code),
+  name: languages.names[code],
+}))
+
+const id = `languages-${variant}`
+const item =
+  "flex items-center gap-4 rounded-xl px-3 py-2.5 transition-colors duration-300 ease-out-expo hover:bg-sand-100"
+---
+
+{variant === "menu" ? (
+  <div
+    class={cn("relative", className)}
+    x-data="languageMenu"
+    x-on:click.outside="close()"
+    x-on:focusout="leave($event)"
+    x-on:keydown.escape="close(true)"
+    {...rest}
+  >
+    <button
+      aria-controls={id}
+      aria-expanded="false"
+      aria-label={languages.label}
+      class="flex h-11 items-center gap-2 rounded-full pr-3 pl-3.5 text-sm font-semibold transition-colors duration-300 ease-out-expo hover:bg-sand-100"
+      type="button"
+      x-bind:aria-expanded="open"
+      x-on:click="toggle()"
+      x-ref="button"
+    >
+      <Icon aria-hidden="true" class="size-[1.125rem]" name="ph:globe" />
+      {current.toUpperCase()}
+      <Icon
+        aria-hidden="true"
+        class="size-3.5 transition-transform duration-300 ease-out-expo"
+        name="ph:caret-down"
+        x-bind:class="caret()"
+      />
+    </button>
+    <ul
+      class="absolute top-full right-0 z-50 mt-2 w-56 animate-enter rounded-2xl border border-sand-200 bg-white p-2 shadow-[0_24px_48px_-16px_rgba(27,25,22,0.25)]"
+      id={id}
+      x-cloak
+      x-show="open"
+    >
+      {links.map(({ code, current: isCurrent, href, name }) => (
+        <li>
+          <a
+            aria-current={isCurrent ? "true" : undefined}
+            class={item}
+            data-locale={code}
+            href={href}
+            hreflang={code}
+            lang={code}
+          >
+            <span class="w-6 text-xs font-semibold text-sand-600">
+              {code.toUpperCase()}
+            </span>
+            <span class="flex-1 text-[0.9375rem]">{name}</span>
+            {isCurrent && (
+              <Icon aria-hidden="true" class="size-4" name="ph:check" />
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+) : (
+  <nav aria-label={languages.label} class={className} {...rest}>
+    <ul class="flex flex-col">
+      {links.map(({ code, current: isCurrent, href, name }) => (
+        <li>
+          <a
+            aria-current={isCurrent ? "true" : undefined}
+            class={cn(item, "-mx-3")}
+            data-locale={code}
+            href={href}
+            hreflang={code}
+            lang={code}
+          >
+            <span class="w-6 text-xs font-semibold text-sand-600">
+              {code.toUpperCase()}
+            </span>
+            <span class="flex-1 text-[0.9375rem]">{name}</span>
+            {isCurrent && (
+              <Icon aria-hidden="true" class="size-4" name="ph:check" />
+            )}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
+
+<script>
+  import "@/scripts/language-menu"
+</script>

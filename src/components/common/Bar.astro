@@ -1,0 +1,44 @@
+---
+import { cn } from "@/libs/utils"
+
+interface Props {
+  class?: string
+  /**
+   * When the fill starts growing once its block is revealed, as a Tailwind
+   * `delay-*` class.
+   */
+  delay?: string
+  /** The fill's colour, as a Tailwind `fill-*` class. */
+  fill: string
+  /** How much of the bar is filled, from 0 to 100. */
+  percent: number
+  /** Half the bar's height in px, so its ends are round. */
+  radius?: number
+  /** Draws the empty part of the bar too, rather than leaving it blank. */
+  track?: boolean
+}
+
+const {
+  class: className,
+  delay = "delay-200",
+  fill,
+  percent,
+  radius = 3,
+  track = true,
+} = Astro.props
+
+// Drawn in SVG so the width can be an attribute: the page's content security
+// policy doesn't allow a `style` attribute to set it.
+---
+
+<svg aria-hidden="true" class={cn("block h-1.5 w-full", className)}>
+  {track && (
+    <rect class="fill-sand-200" height="100%" rx={radius} width="100%" />
+  )}
+  <rect
+    class={cn("grow-x", delay, fill)}
+    height="100%"
+    rx={radius}
+    width={`${percent}%`}
+  />
+</svg>

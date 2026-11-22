@@ -1,0 +1,8 @@
+# The fixed copy around every notice `bun run notify policy` sends. The subject
+# and the body come from the notice file itself, in notices/.
+preheader: A change to how we handle your data, and what you can do about it.
+button: Read the updated page
+fallback: "Button not working? Paste this link into your browser:"
+rights: If you don't agree with the change, you can unsubscribe with the link below and we'll delete your address from the waitlist straight away. To object, or to ask anything about your data, write to privacy@monetyo.com.
+reason: You're getting this because you're on the Monetyo waitlist and the change affects how we handle your data. It's a one-off notice, not a newsletter.
+unsubscribe: Unsubscribe

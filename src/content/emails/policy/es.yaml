@@ -1,0 +1,8 @@
+# The fixed copy around every notice `bun run notify policy` sends. The subject
+# and the body come from the notice file itself, in notices/.
+preheader: Un cambio en cómo tratamos tus datos, y qué puedes hacer al respecto.
+button: Leer la página actualizada
+fallback: "¿No funciona el botón? Pega este enlace en tu navegador:"
+rights: Si no estás de acuerdo con el cambio, puedes darte de baja con el enlace de abajo y borraremos tu dirección de la lista de espera al momento. Para oponerte, o para preguntar cualquier cosa sobre tus datos, escribe a privacy@monetyo.com.
+reason: Recibes este correo porque estás en la lista de espera de Monetyo y el cambio afecta a cómo tratamos tus datos. Es un aviso puntual, no un boletín.
+unsubscribe: Darme de baja

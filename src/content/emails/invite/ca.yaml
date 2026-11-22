@@ -1,0 +1,12 @@
+subject: "Monetyo ja està a punt: prova’l"
+preheader: La teva llar és de les primeres a entrar-hi.
+heading: La teva invitació a Monetyo
+body: |
+  Et vas apuntar a la llista d’espera per saber quan Monetyo estaria a punt. Ja pot acollir les primeres llars, i ens agradaria que la teva en fos una.
+
+  Crea la teva llar, afegeix el que gastes i convida les persones amb qui comparteixes els diners. Tot just comencem, així que encara hi haurà coses per polir.
+button: Prova Monetyo
+fallback: "El botó no funciona? Enganxa aquest enllaç al navegador:"
+feedback: Alguna cosa confusa, que hi falti o que no funcioni? Respon aquest correu i explica’ns-ho. Llegim cada missatge, i el que ens diguis decideix què arreglem primer.
+reason: T’escrivim perquè et vas apuntar a la llista d’espera de Monetyo.
+unsubscribe: Dona’m de baixa

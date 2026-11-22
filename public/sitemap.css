@@ -1,0 +1,109 @@
+/*
+ * We decided to style /sitemap.xml with CSS rather than XSL, so a person can
+ * read it in Monetyo's colours, because browsers are removing XSLT. Crawlers
+ * never load it.
+ * @see https://developer.chrome.com/docs/web-platform/deprecating-xslt
+ */
+@namespace url(http://www.sitemaps.org/schemas/sitemap/0.9);
+@namespace xhtml url(http://www.w3.org/1999/xhtml);
+
+:root {
+  background: #f4f2ee;
+}
+
+urlset {
+  --ink: #1b1916;
+  --muted: #5f5a52;
+  --soft: #8a847a;
+  --border: #e5e2db;
+  --blue: #2341f5;
+  --coral: #ff6a3d;
+
+  display: block;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+  color: var(--ink);
+  font:
+    0.9375rem/1.5 Helvetica,
+    Arial,
+    sans-serif;
+  counter-reset: url;
+}
+
+/* A title over the list: the brand mark, the site, and what this page is. */
+urlset::before {
+  content: "monetyo  ·  Sitemap";
+  display: block;
+  margin-bottom: 2rem;
+  padding-left: 2.75rem;
+  background:
+    radial-gradient(
+      circle at 0.75rem 50%,
+      var(--blue) 0.75rem,
+      transparent 0.78rem
+    ),
+    radial-gradient(
+      circle at 1.6rem 50%,
+      var(--coral) 0.75rem,
+      transparent 0.78rem
+    );
+  background-repeat: no-repeat;
+  font-size: 1.75rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.6;
+  white-space: pre;
+}
+
+url {
+  display: block;
+  position: relative;
+  margin-bottom: 0.75rem;
+  padding: 1.125rem 1.375rem;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: #ffffff;
+  counter-increment: url;
+}
+
+url::before {
+  content: counter(url, decimal-leading-zero);
+  position: absolute;
+  top: 1.125rem;
+  right: 1.375rem;
+  color: var(--soft);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+loc {
+  display: block;
+  margin-bottom: 0.5rem;
+  padding-right: 2.5rem;
+  color: var(--blue);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+xhtml|link {
+  display: block;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  overflow-wrap: anywhere;
+}
+
+xhtml|link::before {
+  content: attr(hreflang);
+  display: inline-block;
+  min-width: 5.5rem;
+  color: var(--ink);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.75rem;
+}
+
+xhtml|link::after {
+  content: attr(href);
+}

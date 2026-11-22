@@ -1,0 +1,13 @@
+title: Unsubscribe
+description: Leave the Monetyo waitlist.
+heading: Leave the waitlist?
+body: We'll stop emailing you and delete your address from the waitlist straight away.
+button: Unsubscribe and delete my address
+sending: Unsubscribing…
+noscript: Unsubscribing needs JavaScript. Please turn it on and reload this page, or write to hello@monetyo.com.
+successHeading: You've been unsubscribed
+successBody: Your address has been deleted. Thanks for your interest in Monetyo, and you're always welcome back.
+invalidHeading: This link doesn't work
+invalidBody: It may have been cut short when it was copied. Use the link in your most recent email from us, or write to hello@monetyo.com.
+genericError: Something went wrong on our side. Please try again in a moment.
+back: Back to Monetyo

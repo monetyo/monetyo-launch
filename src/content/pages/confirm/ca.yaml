@@ -1,0 +1,13 @@
+title: Confirma el correu
+description: Confirma la plaça a la llista d’espera de Monetyo.
+heading: Un clic i ja ets a la llista
+body: Confirma que aquesta adreça de correu és teva i et mantindrem al corrent del llançament de Monetyo.
+button: Confirma el correu
+sending: Confirmant…
+noscript: Per confirmar cal JavaScript. Activa’l i torna a carregar aquesta pàgina.
+successHeading: Ja ets a la llista
+successBody: Gràcies per confirmar. Rebràs novetats del llançament i, de tant en tant, alguna enquesta breu.
+expiredHeading: Aquest enllaç ja no funciona
+expiredBody: Els enllaços de confirmació serveixen un cop, durant 7 dies. Torna-t’hi a apuntar i te n’enviarem un altre.
+genericError: Hi ha hagut un error per part nostra. Torna-hi d’aquí a un moment.
+back: Torna a Monetyo

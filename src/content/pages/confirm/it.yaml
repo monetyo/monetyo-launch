@@ -1,0 +1,13 @@
+title: Conferma la tua email
+description: Conferma il tuo posto nella lista d’attesa di Monetyo.
+heading: Un clic e sei in lista
+body: Conferma che questo indirizzo email è tuo e ti daremo notizie sul lancio di Monetyo.
+button: Conferma l’email
+sending: Conferma in corso…
+noscript: Per confermare serve JavaScript. Attivalo e ricarica la pagina.
+successHeading: Sei in lista
+successBody: Grazie per la conferma. Ti scriveremo con le novità sul lancio e, ogni tanto, un breve sondaggio.
+expiredHeading: Questo link non funziona più
+expiredBody: I link di conferma valgono una volta, per 7 giorni. Iscriviti di nuovo e te ne mandiamo uno nuovo.
+genericError: Qualcosa è andato storto da parte nostra. Riprova tra un momento.
+back: Torna a Monetyo

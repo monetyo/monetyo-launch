@@ -1,0 +1,13 @@
+title: Donar-se de baixa
+description: Surt de la llista d’espera de Monetyo.
+heading: Vols deixar la llista?
+body: Deixarem d’escriure’t i esborrarem la teva adreça de la llista d’espera immediatament.
+button: Dona’m de baixa i esborra’m l’adreça
+sending: Donant-te de baixa…
+noscript: Per donar-te de baixa cal JavaScript. Activa’l i torna a carregar aquesta pàgina, o escriu-nos a hello@monetyo.com.
+successHeading: T’has donat de baixa
+successBody: Hem esborrat la teva adreça. Gràcies per l’interès en Monetyo; aquí sempre tindràs la porta oberta.
+invalidHeading: Aquest enllaç no funciona
+invalidBody: Potser s’ha tallat en copiar-lo. Fes servir l’enllaç de l’últim correu que t’hem enviat, o escriu-nos a hello@monetyo.com.
+genericError: Hi ha hagut un error per part nostra. Torna-hi d’aquí a un moment.
+back: Torna a Monetyo

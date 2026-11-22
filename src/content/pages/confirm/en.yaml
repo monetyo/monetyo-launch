@@ -1,0 +1,13 @@
+title: Confirm your email
+description: Confirm your place on the Monetyo waitlist.
+heading: One click and you're on the list
+body: Confirm that this email address is yours, and we'll keep you posted about Monetyo's launch.
+button: Confirm my email
+sending: Confirming…
+noscript: Confirming needs JavaScript. Please turn it on and reload this page.
+successHeading: You're on the list
+successBody: Thanks for confirming. You'll hear from us with launch news and the occasional short survey.
+expiredHeading: This link no longer works
+expiredBody: Confirmation links work once, for 7 days. Join the waitlist again and we'll send you a fresh one.
+genericError: Something went wrong on our side. Please try again in a moment.
+back: Back to Monetyo

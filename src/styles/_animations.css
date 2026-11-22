@@ -1,0 +1,161 @@
+@theme {
+  /* The one easing curve on the site: weighted, decelerating into place. */
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-enter: enter 0.9s var(--ease-out-expo) both;
+  --animate-soft-ping: soft-ping 2.4s var(--ease-out-expo) infinite;
+  /* Two lengths that don't divide evenly, so the circles never fall back
+    into the same step and the motion doesn't read as a loop. */
+  --animate-drift-a: drift-a 18s ease-in-out infinite alternate;
+  --animate-drift-b: drift-b 23s ease-in-out infinite alternate;
+
+  /* The panels' circles sway together and apart, small enough to feel like
+    the light changing rather than something moving. */
+  @keyframes drift-a {
+    from {
+      transform: translate3d(-2%, 0, 0) scale(1);
+    }
+    to {
+      transform: translate3d(2.5%, -1%, 0) scale(1.04);
+    }
+  }
+
+  @keyframes drift-b {
+    from {
+      transform: translate3d(2%, -1%, 0) scale(1.04);
+    }
+    to {
+      transform: translate3d(-2.5%, 0, 0) scale(1);
+    }
+  }
+
+  @keyframes enter {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+
+  /* A ring that swells out of a dot and fades: something is live here. */
+  @keyframes soft-ping {
+    from {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    70%,
+    to {
+      opacity: 0;
+      transform: scale(2.6);
+    }
+  }
+}
+
+/* Each eases once from a hidden start when `scripts/reveal` marks it revealed;
+  the start needs scripting and no reduced motion, so nothing stays hidden. */
+
+@utility reveal {
+  transition-property: opacity, translate;
+  transition-duration: 0.9s;
+  transition-timing-function: var(--ease-out-expo);
+
+  @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+    &:not([data-revealed]) {
+      opacity: 0;
+      translate: 0 1.25rem;
+    }
+  }
+}
+
+/* For parts of a revealed block that arrive after it: they fade in, timed
+  by a `delay-*` class, once their block is revealed. */
+@utility appear {
+  transition-property: opacity, translate;
+  transition-duration: 0.7s;
+  transition-timing-function: var(--ease-out-expo);
+
+  @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+    [data-reveal]:not([data-revealed]) & {
+      opacity: 0;
+      translate: 0 0.5rem;
+    }
+  }
+}
+
+/* An animation rather than a transition, so its delay never slows a later
+  hover; it only fills backwards, so the note's own rotation takes over. */
+@utility stick {
+  @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+    [data-reveal]:not([data-revealed]) & {
+      opacity: 0;
+    }
+
+    [data-revealed] & {
+      animation: stick 0.8s var(--ease-out-expo) backwards;
+    }
+  }
+}
+
+@keyframes stick {
+  from {
+    opacity: 0;
+    scale: 1.12;
+    translate: 0 -0.75rem;
+  }
+}
+
+/* Eyes in a portrait, blinking while its card is hovered or focused: once
+  straight away, then every few seconds. */
+@utility blink {
+  transform-box: fill-box;
+  transform-origin: center;
+
+  @media (prefers-reduced-motion: no-preference) {
+    .group:hover &,
+    .group:focus-within & {
+      animation: blink 3.6s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes blink {
+  0%,
+  12%,
+  100% {
+    scale: 1 1;
+  }
+
+  6% {
+    scale: 1 0.1;
+  }
+}
+
+/* A bar that grows from its left end to its length. Works on SVG shapes
+  too, measured from their own box rather than the drawing's. */
+@utility grow-x {
+  transform-box: fill-box;
+  transform-origin: left center;
+  transition-property: scale;
+  transition-duration: 1.2s;
+  transition-timing-function: var(--ease-out-expo);
+
+  @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+    [data-reveal]:not([data-revealed]) & {
+      scale: 0 1;
+    }
+  }
+}
+
+/* A line that draws itself from its start. Needs `pathLength="1"` on the
+  path, so a dash of 1 is exactly its length. */
+@utility draw {
+  stroke-dasharray: 1;
+  transition-property: stroke-dashoffset;
+  transition-duration: 1.6s;
+  transition-timing-function: var(--ease-out-expo);
+
+  @media (scripting: enabled) and (prefers-reduced-motion: no-preference) {
+    [data-reveal]:not([data-revealed]) & {
+      stroke-dashoffset: 1;
+    }
+  }
+}

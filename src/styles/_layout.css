@@ -1,0 +1,27 @@
+@theme {
+  --container-page: 72.5rem;
+  --container-band: 105rem;
+  --container-measure: 48.75rem;
+
+  /* The vertical rhythm: the air between sections, and the shorter pause
+    between a section's heading and what it introduces. */
+  --spacing-section: clamp(5.5rem, 9vw, 8.5rem);
+  --spacing-intro: clamp(2.5rem, 4.5vw, 4rem);
+}
+
+/* The column every section's content shares. */
+@utility container-page {
+  @apply mx-auto w-full max-w-page;
+}
+
+/* A section's own breathing room: the gap above it, and the side gutter
+  that keeps its content off the screen's edges. */
+@utility section {
+  @apply px-[clamp(1rem,3vw,1.5rem)] pt-section;
+}
+
+/* The full-bleed coloured panels (hero, roadmap, final call) sit 12px in
+  from the screen's edges, with rounded corners, rather than running to it. */
+@utility band {
+  @apply mx-auto max-w-band overflow-hidden rounded-[2rem];
+}

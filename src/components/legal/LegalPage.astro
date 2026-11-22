@@ -1,0 +1,82 @@
+---
+import Layout from "@/layouts/main.astro"
+
+import { formatDate, getAlternates, localizeHref } from "@/libs/i18n"
+import { protect } from "@/libs/obfuscate"
+import { fillPlaceholders } from "@/libs/template"
+
+interface Section {
+  body?: string | string[]
+  heading: string
+  items?: { description: string; term: string }[]
+}
+
+interface Props {
+  data: {
+    description: string
+    intro: string
+    sections: Section[]
+    title: string
+    updated: Date
+    updatedLabel: string
+  }
+  /** The page as content links to it, such as `/privacy/`. */
+  path: string
+}
+
+const { data, path } = Astro.props
+const locale = Astro.currentLocale
+
+/**
+ * Points the content's own links at this locale's version of each page:
+ * `/legal-notice/` becomes `/es/aviso-legal/` on the Spanish pages.
+ */
+const localize = (html: string) =>
+  protect(html).replace(
+    /href="(\/[^"]*)"/g,
+    (_, href: string) => `href="${localizeHref(href, locale)}"`
+  )
+const updated = fillPlaceholders(data.updatedLabel, {
+  date: formatDate(data.updated, Astro.currentLocale),
+})
+---
+
+<Layout
+  alternates={getAlternates(path)}
+  description={data.description}
+  title={data.title}
+>
+  <article class="section pb-section">
+    <div class="mx-auto flex max-w-measure flex-col">
+      <h1 class="heading-2">{data.title}</h1>
+      <p class="mt-4 text-sm text-sand-750">{updated}</p>
+      <p
+        class="mt-8 lead text-sand-800 rich-text"
+        set:html={localize(data.intro)}
+      />
+
+      <div class="prose-legal">
+        {data.sections.map(({ body, heading, items }) => (
+          <section>
+            <h2>{heading}</h2>
+            {/* Our own content, written with links in it, so it's rendered
+              as HTML rather than escaped. */}
+            {[body ?? []].flat().map((paragraph) => (
+              <p set:html={localize(paragraph)} />
+            ))}
+            {items && (
+              <dl>
+                {items.map(({ description, term }) => (
+                  <div>
+                    <dt>{term}</dt>
+                    <dd set:html={localize(description)} />
+                  </div>
+                ))}
+              </dl>
+            )}
+          </section>
+        ))}
+      </div>
+    </div>
+  </article>
+</Layout>

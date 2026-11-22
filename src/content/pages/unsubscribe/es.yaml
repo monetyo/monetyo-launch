@@ -1,13 +1,13 @@
 title: Darse de baja
-description: Deja la lista de espera de Monetyo.
+description: Abandona la lista de espera de Monetyo.
 heading: ¿Salir de la lista?
 body: Dejaremos de escribirte y borraremos tu dirección de la lista de espera al momento.
 button: Darme de baja y borrar mi dirección
 sending: Dándote de baja…
-noscript: Para darte de baja hace falta JavaScript. Actívalo y recarga la página, o escríbenos a hello@monetyo.com.
+noscript: Para darte de baja hace falta JavaScript. Actívalo y recarga la página o escríbenos a hello@monetyo.com.
 successHeading: Ya te hemos dado de baja
 successBody: Hemos borrado tu dirección. Gracias por tu interés en Monetyo; aquí tienes tu sitio si quieres volver.
 invalidHeading: Este enlace no funciona
-invalidBody: Puede que se cortara un trozo al copiarlo. Usa el enlace del correo más reciente que te enviamos o escríbenos a hello@monetyo.com.
+invalidBody: Puede que se cortara un trozo al copiarlo. Usa el enlace del último correo que te enviamos o escríbenos a hello@monetyo.com.
 genericError: Algo ha fallado por nuestra parte. Inténtalo de nuevo en un rato.
 back: Volver a Monetyo

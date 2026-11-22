@@ -1,0 +1,42 @@
+title: Contenuti generati con l’IA
+description: Come usiamo l’IA per costruire il sito di Monetyo, e cosa resta in mano alle persone.
+updated: 2026-11-22
+updatedLabel: "Ultimo aggiornamento: {date}"
+intro: >-
+  Questa pagina riguarda solo il sito monetyo.com: quali strumenti di IA usiamo per costruirlo, cosa fanno loro e cosa facciamo noi. Come l’app Monetyo userà l’IA verrà spiegato nei suoi documenti al momento del lancio.
+
+sections:
+  - heading: Quali strumenti usiamo
+    items:
+      - term: Claude e Claude Code
+        description: >-
+          <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer">Claude</a>
+          e <a href="https://www.anthropic.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>,
+          di Anthropic, ci aiutano a scrivere e rivedere il codice del sito, a
+          preparare e tradurre i testi e a disegnare le illustrazioni, compresi
+          i ritratti del team.
+
+  - heading: Come nasce una pagina
+    body: >-
+      Di solito una pagina parte da una bozza scritta con Claude a partire dai
+      nostri appunti e dal codice. Poi la confrontiamo con il funzionamento
+      reale del prodotto, riscriviamo ciò che non suona come noi e correggiamo
+      ogni errore prima di pubblicarla.
+
+  - heading: Cosa resta nostro
+    body: >-
+      Le decisioni su cosa è Monetyo, cosa promette e come tratta i tuoi dati
+      spettano a noi, così come la revisione finale di ogni pagina. Rispondiamo
+      di tutto ciò che pubblichiamo qui, chiunque o qualunque cosa ne abbia
+      scritto la bozza.
+
+  - heading: Cosa dice la legge
+    body: >-
+      L’articolo 50, paragrafo 4, del
+      <a href="https://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX:32024R1689" target="_blank" rel="noopener noreferrer">regolamento
+      UE sull’IA (Regolamento (UE) 2024/1689)</a> chiede di dichiarare i testi
+      generati con l’IA e pubblicati per informare il pubblico, salvo che
+      abbiano superato una revisione umana e qualcuno ne abbia la responsabilità
+      editoriale. Qui ogni pagina l’ha superata, quindi questa dichiarazione non
+      è un obbligo di legge. La pubblichiamo perché pensiamo che tu debba
+      saperlo.

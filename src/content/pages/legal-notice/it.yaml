@@ -1,0 +1,63 @@
+title: Note legali
+description: Chi gestisce il sito di Monetyo, a cosa serve e le condizioni per usarlo.
+updated: 2026-11-22
+updatedLabel: "Ultimo aggiornamento: {date}"
+intro: >-
+  Queste note legali valgono solo per il sito monetyo.com e sono pubblicate ai sensi dell’articolo 10 della <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Legge spagnola 34/2002 sui servizi della società dell’informazione e sul commercio elettronico (LSSI-CE)</a>. L’app Monetyo avrà i suoi termini e condizioni al momento del lancio.
+
+sections:
+  - heading: Titolare del sito
+    items:
+      - term: Nome
+        description: Luca Pipolo
+      - term: Codice fiscale (NIF)
+        description: Y4675193C
+      - term: Indirizzo
+        description: Carrer de Bailèn 41, 1º 2ªB, 08010 Barcellona, Spagna
+      - term: Email
+        description: <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+
+  - heading: Finalità del sito
+    body: >-
+      Questo sito presenta Monetyo, un’app per il budget familiare ancora in
+      fase di sviluppo, e ne gestisce la lista d’attesa. Non vende nulla, non
+      accetta pagamenti e non richiede un account.
+
+  - heading: Proprietà intellettuale
+    body: >-
+      I testi, le illustrazioni, il design e il codice di questo sito
+      appartengono al suo titolare, salvo diversa indicazione. Puoi inserire
+      link al sito e citarne brevi estratti indicando la fonte; per qualsiasi
+      altro uso serve un permesso scritto. I nomi e i loghi di altre aziende
+      appartengono a loro e vengono usati solo per indicarne i servizi.
+
+  - heading: Link ad altri siti
+    body: >-
+      Questo sito rimanda a servizi e pagine gestiti da altri. Non li
+      controlliamo e non siamo responsabili dei loro contenuti né di come
+      trattano i tuoi dati.
+
+  - heading: Responsabilità sui contenuti
+    body: >-
+      Ci impegniamo a mantenere esatte le informazioni, ma Monetyo è ancora in
+      sviluppo, quindi funzioni, piani e date descritti su questo sito possono
+      cambiare. Nulla di quanto scritto qui limita responsabilità che per legge
+      non si possono limitare.
+
+  - heading: Hosting
+    body: >-
+      Il sito è ospitato da
+      <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel
+      Inc.</a>, società con sede negli Stati Uniti. Su come vengono trattati i
+      tuoi dati, leggi
+      <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">l’informativa
+      sulla privacy di Vercel</a> e la nostra <a href="/privacy/">informativa sulla
+      privacy</a>.
+
+  - heading: Legge applicabile e foro competente
+    body: >-
+      Questo sito e queste note sono regolati dalla legge spagnola. Se la legge
+      lo consente ed entrambe le parti lo accettano validamente, le controversie
+      spettano ai tribunali di Barcellona, in Spagna. Altrimenti il foro è
+      stabilito dalle norme applicabili, comprese quelle a tutela dei
+      consumatori.

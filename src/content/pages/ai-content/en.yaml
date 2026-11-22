@@ -1,0 +1,40 @@
+title: AI content
+description: How AI tools are used to build the Monetyo website, and what stays in human hands.
+updated: 2026-11-22
+updatedLabel: Last updated {date}
+intro: >-
+  This page covers only the monetyo.com website: which AI tools we use to build it, what they do and what we do ourselves. How the Monetyo app will use AI will be explained in its own documents when it launches.
+
+sections:
+  - heading: Which tools we use
+    items:
+      - term: Claude and Claude Code
+        description: >-
+          <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer">Claude</a>
+          and <a href="https://www.anthropic.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>,
+          by Anthropic, help us write and review the website’s code, draft and
+          translate its texts, and draw its illustrations, including the team
+          portraits.
+
+  - heading: How a page comes about
+    body: >-
+      A page usually starts as a draft written with Claude from our notes and
+      the code. We then check it against how the product actually works,
+      rewrite what doesn’t sound like us and correct anything that’s wrong
+      before it’s published.
+
+  - heading: What stays ours
+    body: >-
+      The decisions about what Monetyo is, what it promises and how it treats
+      your data are ours, and so is the final review of every page. We’re
+      responsible for everything published here, whoever or whatever drafted
+      it.
+
+  - heading: What the law says
+    body: >-
+      Article 50(4) of the
+      <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32024R1689" target="_blank" rel="noopener noreferrer">EU AI Act (Regulation (EU) 2024/1689)</a>
+      asks for AI-generated text published to inform the public to be
+      disclosed, unless it has gone through human review and someone holds
+      editorial responsibility for it. Every page here has, so this disclosure
+      isn’t legally required. We publish it because we think you should know.

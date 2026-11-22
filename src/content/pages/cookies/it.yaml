@@ -1,0 +1,85 @@
+title: Cookie policy
+description: L’unico cookie del sito di Monetyo, perché non c’è un banner dei cookie e come statistiche, errori e antispam funzionano senza tracciarti.
+updated: 2026-11-22
+updatedLabel: "Ultimo aggiornamento: {date}"
+intro: >-
+  Questa policy vale solo per il sito monetyo.com; l’app Monetyo avrà la sua. Il sito imposta un solo cookie, e solo quando scegli una lingua. Non ci sono cookie pubblicitari né nulla che ti segua in giro per il web, ed è per questo che non vedrai nessun banner dei cookie.
+
+sections:
+  - heading: Chi è responsabile
+    items:
+      - term: Titolare del trattamento
+        description: Luca Pipolo
+      - term: Contatto
+        description: <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+      - term: Dati identificativi
+        description: Trovi tutti i dettagli nelle <a href="/legal-notice/">note legali</a>.
+
+  - heading: Cosa salviamo nel tuo browser
+    body: >-
+      Aprire una pagina non salva nulla nel tuo browser. L’unica cosa che il
+      sito memorizza è la tua lingua, e solo quando sei tu a sceglierla.
+    items:
+      - term: locale (cookie)
+        description: >-
+          Ricorda la lingua che hai scelto, così la prossima volta il sito si
+          apre in quella lingua. Viene impostato quando usi il selettore della
+          lingua o apri una pagina in una lingua specifica. Contiene solo il
+          codice della lingua, <code>en</code>, <code>es</code>, <code>ca</code> o <code>it</code>, e scade dopo
+          un anno.
+
+  - heading: Perché niente banner dei cookie
+    body: >-
+      L’articolo 22.2 della
+      <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Legge spagnola 34/2002 (LSSI-CE)</a>
+      non richiede il consenso per i cookie strettamente necessari a fornire
+      un servizio richiesto esplicitamente dall’utente. Ricordare la lingua
+      che hai scelto rientra proprio in questo caso, come spiega l’autorità
+      spagnola per la protezione dei dati nella sua
+      <a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener noreferrer">guida sull’uso dei cookie</a>.
+      Dato che il sito non imposta altri cookie e non salva nient’altro sul tuo
+      dispositivo, il banner non serve.
+
+  - heading: Strumenti che non usano cookie
+    body: >-
+      Questi strumenti ci aiutano a gestire il sito. Nessuno imposta cookie o
+      salva qualcosa nel tuo browser.
+    items:
+      - term: Vercel Web Analytics
+        description: >-
+          <a href="https://vercel.com/docs/analytics" target="_blank" rel="noopener noreferrer">Vercel Web Analytics</a>
+          conta le visite per farci capire quali pagine vengono lette. Raggruppa
+          le pagine viste dallo stesso visitatore con un hash della richiesta
+          che si azzera ogni 24 ore, quindi le visite non si possono collegare
+          tra giorni o siti diversi, e non salva il tuo indirizzo IP. Leggi
+          <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer">come tratta i dati</a>.
+      - term: Sentry
+        description: >-
+          <a href="https://sentry.io/" target="_blank" rel="noopener noreferrer">Sentry</a>
+          raccoglie le segnalazioni di errore così possiamo trovare e risolvere i
+          problemi. È impostato per escludere indirizzi IP, contenuti dei moduli
+          e cookie, e non registra la tua sessione.
+      - term: Cloudflare Turnstile
+        description: >-
+          <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener noreferrer">Turnstile</a>
+          verifica che le iscrizioni arrivino da persone, solo nel modulo di
+          iscrizione. Durante la verifica tratta il tuo indirizzo IP e alcuni
+          dettagli del tuo browser. Leggi il
+          <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Turnstile Privacy Addendum</a>.
+      - term: Google Search Console
+        description: >-
+          <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Search Console</a>
+          ci mostra come appare il sito nei risultati di Google. Non gira in
+          alcun modo su questo sito.
+
+  - heading: Come bloccare le statistiche
+    body: >-
+      Se non vuoi comparire nelle statistiche, un blocco contenuti come
+      <a href="https://ublockorigin.com/" target="_blank" rel="noopener noreferrer">uBlock
+      Origin</a> impedisce a Vercel Web Analytics di caricarsi. Il sito funziona
+      esattamente uguale anche senza.
+
+  - heading: Modifiche alla policy
+    body: >-
+      Se un giorno aggiungeremo qualcosa che richiede il tuo consenso, te lo
+      chiederemo prima di attivarlo e aggiorneremo prima questa pagina.

@@ -1,0 +1,56 @@
+title: Seguretat
+description: Com protegim el web i la llista d’espera de Monetyo, i com avisar-nos d’una vulnerabilitat.
+updated: 2026-11-22
+updatedLabel: "Última actualització: {date}"
+intro: >-
+  Aquesta pàgina parla només del web monetyo.com i de la seva llista d’espera: què els protegeix avui i com avisar-nos si hi trobes un problema de seguretat. L’app de Monetyo tindrà la seva pròpia pàgina de seguretat quan es llanci.
+
+sections:
+  - heading: Què protegeix el web
+    body:
+      - >-
+        Cada pàgina s’envia amb una
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy" target="_blank" rel="noopener noreferrer">Content Security Policy</a>
+        estricta, que només deixa que el navegador executi scripts i estils
+        d’aquest web, a més de Cloudflare Turnstile al formulari d’alta. A cada
+        compilació s’hi fa una comprovació, de manera que no es pot publicar cap
+        pàgina que incompleixi la política.
+      - >-
+        El web també envia les capçaleres que recomana
+        l’<a href="https://owasp.org/www-project-secure-headers/" target="_blank" rel="noopener noreferrer">OWASP Secure Headers Project</a>,
+        entre les quals
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security" target="_blank" rel="noopener noreferrer">HTTP Strict Transport Security</a>,
+        perquè els navegadors només hi accedeixin per HTTPS.
+
+  - heading: Què protegeix la llista d’espera
+    items:
+      - term: Protecció contra bots
+        description: >-
+          <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener noreferrer">Cloudflare Turnstile</a>
+          comprova que cada alta la faci una persona abans de desar-ne res.
+      - term: Bases de dades separades
+        description: >-
+          Les altes i els registres del que ha acceptat cada persona són en dues
+          bases de dades separades a Frankfurt (Alemanya), i des d’una no es pot
+          llegir l’altra.
+      - term: Cap adreça IP desada
+        description: >-
+          En lloc de la teva adreça IP, guardem un hash fet amb una clau secreta
+          que es desa en un altre lloc.
+      - term: Enllaços de confirmació
+        description: >-
+          Cada enllaç funciona un sol cop i només en guardem un hash: si la base
+          de dades es filtrés, no revelaria cap enllaç vàlid.
+      - term: Esborrat automàtic
+        description: >-
+          Una tasca diària esborra les altes no confirmades al cap de 7 dies, i
+          la resta quan la <a href="/privacy/">política de privadesa</a> diu que
+          toca.
+
+  - heading: Com informar d’una vulnerabilitat
+    body: >-
+      Si trobes un problema de seguretat, escriu a
+      <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a> amb els
+      detalls i els passos per reproduir-lo. Si us plau, no el facis públic fins
+      que l’hàgim pogut arreglar. Et respondrem tan aviat com puguem i
+      t’avisarem quan estigui solucionat.

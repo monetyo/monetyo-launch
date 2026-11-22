@@ -1,0 +1,84 @@
+title: Política de cookies
+description: La única cookie que usa la web de Monetyo, por qué no hay aviso de cookies y cómo funcionan las estadísticas, los errores y el antispam sin rastrearte.
+updated: 2026-11-22
+updatedLabel: Actualizado el {date}
+intro: >-
+  Esta política se aplica solo a la web monetyo.com; la app de Monetyo tendrá la suya. La web guarda una sola cookie, y únicamente cuando eliges un idioma. No hay cookies publicitarias ni nada que te siga por internet, y por eso no verás ningún aviso de cookies.
+
+sections:
+  - heading: Quién es responsable
+    items:
+      - term: Responsable del tratamiento
+        description: Luca Pipolo
+      - term: Contacto
+        description: <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+      - term: Datos identificativos
+        description: Tienes todos los datos en el <a href="/legal-notice/">aviso legal</a>.
+
+  - heading: Qué guardamos en tu navegador
+    body: >-
+      No guardamos nada en tu navegador solo porque abras una página. Lo único
+      que guarda la web es tu idioma, y solo cuando lo eliges.
+    items:
+      - term: locale (cookie)
+        description: >-
+          Recuerda el idioma que has elegido para que la web se abra en él la
+          próxima vez. Se crea cuando usas el selector de idioma o abres una
+          página en un idioma concreto. Solo contiene el código del idioma,
+          <code>en</code>, <code>es</code>, <code>ca</code> o <code>it</code>, y caduca al cabo de un año.
+
+  - heading: Por qué no hay aviso de cookies
+    body: >-
+      El artículo 22.2 de la
+      <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE)</a>
+      no exige consentimiento para las cookies estrictamente necesarias para
+      prestar un servicio que el usuario ha pedido expresamente. Recordar tu
+      idioma es justo eso, como explica la Agencia Española de Protección de
+      Datos (AEPD) en su
+      <a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener noreferrer">guía sobre el uso de las cookies</a>.
+      Como la web no instala ninguna otra cookie ni guarda nada más en tu
+      dispositivo, no hace falta aviso.
+
+  - heading: Servicios que no usan cookies
+    body: >-
+      Estos servicios nos ayudan a mantener la web. Ninguno instala cookies ni
+      guarda nada en tu navegador.
+    items:
+      - term: Vercel Web Analytics
+        description: >-
+          <a href="https://vercel.com/docs/analytics" target="_blank" rel="noopener noreferrer">Vercel Web Analytics</a>
+          cuenta las visitas para que veamos qué páginas se leen. Agrupa las
+          páginas vistas de un mismo visitante con un hash de la petición que
+          se renueva cada 24 horas, así que no se pueden relacionar visitas de
+          días distintos ni de otras webs, y no guarda tu dirección IP. Consulta
+          <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer">cómo trata los datos</a>.
+      - term: Sentry
+        description: >-
+          <a href="https://sentry.io/" target="_blank" rel="noopener noreferrer">Sentry</a>
+          recoge informes de errores para que podamos encontrar y arreglar
+          fallos. Está configurado para no incluir direcciones IP, contenido de
+          formularios ni cookies, y no graba tu sesión.
+      - term: Cloudflare Turnstile
+        description: >-
+          <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener noreferrer">Turnstile</a>
+          comprueba que quien se apunta es una persona, solo en el formulario de
+          inscripción. Durante la comprobación trata tu dirección IP y algunos
+          datos de tu navegador. Consulta el
+          <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">anexo de privacidad de Turnstile</a>.
+      - term: Google Search Console
+        description: >-
+          <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Search Console</a>
+          nos muestra cómo aparece la web en la búsqueda de Google. No se
+          ejecuta en esta web en absoluto.
+
+  - heading: Cómo bloquear las estadísticas
+    body: >-
+      Si prefieres que no se cuente tu visita, un bloqueador de contenido como
+      <a href="https://ublockorigin.com/" target="_blank" rel="noopener noreferrer">uBlock Origin</a>
+      impide que se cargue Vercel Web Analytics. La web funciona exactamente
+      igual sin él.
+
+  - heading: Cambios en esta política
+    body: >-
+      Si algún día añadimos algo que necesite tu consentimiento, te lo
+      pediremos antes de activarlo, y primero actualizaremos esta página.

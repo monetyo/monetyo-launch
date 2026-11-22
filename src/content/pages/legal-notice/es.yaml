@@ -1,0 +1,60 @@
+title: Aviso legal
+description: Quién gestiona la web de Monetyo, para qué sirve y qué condiciones se aplican a su uso.
+updated: 2026-11-22
+updatedLabel: Actualizado el {date}
+intro: >-
+  Este aviso legal se aplica solo a la web monetyo.com y se publica en cumplimiento del artículo 10 de la <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI-CE)</a>. La app de Monetyo tendrá sus propios términos y condiciones cuando se lance.
+
+sections:
+  - heading: Titular de la web
+    items:
+      - term: Nombre
+        description: Luca Pipolo
+      - term: NIF
+        description: Y4675193C
+      - term: Dirección
+        description: Carrer de Bailèn 41, 1º 2ªB, 08010 Barcelona, España
+      - term: Correo electrónico
+        description: <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+
+  - heading: Para qué sirve esta web
+    body: >-
+      Esta web presenta Monetyo, una app de presupuesto familiar que aún está
+      en desarrollo, y gestiona su lista de espera. No vende nada, no acepta
+      pagos ni hace falta crear una cuenta.
+
+  - heading: Propiedad intelectual
+    body: >-
+      Los textos, las ilustraciones, el diseño y el código de esta web son de
+      su titular, salvo que se indique lo contrario. Puedes enlazarla y citar
+      fragmentos breves indicando la fuente; cualquier otro uso necesita
+      permiso por escrito. Los nombres y logotipos de otras empresas son
+      suyos y solo se usan para referirse a sus servicios.
+
+  - heading: Enlaces a otras páginas
+    body: >-
+      Esta web enlaza a servicios y páginas de terceros. No los controlamos y
+      no respondemos de sus contenidos ni de cómo tratan tus datos.
+
+  - heading: Responsabilidad del contenido
+    body: >-
+      Intentamos que todo lo que contamos aquí sea exacto, pero Monetyo sigue
+      en desarrollo, así que las funciones, los planes y las fechas que
+      describimos pueden cambiar. Nada de esto limita la responsabilidad que
+      la ley no permite limitar.
+
+  - heading: Alojamiento
+    body: >-
+      La web está alojada en
+      <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel Inc.</a>,
+      con sede en Estados Unidos. Consulta la
+      <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">política de privacidad de Vercel</a>
+      y <a href="/privacy/">la nuestra</a> para saber cómo se tratan tus datos.
+
+  - heading: Ley aplicable y jurisdicción
+    body: >-
+      Esta web y este aviso se rigen por la ley española. Cuando la ley lo
+      permita y ambas partes lo acuerden válidamente, los conflictos se
+      resolverán en los juzgados de Barcelona (España). Si no, la jurisdicción
+      será la que fijen las normas aplicables, incluidas las que protegen a los
+      consumidores.

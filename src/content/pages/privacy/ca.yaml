@@ -1,0 +1,270 @@
+title: Política de privadesa
+description: Quines dades recullen el web i la llista d’espera de Monetyo, per què, qui les tracta, quant temps es guarden i com exercir els teus drets segons el RGPD.
+updated: 2026-11-22
+updatedLabel: "Última actualització: {date}"
+intro: >-
+  Aquesta política s’aplica només al web monetyo.com, a la seva llista d’espera i a les enquestes que enviem a qui s’hi apunta. L’app de Monetyo tindrà la seva pròpia política de privadesa, condicions i pàgines legals quan es llanci. Només recollim el que necessitem per gestionar la llista d’espera, entendre com es fa servir el web i resoldre problemes; no fem perfils i no venem mai les teves dades.
+
+sections:
+  - heading: Qui és responsable de les teves dades
+    items:
+      - term: Responsable del tractament
+        description: Luca Pipolo
+      - term: Contacte
+        description: <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+      - term: Dades identificatives
+        description: >-
+          El NIF, l’adreça postal i la resta de dades del titular són a
+          l’<a href="/legal-notice/">avís legal</a>.
+      - term: Delegat de protecció de dades
+        description: >-
+          No se n’ha designat cap. Pel tipus de tractament que es descriu aquí,
+          no es donen les condicions de l’article 37 del
+          <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=CELEX:02016R0679-20160504" target="_blank" rel="noopener noreferrer">Reglament general de protecció de dades (RGPD)</a>
+          que n’exigirien un.
+
+  - heading: Quines dades tractem
+    items:
+      - term: Llista d’espera
+        description: >-
+          Quan t’hi apuntes, desem la teva adreça de correu, per a qui fas el
+          pressupost si ens ho dius, l’idioma i la pàgina des d’on t’has apuntat,
+          i les dates en què t’has apuntat i has confirmat l’adreça.
+      - term: Registre del que has acceptat
+        description: >-
+          Cada vegada que t’apuntes, confirmes o et dones de baixa, guardem un
+          registre del text exacte que se t’ha mostrat, la versió d’aquesta
+          política a què fa referència, la data i l’hora, la pàgina, l’agent
+          d’usuari del navegador i un hash amb clau de la teva adreça IP, que
+          expliquem més avall. Ens permet demostrar què vas acceptar i quan.
+      - term: Protecció contra l’spam
+        description: >-
+          El formulari d’alta fa servir Cloudflare Turnstile per distingir les
+          persones dels bots. Durant la comprovació, Cloudflare tracta la teva
+          adreça IP i alguns detalls tècnics del navegador i del dispositiu.
+      - term: Enquestes
+        description: >-
+          Les enquestes s’envien per correu i es responen a Tally. Les teves
+          respostes no es vinculen a la teva adreça de correu, i l’enllaç que
+          t’enviem no t’identifica. Algunes enquestes pregunten si vols
+          participar en una entrevista més llarga; només si marques aquesta
+          casella i deixes el correu sabem qui ha respost.
+      - term: Correus que ens envies
+        description: >-
+          Si ens escrius, tractem la teva adreça de correu, el nom que ens donis
+          i el contingut del missatge, per llegir-lo i respondre’t.
+      - term: Preferència d’idioma
+        description: >-
+          Si canvies d’idioma, la tria es desa en una galeta perquè el web la
+          recordi. Consulta la <a href="/cookies/">política de galetes</a>.
+      - term: Estadístiques de visites
+        description: >-
+          Per a cada pàgina vista, Vercel Web Analytics registra la data i
+          l’hora, la pàgina, el web de procedència, els paràmetres de campanya de
+          l’adreça com ara <code>utm_source</code>, la ubicació aproximada (país,
+          regió i ciutat), el sistema operatiu, el navegador i les seves
+          versions, i el tipus de dispositiu.
+      - term: Informes d’errors
+        description: >-
+          Quan alguna cosa falla, Sentry recull el missatge d’error, el punt del
+          codi on s’ha produït i la pàgina on ha passat. Està configurat per
+          excloure les adreces IP, el contingut dels formularis i les galetes, i
+          no enregistra la sessió.
+      - term: Rendiment a la cerca
+        description: >-
+          Google Search Console ens mostra com apareix el web a la cerca de
+          Google, per exemple quines cerques hi porten. No afegeix cap codi ni
+          cap galeta a aquest web i només ens dona xifres agregades.
+
+  - heading: Com es tracten les adreces IP
+    body:
+      - >-
+        Qualsevol web que visites rep la teva adreça IP per poder-te enviar les
+        pàgines, i els nostres proveïdors d’allotjament i de seguretat la
+        tracten com a part del seu servei.
+      - >-
+        Vercel Web Analytics compta les visites sense galetes. Agrupa les
+        pàgines vistes per un mateix visitant amb un hash de la petició que es
+        reinicia cada 24 hores, de manera que les visites no es poden
+        relacionar entre dies ni entre webs, i les estadístiques que guarda no
+        inclouen la teva adreça IP. Sentry està configurat per deixar les
+        adreces IP fora dels informes d’errors.
+      - >-
+        Quan t’apuntes, la teva adreça IP es fa servir per a la comprovació de
+        Turnstile. Al registre del que has acceptat no hi desem la teva adreça
+        IP: hi desem un hash fet amb una clau secreta guardada en un altre lloc,
+        que ens permet comparar registres de la mateixa adreça sense conservar
+        l’adreça. El hash continua sent una dada personal pseudonimitzada i
+        s’esborra juntament amb el seu registre.
+
+  - heading: Bases jurídiques del tractament
+    body: >-
+      El RGPD exigeix una base jurídica per a cada ús de dades personals. Quina
+      s’aplica depèn de per a què es fan servir.
+    items:
+      - term: Correus i enquestes de la llista
+        description: >-
+          El teu consentiment, d’acord amb l’article 6.1.a) del RGPD. El dones
+          quan envies el formulari d’alta, sota una breu explicació del que
+          rebràs, i quan confirmes l’adreça. Respondre una enquesta, i deixar el
+          correu per a una entrevista, també es basen en el consentiment. El
+          pots retirar en qualsevol moment amb l’enllaç de cada correu o
+          escrivint a <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>.
+      - term: Registre del que has acceptat
+        description: >-
+          El nostre interès legítim a poder demostrar el consentiment, d’acord
+          amb els articles 6.1.f) i 7.1 del RGPD.
+      - term: Protecció contra l’spam
+        description: >-
+          El nostre interès legítim a protegir la llista d’espera d’abusos,
+          d’acord amb l’article 6.1.f) i el considerant 49 del RGPD, que inclou
+          la seguretat de la xarxa i de la informació.
+      - term: Estadístiques, errors i cerca
+        description: >-
+          El nostre interès legítim a entendre com es fa servir el web i
+          mantenir-lo en funcionament, d’acord amb l’article 6.1.f) del RGPD,
+          amb cada eina configurada per recollir el mínim possible.
+      - term: Correus que ens envies
+        description: >-
+          El nostre interès legítim a respondre’t, d’acord amb l’article 6.1.f)
+          del RGPD.
+      - term: Preferència d’idioma
+        description: >-
+          Exempta de consentiment segons l’article 22.2 de la
+          <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Llei 34/2002, d’11 de juliol, de serveis de la societat de la informació i de comerç electrònic (LSSI-CE)</a>,
+          perquè forma part d’un servei que demanes explícitament.
+
+  - heading: Com es guarda la teva adreça de correu
+    body:
+      - >-
+        Les altes de la llista d’espera i els registres del que has acceptat es
+        guarden en dues bases de dades Postgres separades que Neon gestiona a
+        Frankfurt (Alemanya), i des d’una no es pot llegir l’altra. Només hi té
+        accés l’equip que porta Monetyo.
+      - >-
+        L’enllaç del correu de confirmació només funciona una vegada, i només en
+        guardem un hash, mai l’enllaç. Si no confirmes l’adreça en 7 dies,
+        l’alta s’esborra automàticament.
+
+  - heading: Proveïdors externs
+    body: >-
+      Fem servir aquests serveis per fer funcionar el web i la llista d’espera.
+      Cadascun tracta només el que li cal per a la seva feina, en nom nostre,
+      tret que s’indiqui el contrari.
+    items:
+      - term: Vercel Inc.
+        description: >-
+          Allotja el web, executa el codi del formulari d’alta a la seva regió
+          de Frankfurt i compta les visites amb
+          <a href="https://vercel.com/docs/analytics" target="_blank" rel="noopener noreferrer">Vercel Web Analytics</a>.
+          Consulta la <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">política de privadesa de Vercel</a>
+          i <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer">com tracta les dades Web Analytics</a>.
+      - term: Neon, una empresa de Databricks
+        description: >-
+          Allotja amb <a href="https://neon.com/" target="_blank" rel="noopener noreferrer">Neon</a>
+          les bases de dades de la llista i dels consentiments a Frankfurt
+          (Alemanya). Consulta
+          l’<a href="https://www.databricks.com/legal/privacynotice" target="_blank" rel="noopener noreferrer">avís de privadesa de Databricks</a>.
+      - term: Sendinblue SAS (Brevo)
+        description: >-
+          Envia els nostres correus amb <a href="https://www.brevo.com/" target="_blank" rel="noopener noreferrer">Brevo</a>,
+          inclosos el de confirmació, les novetats del llançament i les
+          invitacions a enquestes, i desa les dades a la UE. Si et dones de
+          baixa, Brevo rep la teva adreça un cop més, just després que l’esborrem
+          de la llista d’espera, per enviar-te el correu que ho confirma.
+          Consulta la
+          <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">política de privadesa de Brevo</a>.
+      - term: Tally BV
+        description: >-
+          Recull les respostes de les enquestes amb <a href="https://tally.so/" target="_blank" rel="noopener noreferrer">Tally</a>,
+          sota el seu <a href="https://tally.so/help/data-processing-agreement" target="_blank" rel="noopener noreferrer">acord de tractament de dades</a>,
+          inclòs a les condicions de Tally. Les dades dels formularis es
+          xifren i es guarden a la UE. Consulta <a href="https://tally.so/help/gdpr" target="_blank" rel="noopener noreferrer">Tally i el RGPD</a>.
+      - term: Cloudflare, Inc.
+        description: >-
+          Proporciona <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener noreferrer">Turnstile</a>,
+          que protegeix el formulari d’alta dels bots. Cloudflare també fa servir
+          les dades de Turnstile, com a responsable independent, per millorar la
+          detecció de bots, tal com s’explica a
+          l’<a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">annex de privadesa de Turnstile</a>.
+          Consulta la <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">política de privadesa de Cloudflare</a>.
+      - term: Functional Software, Inc.
+        description: >-
+          Proporciona <a href="https://sentry.io/" target="_blank" rel="noopener noreferrer">Sentry</a>,
+          que recull els informes d’errors i els desa a la seva regió de la UE. Consulta la
+          <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">política de privadesa de Sentry</a>.
+      - term: Google Ireland Limited
+        description: >-
+          Proporciona <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Google Search Console</a>,
+          que informa de com funciona el web a la cerca de Google. Consulta la
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">política de privadesa de Google</a>.
+
+  - heading: Transferències de dades fora de l’Espai Econòmic Europeu
+    body:
+      - >-
+        Brevo és una empresa francesa, i Tally, belga. Les bases de dades i els
+        informes d’errors es guarden a la UE. Vercel, Cloudflare i Sentry són
+        empreses dels Estats Units, i Neon i Google pertanyen a grups amb seu
+        als Estats Units, de manera que algunes dades poden ser accessibles des
+        de fora de l’Espai Econòmic Europeu (EEE).
+      - >-
+        Quan és el cas, les transferències estan cobertes per les
+        <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=CELEX:32021D0914" target="_blank" rel="noopener noreferrer">clàusules contractuals tipus aprovades per la Comissió Europea a la Decisió d’execució (UE) 2021/914</a>
+        o per la
+        <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=CELEX:32023D1795" target="_blank" rel="noopener noreferrer">decisió d’adequació (UE) 2023/1795 relativa al Marc de privadesa de dades UE-EUA</a>,
+        si el proveïdor hi està certificat. La política de privadesa de cada
+        proveïdor, enllaçada més amunt, explica les garanties que aplica.
+
+  - heading: Quant temps les guardem
+    items:
+      - term: Altes no confirmades
+        description: S’esborren als 7 dies si no es fa servir l’enllaç de confirmació.
+      - term: Altes confirmades
+        description: Es guarden fins que et dones de baixa, i s’esborren com a molt tard 24 mesos després de l’alta.
+      - term: Registres del que has acceptat
+        description: Es conserven 3 anys, el termini d’una autoritat de control per actuar davant d’una reclamació, i després s’esborren.
+      - term: Respostes a les enquestes
+        description: Es guarden fins que n’hem acabat l’anàlisi, i mai més de 24 mesos.
+      - term: Correus deixats per a una entrevista
+        description: Només serveixen per organitzar l’entrevista i s’esborren en 6 mesos com a màxim, o abans si ho demanes.
+      - term: Correus que ens envies
+        description: Es guarden mentre calgui per atendre la conversa i després s’esborren, tret que la llei ens obligui a conservar-los.
+      - term: Estadístiques i informes d’errors
+        description: Es guarden el temps que fixen Vercel i Sentry per als plans que fem servir.
+      - term: Preferència d’idioma
+        description: Es queda al teu dispositiu fins a un any, o fins que esborris les dades del web.
+
+  - heading: Decisions automatitzades
+    body: >-
+      No prenem decisions automatitzades que tinguin efectes jurídics sobre tu o
+      que t’afectin de manera igualment significativa, i no fem perfils.
+      Turnstile és automàtic i pot bloquejar una alta que consideri sospitosa;
+      si et passa, escriu a <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+      i t’afegirem a mà.
+
+  - heading: Els teus drets
+    body:
+      - >-
+        El RGPD et permet demanar quines dades tenim sobre tu i obtenir-ne una
+        còpia, fer que es corregeixin o s’esborrin, oposar-te al seu tractament
+        o demanar-nos que el limitem, i endur-te-les quan s’apliqui l’article
+        20. Pots retirar el consentiment en qualsevol moment: cada correu que
+        enviem a la llista porta un enllaç que elimina la teva adreça a l’instant.
+      - >-
+        Per a qualsevol altra cosa, escriu a
+        <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>. Et respondrem en el termini
+        d’un mes, que l’article 12 del RGPD ens permet ampliar en alguns casos,
+        i si cal t’ho farem saber.
+      - >-
+        Les respostes d’enquesta donades sense correu no es poden vincular a tu,
+        així que no podem trobar ni esborrar les d’una persona concreta.
+      - >-
+        Si creus que hem tractat malament les teves dades, pots presentar una
+        reclamació a l’autoritat espanyola de protecció de dades, l’<a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">Agencia Española de Protección de Datos (AEPD)</a>,
+        o a l’autoritat del país on vius o treballes.
+
+  - heading: Canvis en aquesta política
+    body: >-
+      Si canviem els serveis que fem servir, les dades que recollim o per què les
+      recollim, actualitzarem aquesta política abans que el canvi entri en vigor
+      i en mostrarem la nova data a dalt de tot.

@@ -1,0 +1,40 @@
+title: Contenido generado con IA
+description: Qué herramientas de IA usamos para hacer la web de Monetyo y qué sigue en manos humanas.
+updated: 2026-11-22
+updatedLabel: Actualizado el {date}
+intro: >-
+  Esta página trata solo de la web monetyo.com: qué herramientas de IA usamos para hacerla, qué hacen y qué hacemos nosotros. Cómo usará la IA la app de Monetyo lo explicaremos en sus propios documentos cuando se lance.
+
+sections:
+  - heading: Con qué trabajamos
+    items:
+      - term: Claude y Claude Code
+        description: >-
+          <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer">Claude</a>
+          y <a href="https://www.anthropic.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>,
+          de Anthropic, nos ayudan a escribir y revisar el código de la web, a
+          redactar y traducir sus textos y a dibujar sus ilustraciones,
+          incluidos los retratos del equipo.
+
+  - heading: Cómo nace una página
+    body: >-
+      Una página suele empezar como un borrador que escribimos con Claude a
+      partir de nuestras notas y del código. Luego lo comparamos con cómo
+      funciona de verdad el producto, reescribimos lo que no suena a nosotros y
+      corregimos cualquier error antes de publicarla.
+
+  - heading: Lo que es nuestro
+    body: >-
+      Las decisiones sobre qué es Monetyo, qué promete y cómo trata tus datos
+      son nuestras, igual que la revisión final de cada página. Respondemos de
+      todo lo que se publica aquí, lo haya redactado una persona o una IA.
+
+  - heading: Lo que dice la ley
+    body: >-
+      El artículo 50.4 del
+      <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=CELEX:32024R1689" target="_blank" rel="noopener noreferrer">Reglamento de IA de la UE (Reglamento (UE) 2024/1689)</a>
+      exige avisar cuando un texto publicado para informar al público lo ha
+      generado una IA, salvo que lo haya revisado una persona y alguien asuma
+      la responsabilidad editorial. Todas las páginas de esta web cumplen esas
+      dos condiciones, así que la ley no nos obliga a este aviso. Lo publicamos
+      porque creemos que debes saberlo.

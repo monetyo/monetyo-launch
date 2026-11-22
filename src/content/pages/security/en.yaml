@@ -1,0 +1,54 @@
+title: Security
+description: How the Monetyo website and waitlist are protected, and how to report a vulnerability.
+updated: 2026-11-22
+updatedLabel: Last updated {date}
+intro: >-
+  This page covers only the monetyo.com website and its waitlist: what protects them today, and how to tell us if you find a security problem. The Monetyo app will have its own security page when it launches.
+
+sections:
+  - heading: What protects the website
+    body:
+      - >-
+        Every page is sent with a strict
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy" target="_blank" rel="noopener noreferrer">Content Security Policy</a>,
+        which only lets the browser run scripts and styles from this website,
+        plus Cloudflare Turnstile on the signup form. A check runs on every
+        build, so a page that breaks the policy can’t be published.
+      - >-
+        The site also sends the headers recommended by the
+        <a href="https://owasp.org/www-project-secure-headers/" target="_blank" rel="noopener noreferrer">OWASP Secure Headers Project</a>,
+        including
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security" target="_blank" rel="noopener noreferrer">HTTP Strict Transport Security</a>,
+        so browsers only ever reach it over HTTPS.
+
+  - heading: What protects the waitlist
+    items:
+      - term: Bot protection
+        description: >-
+          <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener noreferrer">Cloudflare Turnstile</a>
+          checks that each signup comes from a person before anything is stored.
+      - term: Separate databases
+        description: >-
+          Signups and the records of what people agreed to live in two separate
+          databases in Frankfurt, Germany, so one can’t be read from the other.
+      - term: No IP addresses stored
+        description: >-
+          Instead of your IP address, we keep a hash made with a secret key
+          that’s stored elsewhere.
+      - term: Confirmation links
+        description: >-
+          Each link works once, and we only keep a hash of it, so a leaked
+          database wouldn’t reveal working links.
+      - term: Automatic deletion
+        description: >-
+          A daily job deletes unconfirmed signups after 7 days and everything
+          else as soon as the <a href="/privacy/">privacy policy</a> says it
+          must go.
+
+  - heading: Reporting a vulnerability
+    body: >-
+      If you find a security problem, email
+      <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a> with the
+      details and the steps to reproduce it. Please don’t share it publicly
+      until we’ve had a chance to fix it. We’ll reply as soon as we can and let
+      you know when it’s fixed.

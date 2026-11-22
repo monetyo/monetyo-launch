@@ -1,0 +1,41 @@
+title: Contingut generat amb IA
+description: Com fem servir eines d’IA per construir el web de Monetyo, i què continua en mans de persones.
+updated: 2026-11-22
+updatedLabel: "Última actualització: {date}"
+intro: >-
+  Aquesta pàgina parla només del web monetyo.com: quines eines d’IA fem servir per construir-lo, què hi fan i què fem nosaltres. Com farà servir la IA l’app de Monetyo s’explicarà en els seus propis documents quan es llanci.
+
+sections:
+  - heading: Quines eines fem servir
+    items:
+      - term: Claude i Claude Code
+        description: >-
+          <a href="https://www.anthropic.com/claude" target="_blank" rel="noopener noreferrer">Claude</a>
+          i <a href="https://www.anthropic.com/claude-code" target="_blank" rel="noopener noreferrer">Claude Code</a>,
+          d’Anthropic, ens ajuden a escriure i revisar el codi del web, a
+          redactar-ne i traduir-ne els textos i a dibuixar-ne les il·lustracions,
+          inclosos els retrats de l’equip.
+
+  - heading: Com neix una pàgina
+    body: >-
+      Normalment, una pàgina comença com un esborrany escrit amb Claude a partir
+      de les nostres notes i del codi. Després el contrastem amb com funciona de
+      debò el producte, reescrivim el que no sona a nosaltres i corregim tot el
+      que no és correcte abans de publicar-la.
+
+  - heading: El que és nostre
+    body: >-
+      Les decisions sobre què és Monetyo, què promet i com tracta les teves
+      dades són nostres, i també la revisió final de cada pàgina. Responem de
+      tot el que es publica aquí, tant si ho ha redactat una persona com una
+      eina.
+
+  - heading: Què diu la llei
+    body: >-
+      L’article 50.4 del
+      <a href="https://eur-lex.europa.eu/legal-content/ES/TXT/HTML/?uri=CELEX:32024R1689" target="_blank" rel="noopener noreferrer">Reglament d’IA de la UE (Reglament (UE) 2024/1689)</a>
+      demana que s’indiqui quan un text generat amb IA es publica per informar
+      el públic, tret que hagi passat per una revisió humana i algú n’assumeixi
+      la responsabilitat editorial. Aquí totes
+      les pàgines hi han passat, així que la llei no ens obliga a fer aquest avís. El
+      publiquem perquè creiem que ho has de saber.

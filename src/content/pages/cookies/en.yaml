@@ -1,0 +1,84 @@
+title: Cookie policy
+description: The one cookie the Monetyo website sets, why there’s no cookie banner, and how statistics, error reports and spam protection work without tracking you.
+updated: 2026-11-22
+updatedLabel: Last updated {date}
+intro: >-
+  This policy applies only to the monetyo.com website; the Monetyo app will have its own. The website sets a single cookie, and only when you choose a language. There are no advertising cookies and nothing that follows you around the web, which is why you won’t see a cookie banner.
+
+sections:
+  - heading: Who is responsible
+    items:
+      - term: Data controller
+        description: Luca Pipolo
+      - term: Contact
+        description: <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+      - term: Identification details
+        description: Full details are in the <a href="/legal-notice/">legal notice</a>.
+
+  - heading: What we store in your browser
+    body: >-
+      Nothing is stored in your browser just because you open a page. The only
+      thing the site saves is your language, and only when you choose it.
+    items:
+      - term: locale (cookie)
+        description: >-
+          Remembers the language you picked, so the site opens in it next time.
+          It’s set when you use the language switcher or open a page in a
+          specific language. It contains only the language code,
+          <code>en</code>, <code>es</code>, <code>ca</code> or <code>it</code>, and expires after one year.
+
+  - heading: Why there’s no cookie banner
+    body: >-
+      Article 22.2 of the
+      <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Spanish Law 34/2002 (LSSI-CE)</a>
+      doesn’t require consent for cookies that are strictly necessary to
+      provide a service the user explicitly asks for. Remembering the language
+      you chose is exactly that, as the Spanish data protection authority
+      explains in its
+      <a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener noreferrer">guide on the use of cookies</a>.
+      Since the site sets no other cookies and stores nothing else on your
+      device, no banner is needed.
+
+  - heading: Tools that don’t use cookies
+    body: >-
+      These tools help us run the site. None of them sets cookies or saves
+      anything in your browser.
+    items:
+      - term: Vercel Web Analytics
+        description: >-
+          <a href="https://vercel.com/docs/analytics" target="_blank" rel="noopener noreferrer">Vercel Web Analytics</a>
+          counts visits so we can see which pages are read. It groups page
+          views from the same visitor with a hash of the request that resets
+          every 24 hours, so visits can’t be linked across days or websites,
+          and it doesn’t store your IP address. See
+          <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer">how it handles data</a>.
+      - term: Sentry
+        description: >-
+          <a href="https://sentry.io/" target="_blank" rel="noopener noreferrer">Sentry</a>
+          collects error reports so we can find and fix problems. It’s set up
+          to leave out IP addresses, form contents and cookies, and it doesn’t
+          record your session.
+      - term: Cloudflare Turnstile
+        description: >-
+          <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener noreferrer">Turnstile</a>
+          checks that signups come from people, only on the signup form. It
+          processes your IP address and some details about your browser during
+          the check. See the
+          <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Turnstile Privacy Addendum</a>.
+      - term: Google Search Console
+        description: >-
+          <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Search Console</a>
+          shows us how the site appears in Google search. It doesn’t run on
+          this website at all.
+
+  - heading: How to block visit statistics
+    body: >-
+      If you’d rather not be counted, a content blocker such as
+      <a href="https://ublockorigin.com/" target="_blank" rel="noopener noreferrer">uBlock Origin</a>
+      stops Vercel Web Analytics from loading. The site works exactly the same
+      without it.
+
+  - heading: Changes to this policy
+    body: >-
+      If we ever add something that needs your consent, we’ll ask for it
+      before it’s switched on, and update this page first.

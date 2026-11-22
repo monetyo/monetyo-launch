@@ -1,0 +1,57 @@
+title: Seguridad
+description: Cómo se protegen la web y la lista de espera de Monetyo, y cómo avisarnos de una vulnerabilidad.
+updated: 2026-11-22
+updatedLabel: Actualizado el {date}
+intro: >-
+  Esta página trata solo de la web monetyo.com y su lista de espera: qué las protege hoy y cómo avisarnos si encuentras un fallo de seguridad. La app de Monetyo tendrá su propia página de seguridad cuando se lance.
+
+sections:
+  - heading: Cómo se protege la web
+    body:
+      - >-
+        Cada página se sirve con una
+        <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Headers/Content-Security-Policy" target="_blank" rel="noopener noreferrer">Content Security Policy</a>
+        estricta, que solo deja al navegador ejecutar scripts y estilos de esta
+        web y de Cloudflare Turnstile en el formulario de inscripción. Cada
+        compilación lo comprueba, así que no se puede publicar ninguna página
+        que incumpla la política.
+      - >-
+        La web también envía las cabeceras que recomienda el
+        <a href="https://owasp.org/www-project-secure-headers/" target="_blank" rel="noopener noreferrer">OWASP Secure Headers Project</a>,
+        entre ellas
+        <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security" target="_blank" rel="noopener noreferrer">HTTP Strict Transport Security</a>,
+        para que los navegadores solo accedan a ella por HTTPS.
+
+  - heading: Cómo se protege la lista
+    items:
+      - term: Contra los bots
+        description: >-
+          <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener noreferrer">Cloudflare Turnstile</a>
+          comprueba que cada inscripción la hace una persona antes de guardar
+          nada.
+      - term: Dos bases de datos
+        description: >-
+          Las inscripciones y los consentimientos están en dos bases de datos
+          separadas en Fráncfort (Alemania), y desde una no se puede leer la
+          otra.
+      - term: No se guardan las IP
+        description: >-
+          En vez de tu dirección IP, guardamos un hash hecho con una clave
+          secreta que está en otro sitio.
+      - term: Enlaces de confirmación
+        description: >-
+          Cada enlace sirve una sola vez y solo guardamos su hash: si se
+          filtrara la base de datos, no revelaría enlaces válidos.
+      - term: Borrado automático
+        description: >-
+          Un proceso diario borra las inscripciones sin confirmar a los 7 días,
+          y el resto en cuanto lo indica la
+          <a href="/privacy/">política de privacidad</a>.
+
+  - heading: Avisar de una vulnerabilidad
+    body: >-
+      Si encuentras un problema de seguridad, escribe a
+      <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a> con los
+      detalles y los pasos para reproducirlo. Te pedimos que no lo hagas público
+      hasta que hayamos podido corregirlo. Te responderemos lo antes posible y
+      te avisaremos cuando esté arreglado.

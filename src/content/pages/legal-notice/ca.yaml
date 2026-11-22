@@ -1,0 +1,61 @@
+title: Avís legal
+description: Qui gestiona el web de Monetyo, per a què serveix i les condicions per fer-lo servir.
+updated: 2026-11-22
+updatedLabel: "Última actualització: {date}"
+intro: >-
+  Aquest avís legal s’aplica només al web monetyo.com i es publica en compliment de l’article 10 de la <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Llei 34/2002, d’11 de juliol, de serveis de la societat de la informació i de comerç electrònic (LSSI-CE)</a>. L’app de Monetyo tindrà els seus propis termes i condicions quan es llanci.
+
+sections:
+  - heading: Titular del web
+    items:
+      - term: Nom
+        description: Luca Pipolo
+      - term: NIF
+        description: Y4675193C
+      - term: Adreça
+        description: Carrer de Bailèn 41, 1r 2a B, 08010 Barcelona, Espanya
+      - term: Correu electrònic
+        description: <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+
+  - heading: Finalitat d’aquest web
+    body: >-
+      Aquest web presenta Monetyo, una app de pressupostos familiars que encara
+      s’està construint, i gestiona la seva llista d’espera. No ven res, no
+      cobra cap pagament i no demana cap compte.
+
+  - heading: Propietat intel·lectual
+    body: >-
+      Els textos, les il·lustracions, el disseny i el codi d’aquest web
+      pertanyen al seu titular, llevat que s’indiqui el contrari. Hi pots
+      enllaçar i citar-ne fragments breus esmentant-ne la font; qualsevol altre
+      ús requereix permís per escrit. Els noms i logotips d’altres empreses són
+      seus i només s’utilitzen per referir-se als seus serveis.
+
+  - heading: Enllaços a altres webs
+    body: >-
+      Aquest web enllaça a serveis i pàgines que gestionen altres. No els
+      controlem i no som responsables del seu contingut ni de com tracten les
+      teves dades.
+
+  - heading: Responsabilitat sobre el contingut
+    body: >-
+      Procurem que la informació sigui exacta, però Monetyo encara està en
+      desenvolupament, i les funcions, els plans i les dates que s’hi descriuen
+      poden canviar. Res del que diem aquí limita cap responsabilitat que la llei
+      no permeti limitar.
+
+  - heading: Allotjament
+    body: >-
+      El web l’allotja
+      <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel Inc.</a>,
+      una empresa amb seu als Estats Units. Consulta la
+      <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">política de privadesa de Vercel</a>
+      i la nostra <a href="/privacy/">política de privadesa</a> per saber com es
+      tracten les teves dades.
+
+  - heading: Llei aplicable i jurisdicció
+    body: >-
+      Aquest web i aquest avís es regeixen per la llei espanyola. Quan la llei
+      ho permeti i les dues parts ho acordin vàlidament, els conflictes aniran
+      als tribunals de Barcelona (Espanya). Si no, la jurisdicció la fixen les
+      normes aplicables, incloses les de protecció dels consumidors.

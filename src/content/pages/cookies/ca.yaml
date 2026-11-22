@@ -1,0 +1,85 @@
+title: Política de galetes
+description: L’única galeta del web de Monetyo, per què no hi ha bàner de galetes i com funcionen les estadístiques, els errors i l’antispam sense rastrejar-te.
+updated: 2026-11-22
+updatedLabel: "Última actualització: {date}"
+intro: >-
+  Aquesta política s’aplica només al web monetyo.com; l’app de Monetyo tindrà la seva. El web desa una sola galeta, i només quan tries un idioma. No hi ha galetes publicitàries ni res que et segueixi per internet, i per això no veuràs cap bàner de galetes.
+
+sections:
+  - heading: Qui n’és responsable
+    items:
+      - term: Responsable del tractament
+        description: Luca Pipolo
+      - term: Contacte
+        description: <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+      - term: Dades identificatives
+        description: Trobaràs totes les dades a l’<a href="/legal-notice/">avís legal</a>.
+
+  - heading: Què desem al teu navegador
+    body: >-
+      No es desa res al navegador pel simple fet d’obrir una pàgina. L’únic que
+      guarda el web és el teu idioma, i només quan el tries.
+    items:
+      - term: locale (galeta)
+        description: >-
+          Recorda l’idioma que has triat, perquè el web s’obri en aquest idioma
+          la pròxima vegada. Es crea quan fas servir el selector d’idioma o obres
+          una pàgina en un idioma concret. Només conté el codi de l’idioma,
+          <code>en</code>, <code>es</code>, <code>ca</code> o <code>it</code>, i caduca al cap d’un any.
+
+  - heading: Per què no hi ha bàner de galetes
+    body: >-
+      L’article 22.2 de la
+      <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Llei 34/2002, d’11 de juliol, de serveis de la societat de la informació i de comerç electrònic (LSSI-CE)</a>
+      no exigeix consentiment per a les galetes estrictament necessàries per
+      prestar un servei que l’usuari demana explícitament. Recordar l’idioma que
+      has triat és exactament això, com explica l’autoritat espanyola de
+      protecció de dades a la seva
+      <a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener noreferrer">guia sobre l’ús de les galetes</a>.
+      Com que el web no fa servir cap altra galeta ni desa res més al teu
+      dispositiu, no cal cap bàner.
+
+  - heading: Eines que no fan servir galetes
+    body: >-
+      Aquestes eines ens ajuden a fer funcionar el web. Cap d’elles no crea
+      galetes ni desa res al teu navegador.
+    items:
+      - term: Vercel Web Analytics
+        description: >-
+          <a href="https://vercel.com/docs/analytics" target="_blank" rel="noopener noreferrer">Vercel Web Analytics</a>
+          compta les visites perquè puguem veure quines pàgines es llegeixen.
+          Agrupa les pàgines vistes per un mateix visitant amb un hash de la
+          petició que es reinicia cada 24 hores, de manera que les visites no es
+          poden relacionar entre dies ni entre webs, i no desa la teva adreça
+          IP. Consulta
+          <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer">com tracta les dades</a>.
+      - term: Sentry
+        description: >-
+          <a href="https://sentry.io/" target="_blank" rel="noopener noreferrer">Sentry</a>
+          recull informes d’errors perquè puguem trobar i arreglar problemes.
+          Està configurat per excloure les adreces IP, el contingut dels
+          formularis i les galetes, i no enregistra la sessió.
+      - term: Cloudflare Turnstile
+        description: >-
+          <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener noreferrer">Turnstile</a>
+          comprova que les altes les fan persones, només al formulari d’alta.
+          Durant la comprovació, tracta la teva adreça IP i alguns detalls del
+          navegador. Consulta
+          l’<a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">annex de privadesa de Turnstile</a>.
+      - term: Google Search Console
+        description: >-
+          <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Search Console</a>
+          ens mostra com apareix el web a la cerca de Google. No s’executa de
+          cap manera en aquest web.
+
+  - heading: Com bloquejar les estadístiques
+    body: >-
+      Si prefereixes que no et comptem, un bloquejador de contingut com
+      <a href="https://ublockorigin.com/" target="_blank" rel="noopener noreferrer">uBlock Origin</a>
+      impedeix que es carregui Vercel Web Analytics. El web funciona exactament
+      igual sense.
+
+  - heading: Canvis en aquesta política
+    body: >-
+      Si mai afegim alguna cosa que requereixi el teu consentiment, primer
+      actualitzarem aquesta pàgina i te’l demanarem abans d’activar-la.

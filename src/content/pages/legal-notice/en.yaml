@@ -1,0 +1,59 @@
+title: Legal notice
+description: Who runs the Monetyo website, what it’s for, and the terms that apply to using it.
+updated: 2026-11-22
+updatedLabel: Last updated {date}
+intro: >-
+  This legal notice applies only to the monetyo.com website and is published under Article 10 of the <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Spanish Law 34/2002 on information society services and electronic commerce (LSSI-CE)</a>. The Monetyo app will have its own terms and conditions when it launches.
+
+sections:
+  - heading: Website owner
+    items:
+      - term: Name
+        description: Luca Pipolo
+      - term: Tax ID (NIF)
+        description: Y4675193C
+      - term: Address
+        description: Carrer de Bailèn 41, 1º 2ªB, 08010 Barcelona, Spain
+      - term: Email
+        description: <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+
+  - heading: Purpose of this website
+    body: >-
+      This website presents Monetyo, a family budgeting app that’s still being
+      built, and runs its waitlist. It doesn’t sell anything, take payments or
+      require an account.
+
+  - heading: Intellectual property
+    body: >-
+      The texts, illustrations, design and code of this website belong to
+      their owner unless stated otherwise. You may link to it and quote short
+      extracts with a reference to the source; any other use needs written
+      permission. Names and logos of other companies belong to them and are
+      used only to refer to their services.
+
+  - heading: Links to other websites
+    body: >-
+      This website links to services and pages run by others. We don’t
+      control them and aren’t responsible for their content or how they
+      handle your data.
+
+  - heading: Responsibility for content
+    body: >-
+      We work to keep the information here accurate, but Monetyo is still in
+      development, so features, plans and dates described on this website may
+      change. Nothing here limits any liability that can’t be limited by law.
+
+  - heading: Hosting
+    body: >-
+      The website is hosted by
+      <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel Inc.</a>,
+      a company based in the United States. See
+      <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel’s privacy policy</a>,
+      and our <a href="/privacy/">privacy policy</a> for how your data is handled.
+
+  - heading: Governing law and jurisdiction
+    body: >-
+      This website and this notice are governed by Spanish law. Where the law
+      allows it and both parties validly agree, disputes go to the courts of
+      Barcelona, Spain. Otherwise, jurisdiction is set by the applicable rules,
+      including those that protect consumers.

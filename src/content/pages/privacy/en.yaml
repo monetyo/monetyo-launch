@@ -1,0 +1,267 @@
+title: Privacy policy
+description: What data the Monetyo website and waitlist collect, why, who processes it, how long it’s kept and how to exercise your rights under the GDPR.
+updated: 2026-11-22
+updatedLabel: Last updated {date}
+intro: >-
+  This policy applies only to the monetyo.com website, its waitlist and the surveys we send to people on it. The Monetyo app will have its own privacy policy, terms and legal pages when it launches. We only collect what we need to run the waitlist, understand how the site is used and fix problems, we don’t build profiles and we never sell your data.
+
+sections:
+  - heading: Who is responsible for your data
+    items:
+      - term: Data controller
+        description: Luca Pipolo
+      - term: Contact
+        description: <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+      - term: Identification details
+        description: >-
+          Tax ID, postal address and the rest of the owner’s details are in the
+          <a href="/legal-notice/">legal notice</a>.
+      - term: Data Protection Officer
+        description: >-
+          None has been appointed. Given the kind of processing described here,
+          the conditions in Article 37 of the
+          <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02016R0679-20160504" target="_blank" rel="noopener noreferrer">General Data Protection Regulation (GDPR)</a>
+          that would require one don’t apply.
+
+  - heading: What data we process
+    items:
+      - term: Waitlist
+        description: >-
+          When you join, we store your email address, who you’re budgeting for
+          if you tell us, the language and page you signed up from, and the
+          dates you signed up and confirmed your address.
+      - term: Record of what you agreed to
+        description: >-
+          Each time you sign up, confirm or unsubscribe, we keep a record of the
+          exact wording you were shown, the version of this policy it refers to,
+          the date and time, the page, your browser’s user agent and a keyed
+          hash of your IP address, explained below. It lets us show what you
+          agreed to and when.
+      - term: Spam protection
+        description: >-
+          The signup form uses Cloudflare Turnstile to tell people from bots.
+          During the check, Cloudflare processes your IP address and some
+          technical details about your browser and device.
+      - term: Surveys
+        description: >-
+          Surveys are sent by email and answered on Tally. Your answers aren’t
+          linked to your email address, and the link we send doesn’t identify
+          you. Some surveys ask whether you’d like to take part in a longer
+          interview; only if you tick that box and leave your email do we know
+          who answered.
+      - term: Emails you send us
+        description: >-
+          If you write to us, we process your email address, any name you give
+          and the content of your message, to read it and reply.
+      - term: Language preference
+        description: >-
+          If you switch language, your choice is saved in a cookie so the site
+          remembers it. See the <a href="/cookies/">cookie policy</a>.
+      - term: Visit statistics
+        description: >-
+          For each page view, Vercel Web Analytics records the date and time,
+          the page, the referring website, campaign parameters in the address
+          such as <code>utm_source</code>, the approximate location (country,
+          region and city), the operating system, the browser and their
+          versions, and the device type.
+      - term: Error reports
+        description: >-
+          When something breaks, Sentry collects the error message, where in
+          the code it happened and the page it happened on. It’s set up to
+          leave out IP addresses, form contents and cookies, and it doesn’t
+          record your session.
+      - term: Search performance
+        description: >-
+          Google Search Console shows us how the site appears in Google search,
+          for example which searches lead to it. It adds no code or cookies to
+          this website and only gives us aggregated figures.
+
+  - heading: How IP addresses are handled
+    body:
+      - >-
+        Any website you visit receives your IP address so it can send pages
+        back to you, and our hosting and security providers process it as part
+        of their service.
+      - >-
+        Vercel Web Analytics counts visits without cookies. It groups page views
+        from the same visitor using a hash of the request that resets every 24
+        hours, so visits can’t be linked across days or across websites, and
+        the statistics it keeps don’t include your IP address. Sentry is set up
+        to leave IP addresses out of error reports.
+      - >-
+        When you sign up, your IP address is used for the Turnstile check. In
+        the record of what you agreed to, we don’t store your IP address: we
+        store a hash made with a secret key kept elsewhere, which lets us
+        compare records from the same address without keeping the address
+        itself. The hash still counts as pseudonymised personal data and is
+        deleted together with its record.
+
+  - heading: Legal bases for processing
+    body: >-
+      The GDPR requires every use of personal data to have a legal basis. Which
+      one applies depends on why the data is used.
+    items:
+      - term: Waitlist emails and surveys
+        description: >-
+          Your consent, under Article 6(1)(a) of the GDPR. You give it by
+          sending the signup form under a short statement of what you’ll
+          receive and confirming your address. Answering a survey, and leaving
+          your email for an interview, are also based on consent. You can
+          withdraw it at any time with the link in every email or by writing
+          to <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>.
+      - term: Record of what you agreed to
+        description: >-
+          Our legitimate interest in being able to prove consent, under
+          Articles 6(1)(f) and 7(1) of the GDPR.
+      - term: Spam protection
+        description: >-
+          Our legitimate interest in protecting the waitlist from abuse, under
+          Article 6(1)(f) and Recital 49 of the GDPR, which covers network and
+          information security.
+      - term: Statistics, errors and search
+        description: >-
+          Our legitimate interest in understanding how the site is used and
+          keeping it working, under Article 6(1)(f) of the GDPR, with each tool
+          set up to collect as little as possible.
+      - term: Emails you send us
+        description: >-
+          Our legitimate interest in answering you, under Article 6(1)(f) of
+          the GDPR.
+      - term: Language preference
+        description: >-
+          Exempt from consent under Article 22.2 of the
+          <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Spanish Law 34/2002 (LSSI-CE)</a>,
+          because it’s part of a service you explicitly ask for.
+
+  - heading: How your email address is stored
+    body:
+      - >-
+        Waitlist signups and the records of what you agreed to are kept in two
+        separate Postgres databases run by Neon in Frankfurt, Germany, so one
+        can’t be read from the other. Only the people who run Monetyo have
+        access to them.
+      - >-
+        The link in our confirmation email works only once, and we keep only a
+        hash of it, never the link itself. If you don’t confirm your address
+        within 7 days, the signup is deleted automatically.
+
+  - heading: External providers
+    body: >-
+      We use these services to run the website and the waitlist. Each one only
+      processes what it needs for its job, on our behalf, except where noted.
+    items:
+      - term: Vercel Inc.
+        description: >-
+          Hosts the website, runs the code behind the signup form in its
+          Frankfurt region and counts visits with
+          <a href="https://vercel.com/docs/analytics" target="_blank" rel="noopener noreferrer">Vercel Web Analytics</a>.
+          See <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Vercel’s privacy policy</a>
+          and <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer">how Web Analytics handles data</a>.
+      - term: Neon, a Databricks company
+        description: >-
+          Through <a href="https://neon.com/" target="_blank" rel="noopener noreferrer">Neon</a>,
+          hosts the waitlist and consent databases in Frankfurt, Germany. See
+          <a href="https://www.databricks.com/legal/privacynotice" target="_blank" rel="noopener noreferrer">Databricks’ privacy notice</a>.
+      - term: Sendinblue SAS (Brevo)
+        description: >-
+          Sends our emails through <a href="https://www.brevo.com/" target="_blank" rel="noopener noreferrer">Brevo</a>,
+          including the confirmation email, launch news and survey invitations,
+          and stores data in the EU. If you unsubscribe, Brevo gets your
+          address once more, right after we delete it from the waitlist, to send
+          the email confirming it. See
+          <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">Brevo’s privacy policy</a>.
+      - term: Tally BV
+        description: >-
+          Collects survey answers through <a href="https://tally.so/" target="_blank" rel="noopener noreferrer">Tally</a>
+          under its <a href="https://tally.so/help/data-processing-agreement" target="_blank" rel="noopener noreferrer">Data Processing Agreement</a>,
+          which is part of Tally’s terms. Form data is encrypted and stored in
+          the EU. See <a href="https://tally.so/help/gdpr" target="_blank" rel="noopener noreferrer">Tally and the GDPR</a>.
+      - term: Cloudflare, Inc.
+        description: >-
+          Provides <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener noreferrer">Turnstile</a>,
+          which protects the signup form from bots. Cloudflare also uses
+          Turnstile data, as an independent controller, to improve its bot
+          detection, as explained in the
+          <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Turnstile Privacy Addendum</a>.
+          See <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">Cloudflare’s privacy policy</a>.
+      - term: Functional Software, Inc.
+        description: >-
+          Provides <a href="https://sentry.io/" target="_blank" rel="noopener noreferrer">Sentry</a>,
+          which collects error reports, stored in Sentry’s EU region. See
+          <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">Sentry’s privacy policy</a>.
+      - term: Google Ireland Limited
+        description: >-
+          Provides <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Google Search Console</a>,
+          which reports how the site performs in Google search. See
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s privacy policy</a>.
+
+  - heading: Data transfers outside the European Economic Area
+    body:
+      - >-
+        Brevo is a French company and Tally a Belgian one. The databases and
+        the error reports are stored in the EU. Vercel, Cloudflare and Sentry
+        are US companies, and Neon and Google belong to groups based in the
+        United States, so some data may be accessible from outside the
+        European Economic Area (EEA).
+      - >-
+        Where that applies, transfers are covered by the
+        <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32021D0914" target="_blank" rel="noopener noreferrer">standard contractual clauses approved by the European Commission in Implementing Decision (EU) 2021/914</a>
+        or by the
+        <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32023D1795" target="_blank" rel="noopener noreferrer">adequacy decision (EU) 2023/1795 on the EU-US Data Privacy Framework</a>,
+        when the provider is certified under it. Each provider’s privacy
+        policy, linked above, explains the safeguards it uses.
+
+  - heading: How long data is kept
+    items:
+      - term: Unconfirmed signups
+        description: Deleted after 7 days if the confirmation link isn’t used.
+      - term: Confirmed signups
+        description: Kept until you unsubscribe, and deleted 24 months after you signed up at the latest.
+      - term: Records of what you agreed to
+        description: Kept for 3 years, the time a data protection authority has to act on a complaint, then deleted.
+      - term: Survey answers
+        description: Kept until we’ve finished analysing them, and for no more than 24 months.
+      - term: Emails left for an interview
+        description: Used only to arrange the interview and deleted within 6 months of it, or sooner if you ask.
+      - term: Emails you send us
+        description: Kept while we need them to handle the conversation, then deleted unless the law requires us to keep them.
+      - term: Statistics and error reports
+        description: Kept for the periods Vercel and Sentry set for the plans we use.
+      - term: Language preference
+        description: Stays on your device for up to a year, or until you clear the site’s data.
+
+  - heading: Automated decisions
+    body: >-
+      We don’t make automated decisions that have legal or similarly
+      significant effects on you, and we don’t build profiles. Turnstile is
+      automated and may block a signup it finds suspicious; if that happens,
+      write to <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
+      and we’ll add you by hand.
+
+  - heading: Your rights
+    body:
+      - >-
+        The GDPR lets you ask what data we hold about you and get a copy, have
+        it corrected or deleted, object to its processing or ask us to restrict
+        it, and take it with you where Article 20 applies. You can withdraw
+        your consent at any time: every email we send to the list has a link
+        that removes your address straight away.
+      - >-
+        For anything else, write to
+        <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>. We’ll
+        reply within one month, which Article 12 of the GDPR allows us to
+        extend in some cases, and we’ll tell you if we need to.
+      - >-
+        Survey answers given without an email can’t be traced back to you, so
+        we can’t find or delete them for a particular person.
+      - >-
+        If you think we’ve handled your data wrongly, you can complain to the
+        Spanish data protection authority, the
+        <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">Agencia Española de Protección de Datos (AEPD)</a>,
+        or to the authority in the country where you live or work.
+
+  - heading: Changes to this policy
+    body: >-
+      If we change the services we use, the data we collect or why we collect
+      it, we’ll update this policy before the change takes effect and show the
+      new date at the top of the page.

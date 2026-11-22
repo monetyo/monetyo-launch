@@ -1,0 +1,554 @@
+title: "Monetyo: il budget di famiglia con l’IA integrata"
+description: Un budget per tutta la famiglia, con un assistente che ordina le spese, legge gli scontrini e ti dice dove sono finiti i soldi. I dati restano in Europa.
+
+hero:
+  heading:
+    - Dove sono finiti i soldi?
+    - Chiedi a Monetyo.
+  lead: Tutte le spese della famiglia in un solo budget, e quanto resta per questo mese. Monetyo mette ogni pagamento nella categoria giusta e ti avvisa per tempo quando un budget sta per finire.
+
+app:
+  label: "L’app Monetyo: la panoramica di una famiglia con i budget del mese, gli ultimi movimenti e un assistente che risponde a una domanda sulle cene fuori."
+  household: Ferrer–Lindqvist
+  initials: FL
+  members: 3 membri
+  nav: [Panoramica, Movimenti, Budget, Conti, Report, Chiedi a Monetyo]
+  sync: 3 conti sincronizzati, aggiornati 2 min fa
+  title: Panoramica
+  period: Novembre
+  people:
+    - { initial: M, tint: blue }
+    - { initial: J, tint: peach }
+    - { initial: A, tint: ink }
+  spent:
+    label: Speso questo mese
+    value: 2.252 €
+    of: di 2.700 €
+    percent: 83
+  stats:
+    - label: Da spendere
+      value: 448 €
+      note: 12 giorni, 37 €/giorno
+    - label: Entrate
+      value: 4.730 €
+      note: Arrivati i due stipendi
+      positive: true
+  budgets:
+    heading: Budget
+    more: Vedi tutti
+    items:
+      - {
+          name: Casa e affitto,
+          category: home,
+          percent: 100,
+          note: Pagato,
+          state: paid,
+        }
+      - { name: Spesa, category: groceries, percent: 69, note: Restano 188 € }
+      - {
+          name: Figli,
+          category: kids,
+          percent: 100,
+          note: 36 € in più,
+          state: over,
+        }
+      - {
+          name: Trasporti,
+          category: transport,
+          percent: 52,
+          note: Restano 86 €,
+        }
+      - {
+          name: Cene fuori,
+          category: eatingOut,
+          percent: 64,
+          note: Restano 54 €,
+        }
+      - { name: Altro, category: other, percent: 58, note: Restano 156 € }
+  latest:
+    heading: Ultimi
+    note: Ordinati in automatico
+    items:
+      - {
+          initial: L,
+          tint: lemonSoft,
+          name: Lidl,
+          detail: Spesa · Marta,
+          amount: "−63,18 €",
+        }
+      - {
+          initial: S,
+          tint: coralSoft,
+          name: Mensa scolastica,
+          detail: Figli · Jonas,
+          amount: "−92,00 €",
+        }
+      - {
+          initial: I,
+          tint: greenSoft,
+          name: "ICA Nära, Malmö",
+          detail: Spesa · Jonas,
+          amount: "−420,00 kr",
+          converted: "36,72 €",
+        }
+      - {
+          initial: F,
+          tint: blueSoft,
+          name: Farmacia Sants,
+          detail: Salute · Marta,
+          amount: "−18,45 €",
+        }
+  assistant:
+    heading: Chiedi a Monetyo
+    question: Quanto abbiamo speso in cene fuori a ottobre?
+    answer:
+      lead: 486,20 €
+      rest: in 14 movimenti. Sono 61 € in più di settembre, soprattutto per la cena di compleanno (75 €).
+    bars:
+      - { label: Set, value: 425 €, percent: 87 }
+      - { label: Ott, value: 486 €, percent: 100, highlight: true }
+    suggestions: [Mostra i 14 movimenti, Perché sale la Spesa?]
+    placeholder: Chiedi dei tuoi soldi
+
+facts:
+  label: I tuoi dati, protetti
+  items:
+    - { icon: globe, text: I dati restano in Europa }
+    - { icon: eye, text: I tuoi dati non si vendono }
+    - { icon: shield, text: Cifrati e riservati }
+    - { icon: unlock, text: Porta i tuoi dati con te }
+
+ai:
+  eyebrow: Monetyo IA
+  heading: Fai domande sui tuoi soldi come a una persona.
+  lead: L’assistente lavora sui tuoi movimenti, così quando chiedi quanto avete speso per mangiare fuori il mese scorso, ricevi la cifra reale.
+  ask:
+    heading: Chiedi con parole tue
+    body: Niente filtri o report da impostare. Scrivi la domanda come la faresti al tavolo di cucina e ricevi una cifra, con i pagamenti che la compongono.
+    label: "Una conversazione con l’assistente. Domanda: quanto ci è costata l’auto quest’anno? Risposta: 2.184 euro finora, divisi tra benzina, assicurazione, una riparazione a marzo, sosta e pedaggi."
+    question: Quanto ci è costata l’auto quest’anno?
+    answer:
+      lead: 2.184 € finora.
+      rest: La benzina pesa di più, e la riparazione di marzo è l’unica fuori programma.
+    bars:
+      - { label: Benzina, value: 962 €, percent: 100 }
+      - { label: Assicurazione, value: 640 €, percent: 66 }
+      - {
+          label: Riparazione di marzo,
+          value: 412 €,
+          percent: 43,
+          highlight: true,
+        }
+      - { label: Sosta e pedaggi, value: 170 €, percent: 18 }
+    suggestions: [Confronta con l’anno scorso, Mostra i movimenti]
+  sort:
+    heading: Ogni pagamento al suo posto
+    body: Codici come “PAGAMENTO POS FARMACIA SANTS BCN” diventano un nome e una categoria che riconosci. Monetyo impara da ogni tua correzione.
+    label: "Quattro movimenti bancari ripuliti e classificati in automatico: una farmacia in Salute, un supermercato in Spesa, un biglietto del treno in Trasporti e un Bizum che l’utente ha spostato in Cene fuori, e che Monetyo ricorderà."
+    items:
+      - {
+          name: Farmacia Sants,
+          raw: PAGAMENTO POS FARMACIA SANTS BCN,
+          category: health,
+          categoryName: Salute,
+        }
+      - {
+          name: Lidl,
+          raw: ACQUISTO CARTA LIDL 0412 BARCELONA,
+          category: groceries,
+          categoryName: Spesa,
+        }
+      - {
+          name: Renfe,
+          raw: PAG. ONLINE RENFE MADRID,
+          category: transport,
+          categoryName: Trasporti,
+        }
+      - name: Marta, quota cena
+        raw: BIZUM DA MARTA F. CAUSALE CENA
+        category: eatingOut
+        categoryName: Cene fuori
+        learned: Spostato da Bonifici. La prossima volta sarà automatico.
+  receipts:
+    heading: Fai una foto allo scontrino
+    body: Monetyo legge lo scontrino, lo divide tra le tue categorie e lo allega al pagamento. Funziona anche con gli estratti conto.
+    label: Uno scontrino del supermercato da 63,18 euro letto da Monetyo e diviso tra Spesa, Casa e Salute.
+    receipt:
+      store: LIDL
+      address: C. de Sants 112
+      lines:
+        - { item: Pomodori, price: "2,39" }
+        - { item: Latte x6, price: "5,34" }
+        - { item: Detersivo, price: "8,99" }
+        - { item: Dentifricio, price: "2,99" }
+        - { item: + 14 articoli, price: "43,47" }
+      totalLabel: TOTALE
+      total: "63,18"
+    result:
+      store: Lidl
+      amount: "−63,18 €"
+      splits:
+        - { name: Spesa, category: groceries, amount: "51,20 €" }
+        - { name: Casa, category: home, amount: "8,99 €" }
+        - { name: Salute, category: health, amount: "2,99 €" }
+      meta: 14 nov · scontrino allegato
+  insights:
+    heading: Un avviso quando sei ancora in tempo
+    body: Se la spesa sta per sforare il budget, lo scopri a metà mese, quando puoi ancora correggere il tiro. E quando il mese si chiude, ricevi un breve riepilogo.
+    chart:
+      title: Spesa, giorno 18 di 30
+      warning: Sforerà di 40 €
+      label: "Grafico a linee: la spesa alimentare arriva a 412 euro al giorno 18 e dovrebbe chiudere il mese a 640 euro, oltre il budget di 600 euro."
+      budget: Budget 600 €
+      today: Oggi 412 €
+      forecast: Previsti 640 €
+    notes:
+      - heading: La luce costa il 22% più del tuo solito novembre.
+        body: Stessa tariffa, più kWh.
+      - heading: Ottobre ha chiuso 212 € sotto budget.
+        body: Quasi tutto dai trasporti.
+
+household:
+  heading: Un budget che tutta la famiglia vede
+  lead: Riunisci in un unico posto chi condivide i soldi di casa, così guardate tutti gli stessi numeri.
+  together:
+    heading: L’accesso giusto per ogni persona
+    body: Dai il controllo totale a qualcuno, lascia che altri aggiungano e modifichino, o condividi solo ciò che serve, come i report con un consulente finanziario. Ognuno può anche impostare i propri widget, viste e tabelle.
+    label: "Membri della famiglia: Marta ha il controllo totale, Jonas può aggiungere e modificare, e Clara, consulente finanziaria, vede solo i report."
+    title: Membri
+    invite: Invita
+    members:
+      - {
+          initial: M,
+          tint: blue,
+          name: Marta Ferrer,
+          description: "Controllo totale, anche la fatturazione",
+          role: Titolare,
+          owner: true,
+        }
+      - {
+          initial: J,
+          tint: peach,
+          name: Jonas Lindqvist,
+          description: Aggiunge e modifica tutto,
+          role: Editor,
+        }
+      - {
+          initial: C,
+          tint: ink,
+          name: "Clara, consulente finanziaria",
+          description: Vede solo i report,
+          role: Lettrice,
+        }
+  budgets:
+    heading: Giroconti e rimborsi contati come si deve
+    body: Spostare soldi sui risparmi non è una spesa, e un rimborso non è un’entrata in più. Monetyo li tiene separati, così il budget mostra quanto hai speso davvero.
+    label: "Tre movimenti: un giroconto di 400 euro sui risparmi che resta fuori dai budget, un rimborso di 29,90 euro che torna nel budget Abbigliamento e una spesa di 18,45 euro in farmacia contata in Salute."
+    items:
+      - {
+          kind: transfer,
+          name: Da conto comune a Risparmi,
+          detail: Giroconto. Fuori dai budget,
+          amount: "400,00 €",
+        }
+      - {
+          kind: refund,
+          name: "Negozio sportivo, scarpe rese",
+          detail: Rimborso. Torna in Abbigliamento,
+          amount: "+29,90 €",
+        }
+      - {
+          kind: expense,
+          initial: F,
+          name: Farmacia Sants,
+          detail: Uscita. Conta nel budget Salute,
+          amount: "−18,45 €",
+        }
+  sources:
+    heading: Le spese, in quattro modi
+    body: Comunque arrivi un pagamento su Monetyo, finisce nello stesso budget e conta allo stesso modo.
+    items:
+      - {
+          id: bank,
+          name: Collega le banche,
+          note: Si aggiorna da solo,
+          badge: Banca,
+        }
+      - {
+          id: file,
+          name: Carica un estratto,
+          note: Con qualsiasi banca,
+          badge: File,
+        }
+      - {
+          id: receipt,
+          name: Fotografa lo scontrino,
+          note: Diviso voce per voce,
+          badge: Scontrino,
+        }
+      - { id: hand, name: Scrivilo tu, note: Spese in contanti, badge: A mano }
+    label: "Quattro pagamenti in un’unica lista, ognuno aggiunto in modo diverso: Lidl dalla banca, Renfe da un file caricato, Farmacia Sants da uno scontrino fotografato e il mercato a mano."
+    title: Ultimi
+    rows:
+      - {
+          source: bank,
+          initial: L,
+          tint: lemonSoft,
+          name: Lidl,
+          detail: Spesa,
+          amount: "−63,18 €",
+        }
+      - {
+          source: file,
+          initial: R,
+          tint: blueSoft,
+          name: Renfe,
+          detail: Trasporti,
+          amount: "−24,60 €",
+        }
+      - {
+          source: receipt,
+          initial: F,
+          tint: greenSoft,
+          name: Farmacia Sants,
+          detail: Salute,
+          amount: "−18,45 €",
+        }
+      - {
+          source: hand,
+          initial: M,
+          tint: coralSoft,
+          name: Mercato,
+          detail: Spesa,
+          amount: "−12,00 €",
+        }
+  currencies:
+    heading: Spese in un’altra valuta?
+    body: In vacanza in Svezia o un acquisto nel Regno Unito? Nel budget lo vedi in euro, al cambio di quel giorno, e l’importo originale resta sempre visibile.
+    from: { label: Pagato a Malmö, amount: "420,00 kr" }
+    to: { label: Nei tuoi report, amount: "36,72 €" }
+
+roadmap:
+  eyebrow: Costruiscilo con noi
+  heading: Il prossimo passo lo decidi tu.
+  lead: Abbiamo una lunga lista di idee e siamo solo in tre a realizzarle, quindi chiediamo a chi è in lista cosa fare prima.
+  steps:
+    - title: Lascia la tua email e confermala.
+      body: Così sappiamo che possiamo farti domande.
+    - title: Rispondi a poche domande brevi.
+      body: Solo quando c’è una vera decisione sul tavolo. Salta quelle che vuoi.
+    - title: Vedi come abbiamo usato le risposte.
+      body: Condividiamo le risposte di tutti e cosa stiamo costruendo grazie a loro.
+  ideas:
+    heading: Solo alcune delle idee in lista
+    all: Tutte
+    filterLabel: Ordina le idee per tema
+    groups:
+      - { id: family, label: Per la famiglia }
+      - { id: money, label: Spendere meglio }
+      - { id: everywhere, label: Ovunque tu sia }
+      - { id: power, label: Per i più esperti }
+    # The order is deliberate: no two notes of the same theme touch, in a
+    # swipe row or a grid of 2 or 4 columns. Check that before reordering.
+    items:
+      - group: family
+        icon: gift
+        title: Tieni segreto un regalo
+        note: Nascondi un acquisto alla famiglia finché il regalo non è stato aperto.
+      - group: power
+        icon: sliders-horizontal
+        title: Decidi tu quanto fa l’IA
+        note: Dai semplici suggerimenti fino a ordinare tutto. La manopola la giri tu.
+      - group: money
+        icon: users-three
+        title: Mettiti a confronto
+        note: Come vanno le tue spese rispetto a famiglie simili, in totale anonimato.
+      - group: everywhere
+        icon: device-mobile
+        title: App per telefono e computer
+        note: App vere per iOS e Android, e anche una per il tuo computer.
+      - group: power
+        icon: terminal-window
+        title: Scorciatoie per esperti
+        note: Palette comandi, tasti rapidi e perfino una versione da terminale.
+      - group: money
+        icon: chart-line-up
+        title: Segui gli investimenti
+        note: ETF, azioni e fondi accanto al budget, per avere il quadro completo.
+      - group: everywhere
+        icon: receipt
+        title: Fotografa gli scontrini
+        note: Fai una foto allo scontrino e ogni articolo finisce nella categoria giusta.
+      - group: family
+        icon: house-line
+        title: Spese divise tra due case
+        note: Per genitori separati che dividono scuola, vestiti e tutto il resto.
+      - group: money
+        icon: calendar-dots
+        title: Calendario delle scadenze
+        note: Vedi quali bollette scadono prima dello stipendio, senza sorprese.
+      - group: everywhere
+        icon: chat-circle-dots
+        title: Monetyo nelle tue chat
+        note: Fai una domanda o segna una spesa in contanti da WhatsApp o Telegram.
+      - group: family
+        icon: target
+        title: Risparmiate insieme per qualcosa
+        note: Una vacanza o un divano nuovo, e tutti possono vedere quanto manca.
+      - group: money
+        icon: repeat
+        title: Trova abbonamenti dimenticati
+        note: Scova lo streaming che nessuno guarda più e smetti di pagarlo.
+      - group: power
+        icon: squares-four
+        title: Il pannello a modo tuo
+        note: Scegli i widget, le viste e i grafici che ti servono e disponili come vuoi.
+      - group: family
+        icon: house-simple
+        title: Quanto vale la casa
+        note: Aggiungi casa e altri immobili e vedi tutto il patrimonio di famiglia.
+      - group: money
+        icon: arrows-split
+        title: Simula prima un “e se”
+        note: Cosa farebbero al tuo budget un’auto nuova o un trasloco, prima che succeda.
+    blank:
+      title: Qui va la tua idea
+      note: Iscriviti e te la chiediamo
+
+status:
+  heading: A che punto siamo
+  items:
+    - stage: Ora
+      title: Raccogliamo le tue idee
+      body: Parliamo con le famiglie, raccogliamo opinioni e capiamo cosa conta di più.
+    - stage: Subito dopo
+      title: L’app web
+      body: Sul computer o nel browser del telefono, a mano o con i file della banca.
+    - stage: Poi
+      title: L’assistente IA
+      body: Ordina le spese e risponde quando chiedi dove sono finiti i soldi.
+    - stage: Più avanti
+      title: App native per telefono
+      body: App vere per iOS e Android, quando l’app web funzionerà davvero bene.
+  more:
+    stage: E dopo
+    title: Tanto altro ancora
+    body: Quando le app saranno uscite, continueremo a costruire ciò che le famiglie chiedono di più. Ecco alcune idee già in lista.
+    cta: Vedi tutte le idee
+
+privacy:
+  heading: I soldi di famiglia restano affari di famiglia.
+  lead: Le spese di una famiglia dicono molto di lei. Prima di scrivere codice abbiamo fissato per iscritto come trattare i tuoi dati, e tutto Monetyo segue quelle regole.
+  items:
+    - icon: globe
+      heading: Creato e custodito in Europa
+      body: Sviluppato a Barcellona e ospitato a Francoforte, backup compresi. Niente della tua famiglia esce dall’UE.
+    - icon: lock
+      heading: Password bancarie? Mai.
+      body: La tua banca si collega tramite un fornitore con {psd2}, {soc2} e {iso27001}. Non vediamo mai la tua password.
+      terms:
+        - id: psd2
+          label: PSD2
+          tip: La norma UE per cui le aziende autorizzate leggono i tuoi dati bancari solo con il tuo consenso, vigilate da un’autorità.
+        - id: iso27001
+          label: ISO 27001
+          tip: Lo standard internazionale per gestire la sicurezza dei dati, verificato ogni anno da revisori indipendenti.
+        - id: soc2
+          label: SOC 2 Tipo 2
+          tip: Un audit indipendente che per mesi verifica che i controlli di sicurezza funzionino davvero come descritto.
+    - icon: key
+      heading: Sotto chiave, solo per voi
+      body: Numeri di conto e collegamenti bancari sono cifrati con una chiave che appartiene solo alla tua famiglia.
+    - icon: trash
+      heading: Cancellati davvero
+      body: Chiudi l’account e distruggiamo la chiave di famiglia. Nessuno potrà più leggere i tuoi dati, backup compresi.
+    - icon: download
+      heading: Portali dove vuoi
+      body: Scarica tutto quello che abbiamo su di te, quando vuoi, in un formato che puoi usare ovunque.
+    - icon: shield
+      heading: IA nativa, non improvvisata
+      body: L’IA ci aiuta a costruire più in fretta. Decenni nel settore guidano la direzione, l’architettura e ogni scelta.
+
+team:
+  eyebrow: Il team
+  heading: Un piccolo team con tanta strada alle spalle.
+  lead: Monetyo è nato al tavolo della nostra cucina, con la domanda che ogni famiglia si fa a fine mese. Dove sono finiti i soldi? Abbiamo costruito la risposta per noi. Ora la costruiamo per te.
+  linkedin: "{name} su LinkedIn"
+  members:
+    - id: luca
+      name: Luca
+      role: Prodotto e tecnologia
+      bio: Sviluppatore full-stack e team lead da 13+ anni, con 60+ progetti rilasciati. È felice con qualche agente IA al lavoro in parallelo.
+      owns: [Funzioni IA, Infrastruttura, Tech lead]
+      url: https://www.linkedin.com/in/lucapipolo/
+    - id: joan
+      name: Joan
+      role: Dati e integrazioni
+      bio: Da oltre 25 anni costruisce piattaforme PHP e i database che le sostengono. Si assicura che tutto sia veloce e non vada mai giù.
+      owns: [Architettura dati, API, Integrazioni]
+      url: https://www.linkedin.com/in/juanlopez4691/
+    - id: susanna
+      name: Susanna
+      role: Design
+      bio: UX project lead che ama la ricerca quanto i pixel. Prima ascolta le persone, poi disegna schermate che si capiscono al primo colpo.
+      owns: [Esperienza utente, Interfaccia utente]
+      url: https://www.linkedin.com/in/susannacasali/
+
+faq:
+  heading: Bella domanda.
+  items:
+    - question: Quando potrò usarlo?
+      answer: >-
+        Andiamo più veloci che possiamo, ma non lo lanceremo finché esperienza,
+        privacy e sicurezza non saranno a posto. Niente scorciatoie. Chi è in
+        lista lo proverà per primo.
+    - question: Quanto verrà a costare?
+      answer: >-
+        Stiamo valutando alcune strade: un abbonamento per famiglia, un piano gratuito con extra a pagamento, una prova gratuita, oppure una versione open source da installare in autonomia, accanto a una versione cloud a pagamento. Chi è in lista ci aiuterà a scegliere.
+    - question: Funzionerà con la mia banca?
+      answer: >-
+        Sì. Ci collegheremo alle banche di tutta Europa tramite
+        <a href="https://plaid.com/en-eu/" target="_blank" rel="noopener noreferrer">Plaid</a>,
+        autorizzato {psd2}, verificato {soc2} e certificato {iso27001}. Finché
+        la tua banca non è supportata, puoi caricare un file di qualsiasi
+        banca, fotografare gli scontrini o inserire i pagamenti a mano.
+      terms:
+        - id: psd2
+          label: PSD2
+          tip: La norma UE per cui le aziende autorizzate leggono i tuoi dati bancari solo con il tuo consenso, vigilate da un’autorità.
+        - id: soc2
+          label: SOC 2 Tipo 2
+          tip: Un audit indipendente che per mesi verifica che i controlli di sicurezza funzionino davvero come descritto.
+        - id: iso27001
+          label: ISO 27001
+          tip: Lo standard internazionale per gestire la sicurezza dei dati, verificato ogni anno da revisori indipendenti.
+    - question: Può usarlo tutta la famiglia?
+      answer: >-
+        Sì, comunque sia fatta la tua famiglia. Decidi tu chi ha il controllo
+        totale, chi può aggiungere e modificare e chi vede solo alcune parti,
+        che sia il partner, un coinquilino o un consulente finanziario. Ognuno
+        può anche organizzare i propri widget, viste e tabelle.
+    - question: Che fine fanno i miei dati quando uso l’IA?
+      answer: >-
+        L’assistente IA vedrà il meno possibile. Nomi e numeri di conto vengono
+        rimossi prima che qualcosa esca dal tuo account, i modelli piccoli
+        girano sui nostri server in Europa e, dove il telefono lo supporta, si
+        usa l’IA sul dispositivo, come Apple Intelligence. È facoltativo, può
+        solo leggere e ordinare le tue spese, mai spostare denaro, e i tuoi
+        dati non vengono mai usati per addestrare modelli.
+    - question: Monetyo sarà open source?
+      answer: >-
+        Ci piacerebbe, e ci stiamo pensando seriamente: usiamo l’open source
+        ogni giorno, e vorrebbe dire che i tuoi dati restano sempre sotto il tuo
+        controllo. Stiamo capendo come farlo mantenendo Monetyo sostenibile, e
+        vorremmo sentire cosa ne pensi.
+    - question: Che email mi manderete?
+      answer: >-
+        Un messaggio quando ci sarà qualcosa da provare e un breve sondaggio
+        quando dovremo decidere. Le risposte non sono collegate alla
+        tua email, a meno che tu non scelga di lasciarla per un’intervista più
+        lunga. In ogni email trovi un link per disiscriverti.
+
+join:
+  heading: Accedi in anteprima e dai forma a Monetyo
+  lead: Ti scriveremo quando ci sarà qualcosa da provare e, ogni tanto, per un breve sondaggio.

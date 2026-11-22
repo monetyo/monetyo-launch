@@ -1,0 +1,542 @@
+title: "Monetyo: the family budget with AI built in"
+description: One budget for the whole family, with an assistant that sorts your spending, reads receipts and tells you where the money went. Your data stays in Europe.
+
+hero:
+  heading:
+    - Where did the money go?
+    - Ask Monetyo.
+  lead: See everything your family spends in one budget, and how much is left this month. Monetyo sorts each payment into the right category and warns you early when a budget is about to run out.
+
+app:
+  label: "The Monetyo app: a household overview with this month’s budgets, the latest transactions, and an assistant answering a question about eating out."
+  household: Ferrer–Lindqvist
+  initials: FL
+  members: 3 members
+  nav: [Overview, Transactions, Budgets, Accounts, Reports, Ask Monetyo]
+  sync: 3 accounts in sync, updated 2 min ago
+  title: Overview
+  period: November
+  people:
+    - { initial: M, tint: blue }
+    - { initial: J, tint: peach }
+    - { initial: A, tint: ink }
+  spent:
+    label: Spent this month
+    value: €2,252
+    of: of €2,700
+    percent: 83
+  stats:
+    - label: Left to spend
+      value: €448
+      note: 12 days, €37 a day
+    - label: Income
+      value: €4,730
+      note: Both salaries are in
+      positive: true
+  budgets:
+    heading: Budgets
+    more: See all
+    items:
+      - {
+          name: Home & rent,
+          category: home,
+          percent: 100,
+          note: Paid,
+          state: paid,
+        }
+      - { name: Groceries, category: groceries, percent: 69, note: €188 left }
+      - {
+          name: Kids,
+          category: kids,
+          percent: 100,
+          note: €36 over,
+          state: over,
+        }
+      - { name: Transport, category: transport, percent: 52, note: €86 left }
+      - { name: Eating out, category: eatingOut, percent: 64, note: €54 left }
+      - { name: Other, category: other, percent: 58, note: €156 left }
+  latest:
+    heading: Latest
+    note: Sorted automatically
+    items:
+      - {
+          initial: L,
+          tint: lemonSoft,
+          name: Lidl,
+          detail: Groceries · Marta,
+          amount: −€63.18,
+        }
+      - {
+          initial: S,
+          tint: coralSoft,
+          name: School canteen,
+          detail: Kids · Jonas,
+          amount: −€92.00,
+        }
+      - {
+          initial: I,
+          tint: greenSoft,
+          name: "ICA Nära, Malmö",
+          detail: Groceries · Jonas,
+          amount: "−420,00 kr",
+          converted: €36.72,
+        }
+      - {
+          initial: F,
+          tint: blueSoft,
+          name: Farmacia Sants,
+          detail: Health · Marta,
+          amount: −€18.45,
+        }
+  assistant:
+    heading: Ask Monetyo
+    question: How much did we spend eating out in October?
+    answer:
+      lead: €486.20
+      rest: across 14 transactions. That’s €61 more than September, mostly the birthday dinner (€75).
+    bars:
+      - { label: Sep, value: €425, percent: 87 }
+      - { label: Oct, value: €486, percent: 100, highlight: true }
+    suggestions: [Show the 14 transactions, Why is Groceries up?]
+    placeholder: Ask about your money
+
+facts:
+  label: Your data, protected
+  items:
+    - { icon: globe, text: Your data stays in Europe }
+    - { icon: eye, text: We never sell your data }
+    - { icon: shield, text: Encrypted and private }
+    - { icon: unlock, text: Take your data with you }
+
+ai:
+  eyebrow: Monetyo AI
+  heading: Ask about your money the way you’d ask a person.
+  lead: The assistant works from your own transactions, so when you ask how much went on eating out last month, you get the real figure.
+  ask:
+    heading: Ask in your own words
+    body: No filters or reports to set up. Type the question as you’d say it at the kitchen table, and you get a number with the payments behind it.
+    label: "A conversation with the assistant. Question: what did the car cost us this year? Answer: 2,184 euros so far, broken down into fuel, insurance, a repair in March, and parking and tolls."
+    question: What did the car cost us this year?
+    answer:
+      lead: €2,184 so far.
+      rest: Fuel is the biggest part, and the March repair is the one that wasn’t in the plan.
+    bars:
+      - { label: Fuel, value: €962, percent: 100 }
+      - { label: Insurance, value: €640, percent: 66 }
+      - { label: March repair, value: €412, percent: 43, highlight: true }
+      - { label: Parking & tolls, value: €170, percent: 18 }
+    suggestions: [Compare with last year, Show the transactions]
+  sort:
+    heading: Every payment sorted for you
+    body: Codes like “CARD PAYMENT FARMACIA SANTS BCN” become a name and a category you recognise. Monetyo learns from every fix you make.
+    label: "Four bank transactions cleaned up and categorised automatically: a pharmacy under Health, a supermarket under Groceries, a train ticket under Transport, and a Bizum payment the user moved to Eating out, which Monetyo will remember."
+    items:
+      - {
+          name: Farmacia Sants,
+          raw: CARD PAYMENT FARMACIA SANTS BCN,
+          category: health,
+          categoryName: Health,
+        }
+      - {
+          name: Lidl,
+          raw: CARD PURCHASE LIDL 0412 BARCELONA,
+          category: groceries,
+          categoryName: Groceries,
+        }
+      - {
+          name: Renfe,
+          raw: RENFE TRAVEL ONLINE MADRID,
+          category: transport,
+          categoryName: Transport,
+        }
+      - name: Marta, dinner split
+        raw: BIZUM FROM MARTA F. REF DINNER
+        category: eatingOut
+        categoryName: Eating out
+        learned: You moved this from Transfers. Next time it’s automatic.
+  receipts:
+    heading: Take a photo of the receipt
+    body: Monetyo reads the receipt, splits it across your categories and attaches it to the payment. It works with bank statements too.
+    label: A supermarket receipt for 63.18 euros read by Monetyo and split into Groceries, Household and Health.
+    receipt:
+      store: LIDL
+      address: C. de Sants 112
+      lines:
+        - { item: Tomatoes, price: "2.39" }
+        - { item: Milk x6, price: "5.34" }
+        - { item: Detergent, price: "8.99" }
+        - { item: Toothpaste, price: "2.99" }
+        - { item: + 14 items, price: "43.47" }
+      totalLabel: TOTAL
+      total: "63.18"
+    result:
+      store: Lidl
+      amount: −€63.18
+      splits:
+        - { name: Groceries, category: groceries, amount: €51.20 }
+        - { name: Household, category: home, amount: €8.99 }
+        - { name: Health, category: health, amount: €2.99 }
+      meta: 14 Nov · receipt attached
+  insights:
+    heading: A warning while there’s time to act
+    body: If groceries are heading over budget, you’ll know halfway through the month, while there’s still time to adjust. When the month ends, you get a short summary.
+    chart:
+      title: Groceries, day 18 of 30
+      warning: Heading €40 over
+      label: "Line chart: grocery spending has reached 412 euros by day 18 and is forecast to end the month at 640 euros, above the 600 euro budget."
+      budget: Budget €600
+      today: Today €412
+      forecast: Forecast €640
+    notes:
+      - heading: Electricity is 22% above your usual November.
+        body: Same tariff, more kWh.
+      - heading: October closed €212 under budget.
+        body: Transport did most of it.
+
+household:
+  heading: One budget the whole family can see
+  lead: Bring everyone who shares the household’s money into one place, so you’re all looking at the same numbers.
+  together:
+    heading: The right access for each person
+    body: Give someone full control, let others add and edit, or share only the parts a person needs, like the reports with a financial adviser. Everyone can also set up their own widgets, views and tables.
+    label: "Household members: Marta has full control, Jonas can add and edit, and Clara, a financial adviser, can only see the reports."
+    title: Members
+    invite: Invite
+    members:
+      - {
+          initial: M,
+          tint: blue,
+          name: Marta Ferrer,
+          description: "Full control, including billing",
+          role: Owner,
+          owner: true,
+        }
+      - {
+          initial: J,
+          tint: peach,
+          name: Jonas Lindqvist,
+          description: Adds and edits everything,
+          role: Editor,
+        }
+      - {
+          initial: C,
+          tint: ink,
+          name: "Clara, financial adviser",
+          description: Sees the reports only,
+          role: Viewer,
+        }
+  budgets:
+    heading: Transfers and refunds counted properly
+    body: Moving money into savings isn’t spending, and a refund isn’t extra income. Monetyo keeps them apart, so your budget shows what you really spent.
+    label: "Three transactions: a 400 euro transfer to savings that is left out of budgets, a 29.90 euro refund that goes back into the Clothes budget, and an 18.45 euro pharmacy expense counted under Health."
+    items:
+      - {
+          kind: transfer,
+          name: Joint account to Savings,
+          detail: Transfer. Left out of budgets,
+          amount: €400.00,
+        }
+      - {
+          kind: refund,
+          name: "Sports shop, returned trainers",
+          detail: Refund. Goes back into Clothes,
+          amount: +€29.90,
+        }
+      - {
+          kind: expense,
+          initial: F,
+          name: Farmacia Sants,
+          detail: Expense. Counts against Health,
+          amount: −€18.45,
+        }
+  sources:
+    heading: Four ways to add spending
+    body: However a payment reaches Monetyo, it lands in the same budget and counts the same way.
+    items:
+      - {
+          id: bank,
+          name: Connect your banks,
+          note: Syncs on its own,
+          badge: Bank,
+        }
+      - {
+          id: file,
+          name: Upload a bank file,
+          note: Works with any bank,
+          badge: File,
+        }
+      - {
+          id: receipt,
+          name: Scan a receipt,
+          note: Sorted item by item,
+          badge: Receipt,
+        }
+      - { id: hand, name: Type it in, note: For cash payments, badge: By hand }
+    label: "Four payments in one list, each added a different way: Lidl from the bank, Renfe from an uploaded file, Farmacia Sants from a scanned receipt, and the market by hand."
+    title: Latest
+    rows:
+      - {
+          source: bank,
+          initial: L,
+          tint: lemonSoft,
+          name: Lidl,
+          detail: Groceries,
+          amount: −€63.18,
+        }
+      - {
+          source: file,
+          initial: R,
+          tint: blueSoft,
+          name: Renfe,
+          detail: Transport,
+          amount: −€24.60,
+        }
+      - {
+          source: receipt,
+          initial: F,
+          tint: greenSoft,
+          name: Farmacia Sants,
+          detail: Health,
+          amount: −€18.45,
+        }
+      - {
+          source: hand,
+          initial: M,
+          tint: coralSoft,
+          name: Market,
+          detail: Groceries,
+          amount: −€12.00,
+        }
+  currencies:
+    heading: Spending in another currency?
+    body: On holiday in Sweden or paying for something in the UK? It shows in your budget in euros at that day’s rate, and you can still see the original amount.
+    from: { label: Paid in Malmö, amount: "420,00 kr" }
+    to: { label: In your reports, amount: €36.72 }
+
+roadmap:
+  eyebrow: Build it with us
+  heading: You decide what we build next.
+  lead: We have a long list of ideas and only three of us to build them, so we ask the people on this list what should come first.
+  steps:
+    - title: Leave your email and confirm it.
+      body: That’s how we know you’re happy to be asked.
+    - title: Answer a few short questions.
+      body: Only when there’s a real decision on the table. Skip any you like.
+    - title: See what we did with your answers.
+      body: We share what people answered and what we’re building because of it.
+  ideas:
+    heading: Just some of the ideas on our list
+    all: All
+    filterLabel: Sort the ideas by theme
+    groups:
+      - { id: family, label: For the family }
+      - { id: money, label: Smarter money }
+      - { id: everywhere, label: Wherever you are }
+      - { id: power, label: For power users }
+    # The order is deliberate: no two notes of the same theme touch, in a
+    # swipe row or a grid of 2 or 4 columns. Check that before reordering.
+    items:
+      - group: family
+        icon: gift
+        title: Keep a gift a surprise
+        note: Hide a purchase from the family until the present has been opened.
+      - group: power
+        icon: sliders-horizontal
+        title: Decide how much the AI does
+        note: From just making suggestions to sorting everything. You set the dial.
+      - group: money
+        icon: users-three
+        title: See how you compare
+        note: How your spending stacks up against similar families, fully anonymous.
+      - group: everywhere
+        icon: device-mobile
+        title: Apps for phone and desktop
+        note: Proper apps for iOS and Android, and one for your computer too.
+      - group: power
+        icon: terminal-window
+        title: Shortcuts for power users
+        note: A command palette, keyboard shortcuts and even a terminal version.
+      - group: money
+        icon: chart-line-up
+        title: Track your investments
+        note: ETFs, stocks and funds next to your budget, for the full picture.
+      - group: everywhere
+        icon: receipt
+        title: Scan your receipts
+        note: Take a photo of a receipt and every item lands in the right category.
+      - group: family
+        icon: house-line
+        title: Share costs between homes
+        note: For separated parents splitting school, clothes and everything else.
+      - group: money
+        icon: calendar-dots
+        title: A calendar for your bills
+        note: See which bills are due before payday, so nothing catches you out.
+      - group: everywhere
+        icon: chat-circle-dots
+        title: Monetyo in your chats
+        note: Ask a question or add a cash payment from WhatsApp or Telegram.
+      - group: family
+        icon: target
+        title: Save for something together
+        note: A holiday or a new sofa, with everyone able to see how close you are.
+      - group: money
+        icon: repeat
+        title: Find forgotten subscriptions
+        note: Spot the streaming service nobody watches any more, and stop paying.
+      - group: power
+        icon: squares-four
+        title: Make the dashboard yours
+        note: Pick the widgets, views and charts you care about, and arrange them.
+      - group: family
+        icon: house-simple
+        title: Your home’s value
+        note: Add your home and other property to see your whole family wealth.
+      - group: money
+        icon: arrows-split
+        title: Try a “what if” first
+        note: What a new car or moving house would do to your budget, before it happens.
+    blank:
+      title: Your idea goes here
+      note: Sign up and we’ll ask you
+
+status:
+  heading: Where things stand
+  items:
+    - stage: Now
+      title: Collecting your ideas
+      body: Talking to families, gathering feedback and working out what matters most.
+    - stage: Next
+      title: The web app
+      body: On your computer or in your phone’s browser, by hand or with bank files.
+    - stage: Then
+      title: The AI assistant
+      body: It sorts your spending and answers questions about where the money went.
+    - stage: Later
+      title: Native phone apps
+      body: Proper iOS and Android apps, once the web app is working really well.
+  more:
+    stage: After that
+    title: Much more to come
+    body: Once the apps are out, we keep building what families ask for most. Here are some of the ideas already on the list.
+    cta: See all the ideas
+
+privacy:
+  heading: Your family’s money stays your family’s business.
+  lead: What a family spends says a lot about it. We wrote down how we’d handle your data before writing any code, and every part of Monetyo follows those rules.
+  items:
+    - icon: globe
+      heading: Made in Europe, kept in Europe
+      body: Built in Barcelona and stored in Frankfurt, backups included. Nothing about your family leaves the EU.
+    - icon: lock
+      heading: No bank passwords, ever
+      body: Your bank connects through a provider with {psd2}, {soc2} and {iso27001}. We never see your password.
+      terms:
+        - id: psd2
+          label: PSD2
+          tip: The EU law that lets licensed companies read your bank data only with your permission, under a regulator’s supervision.
+        - id: iso27001
+          label: ISO 27001
+          tip: The international standard for managing information security, checked every year by independent auditors.
+        - id: soc2
+          label: SOC 2 Type 2
+          tip: An independent audit that tests over several months that security controls really work as described.
+    - icon: key
+      heading: Locked for your family only
+      body: Account numbers and bank connections are encrypted with a key that belongs to your family alone.
+    - icon: trash
+      heading: Delete means gone
+      body: Close your account and we destroy your family’s key. No one can read your data again, backups included.
+    - icon: download
+      heading: Yours to take away
+      body: Download everything we hold about you, whenever you like, in a format you can take anywhere.
+    - icon: shield
+      heading: AI-native, not vibe-coded
+      body: AI helps us build faster. Decades in the industry shape the direction, the architecture and every decision.
+
+team:
+  eyebrow: The team
+  heading: A small team with a lot of miles on the clock.
+  lead: Monetyo started at our kitchen table, with the question every family asks at the end of the month. Where did the money go? We built the answer for ourselves. Now we’re building it for you.
+  linkedin: "{name} on LinkedIn"
+  members:
+    - id: luca
+      name: Luca
+      role: Product & technology
+      bio: Full-stack developer and team lead for 13+ years, with 60+ projects shipped. Happiest with a few AI agents working in parallel.
+      owns: [AI features, Infrastructure, Tech lead]
+      url: https://www.linkedin.com/in/lucapipolo/
+    - id: joan
+      name: Joan
+      role: Data & integrations
+      bio: More than 25 years building PHP platforms and the databases behind them. Makes sure everything is fast and never falls over.
+      owns: [Data architecture, APIs, Integrations]
+      url: https://www.linkedin.com/in/juanlopez4691/
+    - id: susanna
+      name: Susanna
+      role: Design
+      bio: UX project lead who loves research as much as pixels. Talks to people first, then designs screens nobody has to think twice about.
+      owns: [User experience, User interface]
+      url: https://www.linkedin.com/in/susannacasali/
+
+faq:
+  heading: Glad you asked.
+  items:
+    - question: When can I use it?
+      answer: >-
+        We’re building as fast as we can, but we won’t ship until the
+        experience, privacy and security are right. No shortcuts. People on the
+        list will be the first to try it.
+    - question: How much will it cost?
+      answer: >-
+        We’re weighing a few options: a subscription per family, a free plan
+        with paid extras, a free trial, or an open source version you can host
+        yourself next to a paid cloud version. People on the list will help us
+        choose.
+    - question: Will it work with my bank?
+      answer: >-
+        Yes. We’ll connect to banks across Europe through
+        <a href="https://plaid.com/en-eu/" target="_blank" rel="noopener noreferrer">Plaid</a>,
+        which is licensed under {psd2}, audited for {soc2} and certified to
+        {iso27001}. Until your bank is supported, you can upload a file from any
+        bank, scan receipts or type payments in by hand.
+      terms:
+        - id: psd2
+          label: PSD2
+          tip: The EU law that lets licensed companies read your bank data only with your permission, under a regulator’s supervision.
+        - id: soc2
+          label: SOC 2 Type 2
+          tip: An independent audit that tests over several months that security controls really work as described.
+        - id: iso27001
+          label: ISO 27001
+          tip: The international standard for managing information security, checked every year by independent auditors.
+    - question: Can the whole family use it?
+      answer: >-
+        Yes, however your family is made up. You decide who has full control,
+        who can add and edit, and who only sees certain parts, whether that’s a
+        partner, a flatmate or a financial adviser. Each person can also arrange
+        their own widgets, views and tables.
+    - question: What happens to my data when I use the AI?
+      answer: >-
+        The AI assistant will see as little as possible. Names and account
+        numbers are removed before anything leaves your account, small models
+        run on our own servers in Europe, and on-device AI such as Apple
+        Intelligence is used where your phone supports it. It’s optional, it
+        can only read and sort your spending, never move money, and your data
+        is never used to train models.
+    - question: Will Monetyo be open source?
+      answer: >-
+        We’d love it to be, and we’re seriously considering it: we use open
+        source every day, and it would mean you always control your data. We’re
+        working out how to do it while keeping Monetyo sustainable, and we’d
+        like to hear what you think.
+    - question: What will you email me?
+      answer: >-
+        A message when there’s something to try, and a short survey when we
+        have a decision to make. Your answers aren’t linked to your email
+        unless you choose to leave it for a longer interview. Every email has a
+        link to unsubscribe.
+
+join:
+  heading: Get early access and help shape Monetyo
+  lead: We’ll email you when there’s something to try, and now and then with a short survey.

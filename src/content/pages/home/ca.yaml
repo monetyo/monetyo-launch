@@ -1,0 +1,558 @@
+title: "Monetyo: el pressupost familiar amb IA integrada"
+description: Un pressupost per a tota la família, amb un assistent que classifica les despeses, llegeix tiquets i et diu on van els diners. Les dades, a Europa.
+
+hero:
+  heading:
+    - On han anat els diners?
+    - Pregunta-ho a Monetyo.
+  lead: Tot el que gasta la teva família en un sol pressupost, i el que queda per a aquest mes. Monetyo posa cada pagament a la categoria que toca i t’avisa a temps quan un pressupost està a punt d’esgotar-se.
+
+app:
+  label: "L’app de Monetyo: el resum d’una llar amb els pressupostos del mes, els últims moviments i un assistent que respon una pregunta sobre la despesa en restaurants."
+  household: Ferrer–Lindqvist
+  initials: FL
+  members: 3 membres
+  nav: [Resum, Moviments, Pressupostos, Comptes, Informes, Pregunta a Monetyo]
+  sync: 3 comptes al dia, actualitzats fa 2 min
+  title: Resum
+  period: Novembre
+  people:
+    - { initial: M, tint: blue }
+    - { initial: J, tint: peach }
+    - { initial: A, tint: ink }
+  spent:
+    label: Gastat aquest mes
+    value: 2.252 €
+    of: de 2.700 €
+    percent: 83
+  stats:
+    - label: Queda per gastar
+      value: 448 €
+      note: 12 dies, 37 € al dia
+    - label: Ingressos
+      value: 4.730 €
+      note: Ja hi són els dos sous
+      positive: true
+  budgets:
+    heading: Pressupostos
+    more: Mostra-ho tot
+    items:
+      - {
+          name: Casa i lloguer,
+          category: home,
+          percent: 100,
+          note: Pagat,
+          state: paid,
+        }
+      - {
+          name: Alimentació,
+          category: groceries,
+          percent: 69,
+          note: Queden 188 €,
+        }
+      - {
+          name: Fills,
+          category: kids,
+          percent: 100,
+          note: 36 € de més,
+          state: over,
+        }
+      - { name: Transport, category: transport, percent: 52, note: Queden 86 € }
+      - {
+          name: Restaurants,
+          category: eatingOut,
+          percent: 64,
+          note: Queden 54 €,
+        }
+      - { name: Altres, category: other, percent: 58, note: Queden 156 € }
+  latest:
+    heading: Últims
+    note: Ordenats automàticament
+    items:
+      - {
+          initial: L,
+          tint: lemonSoft,
+          name: Lidl,
+          detail: Alimentació · Marta,
+          amount: "−63,18 €",
+        }
+      - {
+          initial: S,
+          tint: coralSoft,
+          name: Menjador escolar,
+          detail: Fills · Jonas,
+          amount: "−92,00 €",
+        }
+      - {
+          initial: I,
+          tint: greenSoft,
+          name: "ICA Nära, Malmö",
+          detail: Alimentació · Jonas,
+          amount: "−420,00 kr",
+          converted: "36,72 €",
+        }
+      - {
+          initial: F,
+          tint: blueSoft,
+          name: Farmacia Sants,
+          detail: Salut · Marta,
+          amount: "−18,45 €",
+        }
+  assistant:
+    heading: Pregunta a Monetyo
+    question: Quant ens vam gastar menjant fora a l’octubre?
+    answer:
+      lead: 486,20 €
+      rest: en 14 moviments. Són 61 € més que al setembre, sobretot pel sopar d’aniversari (75 €).
+    bars:
+      - { label: Set, value: 425 €, percent: 87 }
+      - { label: Oct, value: 486 €, percent: 100, highlight: true }
+    suggestions: [Mostra els 14 moviments, Per què puja la compra?]
+    placeholder: Pregunta pels diners
+
+facts:
+  label: Dades ben protegides
+  items:
+    - { icon: globe, text: Dades guardades a Europa }
+    - { icon: eye, text: No venem mai les dades }
+    - { icon: shield, text: Xifrades i privades }
+    - { icon: unlock, text: Emporta’t les teves dades }
+
+ai:
+  eyebrow: Monetyo IA
+  heading: Pregunta pels diners com ho faries a una persona.
+  lead: L’assistent treballa amb els teus propis moviments, així que quan preguntes quant us vau gastar menjant fora el mes passat, et dona la xifra real.
+  ask:
+    heading: Pregunta com ho diries
+    body: Sense filtres ni informes per configurar. Escriu la pregunta com la faries a la taula de la cuina i tindràs una xifra amb els pagaments que l’expliquen.
+    label: "Una conversa amb l’assistent. Pregunta: què ens ha costat el cotxe aquest any? Resposta: 2.184 euros fins ara, repartits entre benzina, assegurança, una reparació al març, i pàrquing i peatges."
+    question: Què ens ha costat el cotxe aquest any?
+    answer:
+      lead: 2.184 € fins ara.
+      rest: La benzina és el que pesa més, i la reparació de març és la que no estava prevista.
+    bars:
+      - { label: Benzina, value: 962 €, percent: 100 }
+      - { label: Assegurança, value: 640 €, percent: 66 }
+      - { label: Reparació de març, value: 412 €, percent: 43, highlight: true }
+      - { label: Pàrquing i peatges, value: 170 €, percent: 18 }
+    suggestions: [Compara amb l’any passat, Mostra els moviments]
+  sort:
+    heading: Cada pagament, al seu lloc
+    body: Codis com «TPV*FARMACIA SANTS» es converteixen en un nom i una categoria que reconeixes. Monetyo aprèn de cada correcció que fas.
+    label: "Quatre moviments bancaris endreçats i classificats automàticament: una farmàcia a Salut, un supermercat a Alimentació, un bitllet de tren a Transport i un Bizum que l’usuari ha passat a Restaurants, cosa que Monetyo recordarà."
+    items:
+      - {
+          name: Farmacia Sants,
+          raw: TPV*FARMACIA SANTS BCN ES,
+          category: health,
+          categoryName: Salut,
+        }
+      - {
+          name: Lidl,
+          raw: COMPRA TARJ. LIDL 0412 BARCELONA,
+          category: groceries,
+          categoryName: Alimentació,
+        }
+      - {
+          name: Renfe,
+          raw: RENFE VIAJEROS INTERNET MADRID,
+          category: transport,
+          categoryName: Transport,
+        }
+      - name: Marta, sopar a mitges
+        raw: BIZUM DE MARTA F. CONCEPTO CENA
+        category: eatingOut
+        categoryName: Restaurants
+        learned: L’has tret de Transferències. La pròxima vegada, automàtic.
+  receipts:
+    heading: Fes-li una foto al tiquet
+    body: Monetyo llegeix el tiquet, el reparteix entre les teves categories i l’adjunta al pagament. També funciona amb els extractes del banc.
+    label: Un tiquet de supermercat de 63,18 euros llegit per Monetyo i repartit entre Alimentació, Llar i Salut.
+    receipt:
+      store: LIDL
+      address: C. de Sants 112
+      lines:
+        - { item: Tomàquets, price: "2,39" }
+        - { item: Llet x6, price: "5,34" }
+        - { item: Detergent, price: "8,99" }
+        - { item: Pasta de dents, price: "2,99" }
+        - { item: + 14 articles, price: "43,47" }
+      totalLabel: TOTAL
+      total: "63,18"
+    result:
+      store: Lidl
+      amount: "−63,18 €"
+      splits:
+        - { name: Alimentació, category: groceries, amount: "51,20 €" }
+        - { name: Llar, category: home, amount: "8,99 €" }
+        - { name: Salut, category: health, amount: "2,99 €" }
+      meta: 14 nov. · tiquet adjunt
+  insights:
+    heading: Un avís quan encara hi ets a temps
+    body: Si la compra va camí de passar-se del pressupost, ho sabràs a mig mes, quan encara hi pots fer alguna cosa. I quan s’acaba el mes, reps un resum breu.
+    chart:
+      title: Alimentació, dia 18 de 30
+      warning: Se’n passarà 40 €
+      label: "Gràfic de línies: la despesa en alimentació arriba a 412 euros el dia 18 i es preveu que acabi el mes a 640, per sobre del pressupost de 600 euros."
+      budget: Pressupost 600 €
+      today: Avui 412 €
+      forecast: Previsió 640 €
+    notes:
+      - heading: La llum va un 22% per sobre d’un novembre normal.
+        body: Mateixa tarifa, més kWh.
+      - heading: Octubre va tancar 212 € sota pressupost.
+        body: Sobretot pel transport.
+
+household:
+  heading: Un pressupost que veu tota la família
+  lead: Reuneix en un sol lloc tothom qui comparteix els diners de casa, perquè tots mireu les mateixes xifres.
+  together:
+    heading: Cada persona, l’accés que li toca
+    body: Dona el control total a algú, deixa que altres afegeixin i editin, o comparteix només les parts necessàries, com els informes amb un assessor financer. A més, cadascú pot configurar els seus widgets, vistes i taules.
+    label: "Membres de la llar: la Marta té el control total, en Jonas pot afegir i editar, i la Clara, assessora financera, només pot veure els informes."
+    title: Membres
+    invite: Convida
+    members:
+      - {
+          initial: M,
+          tint: blue,
+          name: Marta Ferrer,
+          description: "Control total, inclosa la facturació",
+          role: Titular,
+          owner: true,
+        }
+      - {
+          initial: J,
+          tint: peach,
+          name: Jonas Lindqvist,
+          description: Afegeix i edita-ho tot,
+          role: Editor,
+        }
+      - {
+          initial: C,
+          tint: ink,
+          name: "Clara, assessora financera",
+          description: Només veu els informes,
+          role: Lectora,
+        }
+  budgets:
+    heading: Traspassos i devolucions, ben comptats
+    body: Passar diners a l’estalvi no és gastar, i una devolució no és un ingrés extra. Monetyo els separa, i així el pressupost mostra el que has gastat de debò.
+    label: "Tres moviments: un traspàs de 400 euros a l’estalvi que queda fora dels pressupostos, una devolució de 29,90 euros que torna al pressupost de Roba i una despesa de 18,45 euros a la farmàcia que compta a Salut."
+    items:
+      - {
+          kind: transfer,
+          name: Compte comú a Estalvi,
+          detail: Traspàs. Fora dels pressupostos,
+          amount: "400,00 €",
+        }
+      - {
+          kind: refund,
+          name: "Botiga d’esports, vambes tornades",
+          detail: Devolució. Es retorna a Roba,
+          amount: "+29,90 €",
+        }
+      - {
+          kind: expense,
+          initial: F,
+          name: Farmacia Sants,
+          detail: Despesa. Es descompta de Salut,
+          amount: "−18,45 €",
+        }
+  sources:
+    heading: Quatre maneres d’afegir despeses
+    body: Arribi com arribi un pagament a Monetyo, va a parar al mateix pressupost i compta igual.
+    items:
+      - {
+          id: bank,
+          name: Connecta els bancs,
+          note: Se sincronitza sol,
+          badge: Banc,
+        }
+      - {
+          id: file,
+          name: Puja un extracte,
+          note: De qualsevol banc,
+          badge: Fitxer,
+        }
+      - {
+          id: receipt,
+          name: Escaneja un tiquet,
+          note: Article per article,
+          badge: Tiquet,
+        }
+      - {
+          id: hand,
+          name: Apunta’l a mà,
+          note: Pagaments en efectiu,
+          badge: A mà,
+        }
+    label: "Quatre pagaments en una mateixa llista, cadascun afegit d’una manera: Lidl des del banc, Renfe des d’un fitxer pujat, Farmacia Sants des d’un tiquet escanejat i el mercat a mà."
+    title: Últims
+    rows:
+      - {
+          source: bank,
+          initial: L,
+          tint: lemonSoft,
+          name: Lidl,
+          detail: Alimentació,
+          amount: "−63,18 €",
+        }
+      - {
+          source: file,
+          initial: R,
+          tint: blueSoft,
+          name: Renfe,
+          detail: Transport,
+          amount: "−24,60 €",
+        }
+      - {
+          source: receipt,
+          initial: F,
+          tint: greenSoft,
+          name: Farmacia Sants,
+          detail: Salut,
+          amount: "−18,45 €",
+        }
+      - {
+          source: hand,
+          initial: M,
+          tint: coralSoft,
+          name: Mercat,
+          detail: Alimentació,
+          amount: "−12,00 €",
+        }
+  currencies:
+    heading: Despeses en una altra moneda?
+    body: De vacances a Suècia o pagant alguna cosa al Regne Unit? Ho veus al pressupost en euros, al canvi d’aquell dia, i continues veient l’import original.
+    from: { label: Pagat a Malmö, amount: "420,00 kr" }
+    to: { label: Als teus informes, amount: "36,72 €" }
+
+roadmap:
+  eyebrow: Fes-lo amb nosaltres
+  heading: Tu decideixes què fem després.
+  lead: Tenim una llista llarga d’idees i només som tres per fer-les, així que preguntem a la gent d’aquesta llista per on hem de començar.
+  steps:
+    - title: Deixa el teu correu i confirma’l.
+      body: Així sabem que no et fa res que et preguntem.
+    - title: Respon unes preguntes curtes.
+      body: Només si hi ha una decisió real sobre la taula. Salta’t les que vulguis.
+    - title: Mira què hem fet amb les respostes.
+      body: Expliquem què ha respost la gent i què estem fent a partir d’això.
+  ideas:
+    heading: Només algunes idees de la llista
+    all: Totes
+    filterLabel: Ordena les idees per tema
+    groups:
+      - { id: family, label: Per a la família }
+      - { id: money, label: Diners amb cap }
+      - { id: everywhere, label: Allà on siguis }
+      - { id: power, label: Per a experts }
+    # The order is deliberate: no two notes of the same theme touch, in a
+    # swipe row or a grid of 2 or 4 columns. Check that before reordering.
+    items:
+      - group: family
+        icon: gift
+        title: Un regal ben amagat
+        note: Amaga una compra a la família fins que s’hagi obert el regal.
+      - group: power
+        icon: sliders-horizontal
+        title: Tu decideixes quant fa la IA
+        note: Des de només suggerir fins a classificar-ho tot. Tu poses el límit.
+      - group: money
+        icon: users-three
+        title: Compara’t amb altres
+        note: Com gastes al costat de famílies semblants, amb total anonimat.
+      - group: everywhere
+        icon: device-mobile
+        title: Apps per a mòbil i ordinador
+        note: Apps de veritat per a iOS i Android, i també una per a l’ordinador.
+      - group: power
+        icon: terminal-window
+        title: Dreceres per als experts
+        note: Paleta d’ordres, dreceres de teclat i fins i tot una versió de terminal.
+      - group: money
+        icon: chart-line-up
+        title: Segueix les inversions
+        note: ETF, accions i fons al costat del pressupost, per veure-ho tot.
+      - group: everywhere
+        icon: receipt
+        title: Escaneja els tiquets
+        note: Fes una foto al tiquet i cada article va a parar a la categoria que toca.
+      - group: family
+        icon: house-line
+        title: Despeses entre dues cases
+        note: Per a pares separats que es reparteixen l’escola, la roba i tota la resta.
+      - group: money
+        icon: calendar-dots
+        title: Un calendari per als rebuts
+        note: Mira quins rebuts arriben abans de cobrar, i que res no et sorprengui.
+      - group: everywhere
+        icon: chat-circle-dots
+        title: Monetyo als teus xats
+        note: Pregunta o apunta un pagament en efectiu des de WhatsApp o Telegram.
+      - group: family
+        icon: target
+        title: Un objectiu d’estalvi comú
+        note: Unes vacances o un sofà nou, i que tothom pugui veure quant us falta.
+      - group: money
+        icon: repeat
+        title: Troba subscripcions oblidades
+        note: Troba el servei d’streaming que ningú no mira i deixa de pagar-lo.
+      - group: power
+        icon: squares-four
+        title: Personalitza el tauler
+        note: Tria els widgets, vistes i gràfics que t’interessen, i ordena’ls.
+      - group: family
+        icon: house-simple
+        title: Què val casa teva
+        note: Suma casa teva i altres immobles i veuràs tot el patrimoni familiar.
+      - group: money
+        icon: arrows-split
+        title: Prova abans un «i si…?»
+        note: Com quedaria el pressupost amb un cotxe nou o una mudança, abans de fer-ho.
+    blank:
+      title: La teva idea, aquí
+      note: Apunta’t i t’ho preguntarem
+
+status:
+  heading: En quin punt som
+  items:
+    - stage: Ara
+      title: Recollim les teves idees
+      body: Parlem amb famílies, escoltem què ens diuen i mirem què és el que importa més.
+    - stage: Tot seguit
+      title: L’app web
+      body: A l’ordinador o al navegador del mòbil, a mà o amb fitxers del banc.
+    - stage: Després
+      title: L’assistent amb IA
+      body: Classifica les despeses i respon quan vols saber on han anat els diners.
+    - stage: Més tard
+      title: Apps natives de mòbil
+      body: Apps de veritat per a iOS i Android, quan l’app web funcioni molt bé.
+  more:
+    stage: Més enllà
+    title: Molt més per venir
+    body: Quan surtin les apps, continuarem fent el que més demanin les famílies. Aquí tens algunes de les idees que ja són a la llista.
+    cta: Mira totes les idees
+
+privacy:
+  heading: Els diners de casa teva són cosa de casa teva.
+  lead: El que gasta una família diu molt d’ella. Vam deixar per escrit com tractaríem les teves dades abans de programar res, i cada part de Monetyo segueix aquestes normes.
+  items:
+    - icon: globe
+      heading: Fet a Europa, guardat a Europa
+      body: Creat a Barcelona i allotjat a Frankfurt, còpies de seguretat incloses. Res de la teva família no surt de la UE.
+    - icon: lock
+      heading: Contrasenyes del banc, mai
+      body: El teu banc es connecta amb un proveïdor que té {psd2}, {soc2} i {iso27001}. No veiem mai la teva contrasenya.
+      terms:
+        - id: psd2
+          label: PSD2
+          tip: La llei de la UE que permet a empreses autoritzades llegir les dades del teu banc només amb permís teu i sota control d’un regulador.
+        - id: iso27001
+          label: ISO 27001
+          tip: La norma internacional per gestionar la seguretat de la informació, revisada cada any per auditors independents.
+        - id: soc2
+          label: SOC 2 Tipus 2
+          tip: Una auditoria independent que comprova durant mesos que els controls de seguretat funcionen com diuen.
+    - icon: key
+      heading: Amb una clau només vostra
+      body: Els números de compte i les connexions bancàries es xifren amb una clau que només és de la teva família.
+    - icon: trash
+      heading: Esborrar és esborrar
+      body: Tanques el compte i destruïm la clau de la família. Ningú no podrà tornar a llegir les dades, ni a les còpies.
+    - icon: download
+      heading: Te les pots endur
+      body: Descarrega tot el que tenim sobre tu quan vulguis, en un format que pots portar a qualsevol lloc.
+    - icon: shield
+      heading: IA nativa, no feta a ull
+      body: La IA ens ajuda a construir més de pressa. Dècades al sector marquen la direcció, l’arquitectura i cada decisió.
+
+team:
+  eyebrow: L’equip
+  heading: Un equip petit, però amb molts anys d’ofici.
+  lead: Monetyo va néixer a la taula de la nostra cuina, amb la pregunta que es fa tota família a final de mes. On han anat els diners? Vam construir la resposta per a nosaltres. Ara la construïm per a tu.
+  linkedin: "{name} a LinkedIn"
+  members:
+    - id: luca
+      name: Luca
+      role: Producte i tecnologia
+      bio: Desenvolupador full-stack i cap d’equip fa més de 13 anys, amb més de 60 projectes llançats. Feliç amb uns quants agents d’IA en paral·lel.
+      owns: [Funcions d’IA, Infraestructura, Cap tècnic]
+      url: https://www.linkedin.com/in/lucapipolo/
+    - id: joan
+      name: Joan
+      role: Dades i integracions
+      bio: Més de 25 anys construint plataformes PHP i les bases de dades que les sostenen. S’encarrega que tot vagi ràpid i que no caigui mai.
+      owns: [Arquitectura de dades, API, Integracions]
+      url: https://www.linkedin.com/in/juanlopez4691/
+    - id: susanna
+      name: Susanna
+      role: Disseny
+      bio: UX project lead a qui la recerca agrada tant com els píxels. Primer parla amb la gent i després dissenya pantalles que s’entenen a la primera.
+      owns: [Experiència d’usuari, Interfície d’usuari]
+      url: https://www.linkedin.com/in/susannacasali/
+
+faq:
+  heading: Bona pregunta.
+  items:
+    - question: Quan el podré usar?
+      answer: >-
+        Anem tan de pressa com podem, però no el traurem fins que l’experiència,
+        la privadesa i la seguretat estiguin a punt. Sense dreceres. La gent de
+        la llista serà la primera a provar-lo.
+    - question: Quant costarà Monetyo?
+      answer: >-
+        Sospesem diverses opcions: una subscripció per família, un pla gratuït
+        amb extres de pagament, una prova gratuïta, o una versió de codi obert
+        que pots allotjar tu mateix al costat d’una de pagament al núvol. La gent de
+        la llista ens ajudarà a triar.
+    - question: Funcionarà amb el meu banc?
+      answer: >-
+        Sí. Ens connectarem a bancs de tot Europa a través de
+        <a href="https://plaid.com/en-eu/" target="_blank" rel="noopener noreferrer">Plaid</a>,
+        que té llicència {psd2}, està auditat per {soc2} i certificat en
+        {iso27001}. Mentre el teu banc no hi sigui, pots pujar un fitxer de
+        qualsevol banc, escanejar tiquets o apuntar els pagaments a mà.
+      terms:
+        - id: psd2
+          label: PSD2
+          tip: La llei de la UE que permet a empreses autoritzades llegir les dades del teu banc només amb permís teu i sota control d’un regulador.
+        - id: soc2
+          label: SOC 2 Tipus 2
+          tip: Una auditoria independent que comprova durant mesos que els controls de seguretat funcionen com diuen.
+        - id: iso27001
+          label: ISO 27001
+          tip: La norma internacional per gestionar la seguretat de la informació, revisada cada any per auditors independents.
+    - question: Hi pot entrar tota la família?
+      answer: >-
+        Sí, sigui com sigui la teva família. Tu decideixes qui té el control
+        total, qui pot afegir i editar, i qui només en veu algunes parts, tant si
+        és la teva parella com algú amb qui comparteixes pis o un assessor
+        financer. A més, cadascú pot organitzar els seus widgets, vistes i
+        taules.
+    - question: Què se’n fa, de les meves dades, amb la IA?
+      answer: >-
+        L’assistent d’IA veurà el mínim possible. Els noms i els números de
+        compte s’eliminen abans que res surti del teu compte, els models petits
+        funcionen als nostres propis servidors a Europa i, quan el mòbil ho
+        permet, es fa servir IA al mateix dispositiu, com Apple Intelligence. És
+        opcional, només pot llegir i classificar les despeses, mai moure diners,
+        i les teves dades no s’utilitzen mai per entrenar models.
+    - question: Monetyo serà de codi obert?
+      answer: >-
+        Ens agradaria molt, i ens ho estem plantejant seriosament: fem servir
+        codi obert cada dia, i voldria dir que les teves dades sempre són sota
+        el teu control. Estem mirant com fer-ho sense que Monetyo deixi de ser
+        sostenible, i volem saber què en penses.
+    - question: Què m’enviareu per correu?
+      answer: >-
+        Un missatge quan hi hagi alguna cosa per provar, i una enquesta curta
+        quan hàgim de decidir alguna cosa. Les respostes no van lligades al teu
+        correu, tret que el deixis per a una entrevista més llarga. Cada correu
+        porta un enllaç per donar-te de baixa.
+
+join:
+  heading: Entra-hi abans i ajuda’ns a fer Monetyo
+  lead: T’escriurem quan hi hagi alguna cosa per provar i, de tant en tant, amb una enquesta curta.

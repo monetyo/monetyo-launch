@@ -1,9 +1,9 @@
 title: Cookie policy
-description: L’unico cookie del sito di Monetyo, perché non c’è un banner dei cookie e come statistiche, errori e antispam funzionano senza tracciarti.
+description: L’unico cookie del sito di Monetyo e perché non serve un banner. Come misuriamo visite ed errori e fermiamo lo spam senza tracciarti.
 updated: 2026-11-22
 updatedLabel: "Ultimo aggiornamento: {date}"
 intro: >-
-  Questa policy vale solo per il sito monetyo.com; l’app Monetyo avrà la sua. Il sito imposta un solo cookie, e solo quando scegli una lingua. Non ci sono cookie pubblicitari né nulla che ti segua in giro per il web, ed è per questo che non vedrai nessun banner dei cookie.
+  Questa policy si applica solo al sito monetyo.com; l’app Monetyo avrà la sua. Il sito usa un solo cookie, e solo quando scegli una lingua. Non usiamo cookie pubblicitari né strumenti che ti seguono da un sito all’altro: per questo non vedrai nessun banner dei cookie.
 
 sections:
   - heading: Chi è responsabile
@@ -13,73 +13,72 @@ sections:
       - term: Contatto
         description: <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>
       - term: Dati identificativi
-        description: Trovi tutti i dettagli nelle <a href="/legal-notice/">note legali</a>.
+        description: Trovi tutti i dati nelle <a href="/legal-notice/">note legali</a>.
 
   - heading: Cosa salviamo nel tuo browser
     body: >-
-      Aprire una pagina non salva nulla nel tuo browser. L’unica cosa che il
-      sito memorizza è la tua lingua, e solo quando sei tu a sceglierla.
+      Quando apri una pagina non salviamo nulla nel tuo browser. L’unica informazione che memorizziamo è la lingua, e solo quando la scegli tu.
     items:
       - term: locale (cookie)
         description: >-
-          Ricorda la lingua che hai scelto, così la prossima volta il sito si
-          apre in quella lingua. Viene impostato quando usi il selettore della
-          lingua o apri una pagina in una lingua specifica. Contiene solo il
-          codice della lingua, <code>en</code>, <code>es</code>, <code>ca</code> o <code>it</code>, e scade dopo
-          un anno.
+          Ricorda la lingua che hai scelto, così la volta successiva il sito si
+          apre direttamente in quella lingua. Viene impostato quando usi il
+          selettore della lingua o apri una pagina in una lingua specifica.
+          Contiene solo il codice della lingua, <code>en</code>, <code>es</code>, <code>ca</code> o <code>it</code>, e
+          scade dopo un anno.
 
-  - heading: Perché niente banner dei cookie
+  - heading: Perché non c’è un banner dei cookie
     body: >-
       L’articolo 22.2 della
       <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Legge spagnola 34/2002 (LSSI-CE)</a>
       non richiede il consenso per i cookie strettamente necessari a fornire
-      un servizio richiesto esplicitamente dall’utente. Ricordare la lingua
-      che hai scelto rientra proprio in questo caso, come spiega l’autorità
-      spagnola per la protezione dei dati nella sua
+      un servizio richiesto espressamente dall’utente. Ricordare la lingua che
+      hai scelto rientra in questo caso, come spiega l’autorità spagnola per la
+      protezione dei dati nella sua
       <a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener noreferrer">guida sull’uso dei cookie</a>.
-      Dato che il sito non imposta altri cookie e non salva nient’altro sul tuo
-      dispositivo, il banner non serve.
+      Poiché il sito non usa altri cookie e non salva nient’altro sul tuo
+      dispositivo, il banner non è necessario.
 
   - heading: Strumenti che non usano cookie
     body: >-
-      Questi strumenti ci aiutano a gestire il sito. Nessuno imposta cookie o
-      salva qualcosa nel tuo browser.
+      Usiamo questi strumenti per gestire il sito. Nessuno di loro imposta
+      cookie o salva dati nel tuo browser.
     items:
       - term: Vercel Web Analytics
         description: >-
           <a href="https://vercel.com/docs/analytics" target="_blank" rel="noopener noreferrer">Vercel Web Analytics</a>
-          conta le visite per farci capire quali pagine vengono lette. Raggruppa
-          le pagine viste dallo stesso visitatore con un hash della richiesta
-          che si azzera ogni 24 ore, quindi le visite non si possono collegare
-          tra giorni o siti diversi, e non salva il tuo indirizzo IP. Leggi
+          conta le visite, così sappiamo quali pagine vengono lette. Riconosce
+          le pagine viste dallo stesso visitatore tramite un hash della
+          richiesta che cambia ogni 24 ore: le visite non si possono quindi
+          collegare tra giorni o siti diversi. Non salva il tuo indirizzo IP.
+          Scopri
           <a href="https://vercel.com/docs/analytics/privacy-policy" target="_blank" rel="noopener noreferrer">come tratta i dati</a>.
       - term: Sentry
         description: >-
           <a href="https://sentry.io/" target="_blank" rel="noopener noreferrer">Sentry</a>
-          raccoglie le segnalazioni di errore così possiamo trovare e risolvere i
-          problemi. È impostato per escludere indirizzi IP, contenuti dei moduli
-          e cookie, e non registra la tua sessione.
+          raccoglie le segnalazioni di errore, così possiamo individuare e
+          risolvere i problemi. È configurato per escludere indirizzi IP,
+          contenuto dei moduli e cookie, e non registra la tua sessione.
       - term: Cloudflare Turnstile
         description: >-
           <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener noreferrer">Turnstile</a>
-          verifica che le iscrizioni arrivino da persone, solo nel modulo di
-          iscrizione. Durante la verifica tratta il tuo indirizzo IP e alcuni
-          dettagli del tuo browser. Leggi il
+          verifica che le iscrizioni arrivino da persone e viene usato solo nel
+          modulo di iscrizione. Durante la verifica tratta il tuo indirizzo IP e
+          alcune informazioni sul tuo browser. Consulta il
           <a href="https://www.cloudflare.com/turnstile-privacy-policy/" target="_blank" rel="noopener noreferrer">Turnstile Privacy Addendum</a>.
       - term: Google Search Console
         description: >-
           <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Search Console</a>
-          ci mostra come appare il sito nei risultati di Google. Non gira in
-          alcun modo su questo sito.
+          ci mostra come appare il sito nei risultati di Google. Non aggiunge alcun codice a questo sito.
 
-  - heading: Come bloccare le statistiche
+  - heading: Come non comparire nelle statistiche
     body: >-
-      Se non vuoi comparire nelle statistiche, un blocco contenuti come
+      Se preferisci non comparire nelle statistiche, puoi usare un’estensione che blocca i tracker, come
       <a href="https://ublockorigin.com/" target="_blank" rel="noopener noreferrer">uBlock
-      Origin</a> impedisce a Vercel Web Analytics di caricarsi. Il sito funziona
-      esattamente uguale anche senza.
+      Origin</a>, che impedisce il caricamento di Vercel Web Analytics. Il sito
+      funziona esattamente allo stesso modo.
 
-  - heading: Modifiche alla policy
+  - heading: Modifiche a questa policy
     body: >-
-      Se un giorno aggiungeremo qualcosa che richiede il tuo consenso, te lo
-      chiederemo prima di attivarlo e aggiorneremo prima questa pagina.
+      Se in futuro aggiungeremo qualcosa che richiede il tuo consenso,
+      aggiorneremo subito questa pagina e ti chiederemo il consenso prima di attivarlo.

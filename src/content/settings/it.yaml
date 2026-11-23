@@ -3,8 +3,8 @@ skipLink: Vai al contenuto
 contactEmail: hello@monetyo.com
 
 header:
-  homeLabel: Home di Monetyo
-  navLabel: Principale
+  homeLabel: Monetyo, pagina iniziale
+  navLabel: Menu principale
   menuLabel: Menu
   cta: Ricevi le novità
   nav:
@@ -28,7 +28,7 @@ languages:
     it: Italiano
 
 footer:
-  copyright: © {year} Monetyo. I conti di casa, gestiti con intelligenza.
+  copyright: © {year} Monetyo. Il modo più semplice per gestire i soldi di famiglia.
   linksLabel: Informazioni legali
   links:
     - label: Note legali
@@ -39,36 +39,36 @@ footer:
       href: /cookies/
     - label: Sicurezza
       href: /security/
-    - label: Contenuti IA
+    - label: Uso dell’IA
       href: /ai-content/
 
 waitlist:
   emailLabel: Indirizzo email
   emailPlaceholder: La tua email
-  consent: Novità sul lancio e qualche breve sondaggio. Ti cancelli quando vuoi.
+  consent: Ti avviseremo quando Monetyo sarà pronto e, ogni tanto, ti manderemo un breve sondaggio. Puoi annullare l’iscrizione in qualsiasi momento.
   privacyLink: Informativa sulla privacy
   submit: Ricevi le novità
-  sending: Invio in corso
-  noscript: La lista d’attesa usa JavaScript per bloccare lo spam. Attivalo, oppure scrivi a hello@monetyo.com.
-  successHeading: Quasi fatto. Controlla la posta.
-  successBody: Ti abbiamo mandato un link di conferma. Un clic e ci sei.
+  sending: Invio in corso…
+  noscript: Per proteggere la lista dallo spam serve JavaScript. Attivalo oppure scrivici a hello@monetyo.com.
+  successHeading: "Ci sei quasi: controlla la tua email."
+  successBody: Ti abbiamo inviato un link di conferma. Basta un clic per completare l’iscrizione.
   errors:
-    required: Inserisci la tua email.
-    email: Questo non sembra un indirizzo email.
-    tooLong: Indirizzo troppo lungo.
-    verification: Non siamo riusciti a verificare che tu sia una persona. Ricarica la pagina e riprova.
+    required: Inserisci il tuo indirizzo email.
+    email: Questo indirizzo email non sembra valido.
+    tooLong: L’indirizzo è troppo lungo.
+    verification: Non siamo riusciti a verificare che tu non sia un robot. Ricarica la pagina e riprova.
     rateLimited: Troppi tentativi. Aspetta un minuto e riprova.
-    generic: Qualcosa è andato storto da parte nostra. Riprova tra un momento.
+    generic: C’è stato un problema da parte nostra. Riprova tra qualche istante.
   notice:
     heading: Protezione dei dati
     items:
       - term: Titolare
         description: Luca Pipolo, Barcellona, Spagna.
       - term: Finalità
-        description: Inviarti novità sul lancio e brevi sondaggi su Monetyo.
+        description: Inviarti le novità sul lancio di Monetyo e qualche breve sondaggio.
       - term: Base giuridica
-        description: Il tuo consenso, revocabile in qualsiasi momento con il link in ogni email.
+        description: Il tuo consenso, che puoi revocare in qualsiasi momento con il link presente in ogni email.
       - term: Destinatari
-        description: I fornitori che ospitano il sito e il database, inviano le email e raccolgono le risposte ai sondaggi, tutti sotto contratto. Nessun altro.
+        description: I fornitori che ospitano il sito e il database, inviano le email e raccolgono le risposte ai sondaggi, tutti vincolati da contratto. Nessun altro.
       - term: I tuoi diritti
-        description: Accesso, rettifica, cancellazione, opposizione e portabilità, scrivendo a privacy@monetyo.com.
+        description: "Accesso, rettifica, cancellazione, opposizione e portabilità: basta scrivere a privacy@monetyo.com."

@@ -1,12 +1,12 @@
-subject: Monetyo è pronto e puoi provarlo
-preheader: La tua famiglia è tra le prime a entrare.
-heading: Il tuo invito a Monetyo
+subject: "Monetyo è pronto: puoi provarlo"
+preheader: La tua famiglia è tra le prime a usarlo.
+heading: Ti invitiamo a provare Monetyo
 body: |
-  Hai lasciato la tua email nella lista d’attesa per sapere quando Monetyo sarebbe stato pronto. Ora può accogliere le prime famiglie, e vorremmo che la tua fosse una di queste.
+  Avevi lasciato la tua email per sapere quando Monetyo sarebbe stato pronto. Ora le prime famiglie possono usarlo, e vorremmo che la tua fosse tra queste.
 
-  Configura la tua famiglia, aggiungi le spese e invita le persone con cui condividi i soldi. Siamo agli inizi, quindi qualcosa sarà ancora da sistemare.
+  Crea lo spazio della tua famiglia, aggiungi le spese e invita le persone con cui condividi le spese. Siamo ancora agli inizi, quindi qualcosa potrebbe non essere perfetto.
 button: Prova Monetyo
-fallback: "Il pulsante non funziona? Incolla questo link nel browser:"
-feedback: Qualcosa non è chiaro, manca o non funziona? Rispondi a questa email e diccelo. Leggiamo ogni messaggio, e quello che ci dici decide cosa sistemiamo prima.
-reason: Ti scriviamo per la tua iscrizione alla lista d’attesa di Monetyo.
-unsubscribe: Disiscriviti
+fallback: "Il pulsante non funziona? Copia questo link nel browser:"
+feedback: Qualcosa non è chiaro, manca o non funziona? Rispondi a questa email e raccontacelo. Leggiamo tutti i messaggi, e sono le tue segnalazioni a decidere cosa sistemare per primo.
+reason: Ricevi questa email perché hai lasciato il tuo indirizzo nella lista d’attesa di Monetyo.
+unsubscribe: Annulla l’iscrizione

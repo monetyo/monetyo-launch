@@ -1,6 +1,6 @@
-subject: Hai lasciato la lista d’attesa di Monetyo
-preheader: Il tuo indirizzo email è stato cancellato dalla lista.
-heading: Non sei più in lista
-body: Abbiamo cancellato il tuo indirizzo email dalla lista d’attesa di Monetyo, insieme al resto della tua iscrizione. È l’ultima email che ti mandiamo.
-records: Per 3 anni conserviamo un registro di ogni tua iscrizione, conferma o disiscrizione, per poter dimostrare cosa hai accettato. È il tempo che un’autorità per la protezione dei dati ha per intervenire su un reclamo. Questi registri non contengono il tuo indirizzo email, ma il testo che ti è stato mostrato, lo user agent del browser e un codice ricavato dal tuo indirizzo IP da cui non si può risalire all’indirizzo.
+subject: Non sei più nella lista d’attesa di Monetyo
+preheader: Abbiamo cancellato il tuo indirizzo email dalla lista.
+heading: Iscrizione annullata
+body: Abbiamo cancellato il tuo indirizzo email dalla lista d’attesa di Monetyo, insieme a tutti i dati della tua iscrizione. Questa è l’ultima email che ti mandiamo.
+records: "Per 3 anni, cioè il tempo che un’autorità per la protezione dei dati ha per intervenire su un reclamo, conserviamo traccia di ogni tua iscrizione, conferma o cancellazione, così possiamo dimostrare cosa avevi accettato. Queste registrazioni non contengono il tuo indirizzo email: contengono il testo che ti abbiamo mostrato, i dati tecnici del browser (user agent) e un codice ricavato dal tuo indirizzo IP, da cui non è possibile risalire all’indirizzo."
 rejoin: Hai cambiato idea? Puoi iscriverti di nuovo quando vuoi su monetyo.com.

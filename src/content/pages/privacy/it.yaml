@@ -1,5 +1,5 @@
 title: Informativa sulla privacy
-description: Quali dati raccolgono il sito e la lista d’attesa di Monetyo, perché, chi li tratta, per quanto li conserviamo e come esercitare i tuoi diritti GDPR.
+description: Quali dati raccogliamo con il sito e la lista d’attesa di Monetyo, perché, chi li tratta, per quanto li conserviamo e come esercitare i tuoi diritti.
 updated: 2026-11-22
 updatedLabel: "Ultimo aggiornamento: {date}"
 intro: >-
@@ -7,8 +7,7 @@ intro: >-
   i sondaggi che inviamo agli iscritti. L’app Monetyo avrà informativa sulla
   privacy, termini e pagine legali propri al momento del lancio. Raccogliamo
   solo ciò che serve per gestire la lista d’attesa, capire come viene usato il
-  sito e risolvere i problemi, non creiamo profili e non vendiamo mai i tuoi
-  dati.
+  sito e risolvere eventuali problemi. Non creiamo profili e non vendiamo mai i tuoi dati.
 
 sections:
   - heading: Chi è responsabile dei tuoi dati
@@ -32,16 +31,13 @@ sections:
     items:
       - term: Lista d’attesa
         description: >-
-          Quando ti iscrivi, salviamo il tuo indirizzo email, per chi gestisci
-          il budget se ce lo dici, la lingua e la pagina da cui ti sei iscritto
-          e le date in cui ti sei iscritto e hai confermato l’indirizzo.
+          Quando ti iscrivi, salviamo il tuo indirizzo email, per chi gestisci il budget (se ce lo indichi), la lingua e la pagina da cui è partita l’iscrizione e le date di iscrizione e di conferma dell’indirizzo.
       - term: Registro dei consensi
         description: >-
-          Ogni volta che ti iscrivi, confermi o ti disiscrivi, registriamo il
+          Ogni volta che ti iscrivi, confermi o annulli l’iscrizione, registriamo il
           testo esatto che ti è stato mostrato, la versione di questa
           informativa a cui si riferisce, data e ora, la pagina, lo user agent
-          del browser e un hash con chiave del tuo indirizzo IP, spiegato più
-          avanti. Così possiamo dimostrare cosa hai accettato e quando.
+          del browser e un hash del tuo indirizzo IP generato con una chiave segreta, come spieghiamo più avanti. Così possiamo dimostrare cosa hai accettato e quando.
       - term: Protezione antispam
         description: >-
           Il modulo di iscrizione usa Cloudflare Turnstile per distinguere le
@@ -71,7 +67,7 @@ sections:
           versioni, e il tipo di dispositivo.
       - term: Segnalazioni di errore
         description: >-
-          Quando qualcosa si rompe, Sentry raccoglie il messaggio di errore, il
+          Quando si verifica un errore, Sentry raccoglie il messaggio di errore, il
           punto del codice in cui è successo e la pagina interessata. È
           configurato per escludere indirizzi IP, contenuti dei moduli e cookie,
           e non registra la tua sessione.
@@ -89,8 +85,7 @@ sections:
         nell’ambito del loro servizio.
       - >-
         Vercel Web Analytics conta le visite senza cookie. Raggruppa le pagine
-        viste dallo stesso visitatore con un hash della richiesta che si azzera
-        ogni 24 ore, quindi le visite non si possono collegare tra giorni o siti
+        viste dallo stesso visitatore con un hash della richiesta che cambia ogni 24 ore, quindi le visite non si possono collegare tra giorni o siti
         diversi, e le statistiche che conserva non includono il tuo indirizzo
         IP. Sentry è configurato per escludere gli indirizzi IP dalle
         segnalazioni di errore.
@@ -98,20 +93,17 @@ sections:
         Quando ti iscrivi, il tuo indirizzo IP serve per la verifica di
         Turnstile. Nel registro dei consensi non salviamo il tuo indirizzo IP,
         ma un hash creato con una chiave segreta custodita altrove, che ci
-        permette di confrontare registrazioni dallo stesso indirizzo senza
+        permette di confrontare registrazioni provenienti dallo stesso indirizzo senza
         conservare l’indirizzo stesso. L’hash resta comunque un dato personale
         pseudonimizzato e viene cancellato con la sua registrazione.
 
   - heading: Basi giuridiche del trattamento
     body: >-
-      Il GDPR chiede che ogni uso di dati personali abbia una base giuridica.
-      Quale si applica dipende dal perché si usano i dati.
+      Il GDPR richiede che ogni trattamento di dati personali si fondi su una base giuridica, che cambia a seconda della finalità.
     items:
       - term: Email e sondaggi della lista
         description: >-
-          Il tuo consenso, ai sensi dell’articolo 6, paragrafo 1, lettera a), del GDPR. Lo
-          dai inviando il modulo di iscrizione, sotto una breve descrizione di
-          ciò che riceverai, e confermando il tuo indirizzo. Anche rispondere a
+          Il tuo consenso, ai sensi dell’articolo 6, paragrafo 1, lettera a), del GDPR. Lo esprimi inviando il modulo di iscrizione, dopo aver letto la breve descrizione di ciò che riceverai, e confermando il tuo indirizzo. Anche rispondere a
           un sondaggio e lasciare la tua email per un’intervista si basano sul
           consenso. Puoi revocarlo in qualsiasi momento con il link in ogni
           email o scrivendo a
@@ -128,17 +120,16 @@ sections:
       - term: Statistiche, errori e ricerche
         description: >-
           Il nostro legittimo interesse a capire come viene usato il sito e a
-          farlo funzionare, ai sensi dell’articolo 6, paragrafo 1, lettera f), del GDPR,
-          con ogni strumento impostato per raccogliere il minimo.
+          farlo funzionare, ai sensi dell’articolo 6, paragrafo 1, lettera f), del GDPR. Ogni strumento è configurato per raccogliere solo il minimo indispensabile.
       - term: Email che ci mandi
         description: >-
           Il nostro legittimo interesse a risponderti, ai sensi dell’articolo 6,
           paragrafo 1, lettera f), del GDPR.
       - term: Preferenza di lingua
         description: >-
-          Esente dal consenso ai sensi dell’articolo 22.2 della
+          Non richiede il consenso ai sensi dell’articolo 22.2 della
           <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Legge spagnola 34/2002 (LSSI-CE)</a>,
-          perché fa parte di un servizio che richiedi esplicitamente.
+          perché è necessaria a fornire un servizio che richiedi espressamente.
 
   - heading: Come conserviamo la tua email
     body:
@@ -154,9 +145,7 @@ sections:
 
   - heading: Fornitori esterni
     body: >-
-      Usiamo questi servizi per gestire il sito e la lista d’attesa. Ognuno
-      tratta solo ciò che gli serve per il suo compito, per nostro conto, salvo
-      dove indicato.
+      Usiamo questi servizi per gestire il sito e la lista d’attesa. Ciascuno tratta per nostro conto solo i dati necessari al proprio servizio, salvo dove indicato diversamente.
     items:
       - term: Vercel Inc.
         description: >-
@@ -170,9 +159,7 @@ sections:
           Web Analytics tratta i dati</a>.
       - term: Neon, una società di Databricks
         description: >-
-          Tramite
-          <a href="https://neon.com/" target="_blank" rel="noopener noreferrer">Neon</a>,
-          ospita i database della lista d’attesa e dei consensi a Francoforte,
+          Ospita, tramite il servizio <a href="https://neon.com/" target="_blank" rel="noopener noreferrer">Neon</a>, i database della lista d’attesa e dei consensi a Francoforte,
           in Germania. Leggi
           <a href="https://www.databricks.com/legal/privacynotice" target="_blank" rel="noopener noreferrer">l’informativa
           sulla privacy di Databricks</a>.
@@ -181,9 +168,7 @@ sections:
           Invia le nostre email tramite
           <a href="https://www.brevo.com/" target="_blank" rel="noopener noreferrer">Brevo</a>,
           tra cui l’email di conferma, le novità sul lancio e gli inviti ai
-          sondaggi, e conserva i dati nell’UE. Se ti disiscrivi, Brevo riceve
-          ancora una volta il tuo indirizzo, subito dopo che lo abbiamo cancellato
-          dalla lista d’attesa, per inviarti l’email che lo conferma. Leggi
+          sondaggi, e conserva i dati nell’UE. Se annulli l’iscrizione, subito dopo aver cancellato il tuo indirizzo dalla lista d’attesa lo trasmettiamo un’ultima volta a Brevo, per inviarti l’email che conferma la cancellazione. Leggi
           <a href="https://www.brevo.com/legal/privacypolicy/" target="_blank" rel="noopener noreferrer">l’informativa
           sulla privacy di Brevo</a>.
       - term: Tally BV
@@ -193,8 +178,7 @@ sections:
           in base al suo
           <a href="https://tally.so/help/data-processing-agreement" target="_blank" rel="noopener noreferrer">accordo
           sul trattamento dei dati</a>, parte dei termini di Tally. I dati dei
-          moduli sono cifrati e conservati nell’UE. Leggi
-          <a href="https://tally.so/help/gdpr" target="_blank" rel="noopener noreferrer">Tally
+          moduli sono cifrati e conservati nell’UE. Leggi la pagina <a href="https://tally.so/help/gdpr" target="_blank" rel="noopener noreferrer">Tally
           e il GDPR</a>.
       - term: Cloudflare, Inc.
         description: >-
@@ -211,7 +195,7 @@ sections:
         description: >-
           Fornisce
           <a href="https://sentry.io/" target="_blank" rel="noopener noreferrer">Sentry</a>,
-          che raccoglie le segnalazioni di errore e le conserva nella sua regione UE.
+          che raccoglie le segnalazioni di errore e le conserva su server situati nell’UE.
           Leggi
           <a href="https://sentry.io/privacy/" target="_blank" rel="noopener noreferrer">l’informativa
           sulla privacy di Sentry</a>.
@@ -219,7 +203,7 @@ sections:
         description: >-
           Fornisce
           <a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Google
-          Search Console</a>, che mostra come va il sito nelle ricerche Google.
+          Search Console</a>, che mostra come si posiziona il sito nelle ricerche Google.
           Leggi
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">l’informativa
           sulla privacy di Google</a>.
@@ -238,20 +222,20 @@ sections:
         o dalla
         <a href="https://eur-lex.europa.eu/legal-content/IT/TXT/HTML/?uri=CELEX:32023D1795" target="_blank" rel="noopener noreferrer">decisione di adeguatezza (UE) 2023/1795 sul quadro UE-USA per la protezione dei dati personali</a>,
         quando il fornitore ha aderito al quadro. L’informativa sulla privacy di
-        ciascun fornitore, linkata sopra, spiega le garanzie che adotta.
+        ciascun fornitore, indicata sopra, spiega le garanzie che adotta.
 
   - heading: Tempi di conservazione
     items:
       - term: Iscrizioni non confermate
         description: Cancellate dopo 7 giorni se il link di conferma non viene usato.
       - term: Iscrizioni confermate
-        description: Conservate finché non ti disiscrivi, e cancellate al più tardi 24 mesi dopo l’iscrizione.
+        description: Conservate finché non annulli l’iscrizione, e cancellate al più tardi 24 mesi dopo l’iscrizione.
       - term: Registro dei consensi
-        description: Conservato per 3 anni, il tempo che un’autorità di controllo ha per agire su un reclamo, poi cancellato.
+        description: Conservato per 3 anni, il tempo che un’autorità per la protezione dei dati ha per intervenire su un reclamo, poi cancellato.
       - term: Risposte ai sondaggi
         description: Conservate finché non abbiamo finito di analizzarle, e comunque non oltre 24 mesi.
       - term: Email lasciate per un’intervista
-        description: Usate solo per organizzare l’intervista e cancellate entro 6 mesi dalla stessa, o prima se lo chiedi.
+        description: Usate solo per organizzare l’intervista e cancellate entro 6 mesi dall’intervista, o prima se lo chiedi.
       - term: Email che ci mandi
         description: Conservate finché servono per gestire la conversazione, poi cancellate, salvo obblighi di legge.
       - term: Statistiche ed errori
@@ -278,9 +262,7 @@ sections:
         subito il tuo indirizzo.
       - >-
         Per qualsiasi altra richiesta, scrivi a
-        <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>. Ti
-        risponderemo entro un mese, termine che l’articolo 12 del GDPR ci
-        permette di prorogare in alcuni casi, e te lo diremo se servirà.
+        <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a>. Ti risponderemo entro un mese. In alcuni casi l’articolo 12 del GDPR ci permette di prorogare questo termine: se succede, te lo comunicheremo.
       - >-
         Le risposte ai sondaggi date senza email non sono riconducibili a te,
         quindi non possiamo trovarle né cancellarle per una persona specifica.

@@ -1,13 +1,13 @@
-title: Disiscriviti
+title: Annulla l’iscrizione
 description: Esci dalla lista d’attesa di Monetyo.
-heading: Vuoi uscire dalla lista?
-body: Smetteremo di scriverti e cancelleremo subito il tuo indirizzo dalla lista d’attesa.
-button: Disiscrivimi e cancella il mio indirizzo
-sending: Disiscrizione in corso…
-noscript: Per disiscriverti serve JavaScript. Attivalo e ricarica la pagina, oppure scrivi a hello@monetyo.com.
-successHeading: Disiscrizione completata
-successBody: "Il tuo indirizzo è stato cancellato. Grazie per l’interesse in Monetyo: qui la porta resta aperta."
+heading: Vuoi uscire dalla lista d’attesa?
+body: Non ti scriveremo più e cancelleremo subito il tuo indirizzo dalla lista.
+button: Annulla l’iscrizione e cancella il mio indirizzo
+sending: Annullamento in corso…
+noscript: Per annullare l’iscrizione serve JavaScript. Attivalo e ricarica la pagina, oppure scrivici a hello@monetyo.com.
+successHeading: Iscrizione annullata
+successBody: Abbiamo cancellato il tuo indirizzo. Grazie per l’interesse verso Monetyo. Se cambi idea, puoi iscriverti di nuovo quando vuoi.
 invalidHeading: Questo link non funziona
-invalidBody: Forse si è tagliato quando l’hai copiato. Usa il link dell’ultima email che ti abbiamo mandato, oppure scrivi a hello@monetyo.com.
-genericError: Qualcosa è andato storto da parte nostra. Riprova tra un momento.
+invalidBody: Forse non è stato copiato per intero. Usa il link nell’ultima email che ti abbiamo mandato, oppure scrivici a hello@monetyo.com.
+genericError: C’è stato un problema da parte nostra. Riprova tra qualche istante.
 back: Torna a Monetyo

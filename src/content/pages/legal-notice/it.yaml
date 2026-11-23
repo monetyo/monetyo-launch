@@ -1,9 +1,9 @@
 title: Note legali
-description: Chi gestisce il sito di Monetyo, a cosa serve e le condizioni per usarlo.
+description: Chi gestisce il sito di Monetyo, a cosa serve e le condizioni che si applicano al suo utilizzo.
 updated: 2026-11-22
 updatedLabel: "Ultimo aggiornamento: {date}"
 intro: >-
-  Queste note legali valgono solo per il sito monetyo.com e sono pubblicate ai sensi dell’articolo 10 della <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Legge spagnola 34/2002 sui servizi della società dell’informazione e sul commercio elettronico (LSSI-CE)</a>. L’app Monetyo avrà i suoi termini e condizioni al momento del lancio.
+  Queste note legali si applicano solo al sito monetyo.com e sono pubblicate ai sensi dell’articolo 10 della <a href="https://www.boe.es/buscar/doc.php?id=BOE-A-2002-13758" target="_blank" rel="noopener noreferrer">Legge spagnola 34/2002 sui servizi della società dell’informazione e sul commercio elettronico (LSSI-CE)</a>. L’app Monetyo avrà termini e condizioni propri al momento del lancio.
 
 sections:
   - heading: Titolare del sito
@@ -19,45 +19,47 @@ sections:
 
   - heading: Finalità del sito
     body: >-
-      Questo sito presenta Monetyo, un’app per il budget familiare ancora in
-      fase di sviluppo, e ne gestisce la lista d’attesa. Non vende nulla, non
-      accetta pagamenti e non richiede un account.
+      Questo sito presenta Monetyo, un’app per gestire il budget familiare
+      ancora in fase di sviluppo, e ne gestisce la lista d’attesa. Non vende
+      prodotti, non accetta pagamenti e non richiede la creazione di un
+      account.
 
   - heading: Proprietà intellettuale
     body: >-
-      I testi, le illustrazioni, il design e il codice di questo sito
-      appartengono al suo titolare, salvo diversa indicazione. Puoi inserire
-      link al sito e citarne brevi estratti indicando la fonte; per qualsiasi
-      altro uso serve un permesso scritto. I nomi e i loghi di altre aziende
-      appartengono a loro e vengono usati solo per indicarne i servizi.
+      Salvo diversa indicazione, testi, illustrazioni, grafica e codice di
+      questo sito appartengono al titolare. Puoi inserire link al sito e
+      citarne brevi estratti indicandone la fonte; qualsiasi altro utilizzo
+      richiede un’autorizzazione scritta. I nomi e i marchi di altre aziende
+      appartengono ai rispettivi titolari e sono citati solo per indicarne i
+      servizi.
 
-  - heading: Link ad altri siti
+  - heading: Link a siti esterni
     body: >-
-      Questo sito rimanda a servizi e pagine gestiti da altri. Non li
-      controlliamo e non siamo responsabili dei loro contenuti né di come
-      trattano i tuoi dati.
+      Questo sito contiene link a servizi e pagine gestiti da terzi. Non li
+      controlliamo e non siamo responsabili dei loro contenuti né del modo in
+      cui trattano i tuoi dati.
 
   - heading: Responsabilità sui contenuti
     body: >-
-      Ci impegniamo a mantenere esatte le informazioni, ma Monetyo è ancora in
-      sviluppo, quindi funzioni, piani e date descritti su questo sito possono
-      cambiare. Nulla di quanto scritto qui limita responsabilità che per legge
-      non si possono limitare.
+      Facciamo il possibile perché le informazioni pubblicate siano corrette,
+      ma Monetyo è ancora in fase di sviluppo: funzionalità, piani e date
+      descritti su questo sito possono cambiare. Nulla di quanto riportato qui
+      limita le responsabilità che la legge non consente di limitare.
 
   - heading: Hosting
     body: >-
       Il sito è ospitato da
       <a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">Vercel
-      Inc.</a>, società con sede negli Stati Uniti. Su come vengono trattati i
-      tuoi dati, leggi
+      Inc.</a>, società con sede negli Stati Uniti. Per sapere come vengono
+      trattati i tuoi dati, consulta
       <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">l’informativa
       sulla privacy di Vercel</a> e la nostra <a href="/privacy/">informativa sulla
       privacy</a>.
 
   - heading: Legge applicabile e foro competente
     body: >-
-      Questo sito e queste note sono regolati dalla legge spagnola. Se la legge
-      lo consente ed entrambe le parti lo accettano validamente, le controversie
-      spettano ai tribunali di Barcellona, in Spagna. Altrimenti il foro è
-      stabilito dalle norme applicabili, comprese quelle a tutela dei
-      consumatori.
+      Questo sito e queste note legali sono regolati dalla legge spagnola. Se
+      la legge lo consente ed entrambe le parti lo accettano validamente, le
+      eventuali controversie sono di competenza dei tribunali di Barcellona, in
+      Spagna. In caso contrario, il foro competente è stabilito dalle norme
+      applicabili, comprese quelle a tutela dei consumatori.

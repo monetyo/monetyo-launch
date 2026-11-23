@@ -1,8 +1,8 @@
-subject: "Monetyo: conferma il tuo posto in lista"
-preheader: Un clic e sei in lista.
-heading: Ancora un passo
-body: Grazie per l’iscrizione alla lista d’attesa di Monetyo. Conferma che questo indirizzo è tuo e ti daremo notizie sul lancio, con qualche breve sondaggio ogni tanto.
-button: Conferma l’email
-fallback: "Il pulsante non funziona? Incolla questo link nel browser:"
-ignore: Iscrizione non tua? Ignora questa email e il tuo indirizzo sarà cancellato entro 7 giorni.
-unsubscribe: Disiscriviti
+subject: Conferma la tua iscrizione alla lista d’attesa di Monetyo
+preheader: Basta un clic per confermare l’iscrizione.
+heading: Manca solo un passaggio
+body: "Grazie per l’iscrizione alla lista d’attesa di Monetyo. Conferma che questo indirizzo è tuo: ti avviseremo quando Monetyo sarà pronto e, ogni tanto, ti manderemo un breve sondaggio."
+button: Conferma la mia email
+fallback: "Il pulsante non funziona? Copia questo link nel browser:"
+ignore: "Non hai richiesto tu l’iscrizione? Ignora questa email: il tuo indirizzo verrà cancellato entro 7 giorni."
+unsubscribe: Annulla l’iscrizione

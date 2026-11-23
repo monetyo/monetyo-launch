@@ -1,56 +1,57 @@
 title: Sicurezza
-description: Come sono protetti il sito e la lista d’attesa di Monetyo, e come segnalare una vulnerabilità.
+description: Come proteggiamo il sito e la lista d’attesa di Monetyo e come segnalarci una vulnerabilità.
 updated: 2026-11-22
 updatedLabel: "Ultimo aggiornamento: {date}"
 intro: >-
-  Questa pagina riguarda solo il sito monetyo.com e la sua lista d’attesa: cosa li protegge oggi e come avvisarci se trovi un problema di sicurezza. L’app Monetyo avrà una sua pagina sulla sicurezza al momento del lancio.
+  Questa pagina riguarda solo il sito monetyo.com e la sua lista d’attesa: come li proteggiamo oggi e come avvisarci se trovi un problema di sicurezza. L’app Monetyo avrà una pagina dedicata al momento del lancio.
 
 sections:
-  - heading: Cosa protegge il sito
+  - heading: Come proteggiamo il sito
     body:
       - >-
-        Ogni pagina viene inviata con una rigorosa
-        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy" target="_blank" rel="noopener noreferrer">Content Security Policy</a>,
-        che permette al browser di eseguire solo script e stili di questo sito,
-        più Cloudflare Turnstile nel modulo di iscrizione. A ogni build parte un
-        controllo, quindi una pagina che viola la policy non può essere
-        pubblicata.
+        Ogni pagina viene inviata con una
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy" target="_blank" rel="noopener noreferrer">Content Security Policy</a>
+        restrittiva: il browser può eseguire solo script e stili provenienti da
+        questo sito, oltre a Cloudflare Turnstile nel modulo di iscrizione. A
+        ogni build un controllo automatico blocca la pubblicazione di qualsiasi
+        pagina che non rispetti queste regole.
       - >-
-        Il sito invia anche gli header raccomandati dall’<a href="https://owasp.org/www-project-secure-headers/" target="_blank" rel="noopener noreferrer">OWASP Secure Headers Project</a>,
+        Il sito invia anche gli header consigliati dall’<a href="https://owasp.org/www-project-secure-headers/" target="_blank" rel="noopener noreferrer">OWASP Secure Headers Project</a>,
         tra cui
         <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security" target="_blank" rel="noopener noreferrer">HTTP Strict Transport Security</a>,
-        così i browser lo raggiungono sempre e solo tramite HTTPS.
+        che obbliga i browser a collegarsi sempre e solo tramite HTTPS.
 
-  - heading: Cosa protegge la lista d’attesa
+  - heading: Come proteggiamo la lista d’attesa
     items:
       - term: Protezione dai bot
         description: >-
           <a href="https://www.cloudflare.com/products/turnstile/" target="_blank" rel="noopener noreferrer">Cloudflare Turnstile</a>
-          verifica che ogni iscrizione arrivi da una persona prima di salvare
+          verifica che ogni iscrizione arrivi da una persona, prima di salvare
           qualsiasi dato.
       - term: Database separati
         description: >-
-          Le iscrizioni e il registro dei consensi stanno in due database
-          separati a Francoforte, in Germania, così dall’uno non si può leggere
-          l’altro.
-      - term: Nessun IP salvato
+          Le iscrizioni e le registrazioni dei consensi si trovano in due
+          database distinti a Francoforte, in Germania: chi accede a uno non
+          può leggere l’altro.
+      - term: Nessun indirizzo IP salvato
         description: >-
-          Al posto del tuo indirizzo IP conserviamo un hash creato con una
+          Al posto del tuo indirizzo IP conserviamo un hash, generato con una
           chiave segreta custodita altrove.
       - term: Link di conferma
         description: >-
-          Ogni link funziona una volta sola e ne teniamo solo un hash, così un
-          database trafugato non rivelerebbe link validi.
+          Ogni link si può usare una sola volta e ne conserviamo solo l’hash:
+          anche se qualcuno sottraesse il database, non troverebbe link
+          validi.
       - term: Cancellazione automatica
         description: >-
-          Un processo giornaliero cancella le iscrizioni non confermate dopo 7
-          giorni e il resto appena lo prevede l’<a href="/privacy/">informativa
-          sulla privacy</a>.
+          Ogni giorno un processo automatico cancella le iscrizioni non
+          confermate dopo 7 giorni e tutti gli altri dati alla scadenza
+          prevista dall’<a href="/privacy/">informativa sulla privacy</a>.
 
   - heading: Segnalare una vulnerabilità
     body: >-
       Se trovi un problema di sicurezza, scrivi a
-      <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a> con i
-      dettagli e i passaggi per riprodurlo. Ti chiediamo di non renderlo
-      pubblico finché non avremo avuto modo di risolverlo. Ti risponderemo il
-      prima possibile e ti avviseremo quando sarà risolto.
+      <a href="mailto:privacy@monetyo.com">privacy@monetyo.com</a> descrivendolo
+      e indicando i passaggi per riprodurlo. Ti chiediamo di non renderlo
+      pubblico finché non avremo potuto risolverlo. Ti risponderemo il prima
+      possibile e ti avviseremo quando sarà risolto.

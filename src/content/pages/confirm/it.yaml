@@ -1,13 +1,13 @@
 title: Conferma la tua email
-description: Conferma il tuo posto nella lista d’attesa di Monetyo.
-heading: Un clic e sei in lista
-body: Conferma che questo indirizzo email è tuo e ti daremo notizie sul lancio di Monetyo.
-button: Conferma l’email
+description: Conferma la tua iscrizione alla lista d’attesa di Monetyo.
+heading: Basta un clic per confermare l’iscrizione
+body: Conferma che questo indirizzo email è tuo e ti avviseremo quando Monetyo sarà pronto.
+button: Conferma la mia email
 sending: Conferma in corso…
 noscript: Per confermare serve JavaScript. Attivalo e ricarica la pagina.
-successHeading: Sei in lista
-successBody: Grazie per la conferma. Ti scriveremo con le novità sul lancio e, ogni tanto, un breve sondaggio.
-expiredHeading: Questo link non funziona più
-expiredBody: I link di conferma valgono una volta, per 7 giorni. Iscriviti di nuovo e te ne mandiamo uno nuovo.
-genericError: Qualcosa è andato storto da parte nostra. Riprova tra un momento.
+successHeading: Iscrizione confermata
+successBody: Grazie per la conferma. Ti avviseremo quando Monetyo sarà pronto e, ogni tanto, ti manderemo un breve sondaggio.
+expiredHeading: Questo link non è più valido
+expiredBody: I link di conferma si possono usare una sola volta, entro 7 giorni. Iscriviti di nuovo e te ne mandiamo uno nuovo.
+genericError: C’è stato un problema da parte nostra. Riprova tra qualche istante.
 back: Torna a Monetyo

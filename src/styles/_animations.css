@@ -1,7 +1,4 @@
 @theme {
-  /* The one easing curve on the site: weighted, decelerating into place. */
-  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
-
   --animate-enter: enter 0.9s var(--ease-out-expo) both;
   --animate-soft-ping: soft-ping 2.4s var(--ease-out-expo) infinite;
   /* Two lengths that don't divide evenly, so the circles never fall back

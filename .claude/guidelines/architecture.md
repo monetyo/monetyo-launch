@@ -69,13 +69,24 @@ are written reversed in the HTML so scrapers can't lift them, shown the right wa
 readable, as the legal notice must. `protect(html)` takes trusted HTML and `protectText(text)` escapes plain text
 first; `LegalPage.astro`, `WaitlistForm.astro` and `EmailAction.astro` use them, so copy writes addresses plainly.
 
+## Brand
+
+Everything visual that Monetyo's sites share comes from the `@monetyo/brand` package, never a copy in this repo: the
+palette, Host Grotesk and the type styles, and the easing (`@import "@monetyo/brand/theme.css"` in `global.css`); the
+logos and icons (imported with `?url`); and the same colours as JSON (`@monetyo/brand/tokens.json`) for code that
+can't read CSS, `src/scripts/favicon.ts` and `src/libs/email-layout.ts`. The layout links the brand's favicon, touch
+icon and link preview image, and `src/pages/favicon.ico.ts` copies its `favicon.ico` to the site root at build time.
+Changing the brand happens in that package; this site picks it up by moving to a newer version.
+
 ## Favicon
 
-`public/favicon.svg` is the static icon; `src/scripts/favicon.ts`, loaded by the layout, draws the mark's two coins
-drifting apart and back on a canvas and swaps the icon's `href` frame by frame, because browsers don't run
-animations inside a favicon SVG. It pauses while the tab is hidden and never starts (or stops and restores the SVG)
-under `prefers-reduced-motion`. In the SVGs (`favicon.svg`, `src/icons/mark.svg`) and the canvas, the lens where the
-coins overlap is stroked in its own colour so its shared edges leave no antialiasing fringe.
+The layout links the brand's `favicon.svg` first; `src/scripts/favicon.ts` draws the mark's coin and house drifting
+apart along the diagonal and back on a canvas and swaps that first icon link's `href` frame by frame, because
+browsers don't run animations inside a favicon SVG. It pauses while the tab is hidden and never starts (or stops and
+restores the SVG) under `prefers-reduced-motion`. On the canvas, as in the brand's SVGs, the house's corners are
+rounded by a stroke, and the dark space the two shapes share is the house again clipped to the coin. Emails can't
+clip or draw SVG, so `mark()` in `src/libs/email-layout.ts` builds the coin and house from plain boxes (VML in
+Outlook), without it.
 
 ## Waitlist
 

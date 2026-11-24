@@ -1,6 +1,8 @@
 ---
 import "@/styles/global.css"
 
+import favicon from "@monetyo/brand/logos/favicon.svg?url"
+
 import SiteFooter from "@/components/sections/SiteFooter/SiteFooter.astro"
 
 import SiteHeader from "@/components/sections/SiteHeader/SiteHeader.astro"
@@ -54,7 +56,8 @@ const fallback = alternates[DEFAULT_LOCALE]
     {fallback && (
       <link href={absolute(fallback)} hreflang="x-default" rel="alternate" />
     )}
-    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+    {/* The SVG comes first: src/scripts/favicon.ts animates the first icon link. */}
+    <link href={favicon} rel="icon" type="image/svg+xml" />
     <meta content="#4f46e5" name="theme-color" />
     <meta content="website" property="og:type" />
     <meta content={settings.siteName} property="og:site_name" />

@@ -134,7 +134,7 @@ api/notify.ts                         Emails to everyone on the waitlist
 api/not-found.ts                      The 404 page in a translated path's language
 scripts/notify.ts                     Triggers api/notify.ts, as bun run notify
 notices/                              The legal page notices sent to the list
-public/                               Favicon, sitemap stylesheet and security.txt
+public/                               Sitemap stylesheet and security.txt
 tests/                                Vitest unit tests
 vitest.config.ts                      Test and coverage configuration
 patches/                              Temporary fixes for dependencies

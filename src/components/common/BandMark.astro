@@ -1,0 +1,54 @@
+---
+interface Props {
+  /** The drawing's height; its width is always 1400. */
+  height: number
+  /** How far the coin and the house each sit in from their side. */
+  inset: number
+  /** The coin's radius, and half the house's width. */
+  radius: number
+  /**
+   * How far below the bottom edge the coin's centre sits. The roof peaks level
+   * with the coin's top.
+   */
+  sink?: number
+}
+
+const { height, inset, radius, sink = 30 } = Astro.props
+
+const WIDTH = 1400
+
+// The house keeps the proportions of @monetyo/brand's mark, where it is 14 units
+// wide, scaled here to the coin's width.
+const unit = radius / 7
+const cy = height + sink
+const peak = cy - radius
+const eaves = peak + 6.2 * unit
+const base = peak + 14.7 * unit
+const right = WIDTH - inset
+const house = `M${right - radius} ${base}V${eaves}L${right} ${peak}L${right + radius} ${eaves}V${base}Z`
+const viewBox = `0 0 ${WIDTH} ${height}`
+---
+
+{/* A layer per shape drifts on the GPU without repainting the panel, and draws
+  past its box so a drift never shows a cut: the panel's edge crops it. */}
+<svg
+  aria-hidden="true"
+  class="absolute inset-0 size-full origin-bottom animate-drift-a overflow-visible"
+  preserveAspectRatio="xMidYMax slice"
+  viewBox={viewBox}
+>
+  <circle class="fill-blue-400" cx={inset} cy={cy} r={radius} />
+</svg>
+<svg
+  aria-hidden="true"
+  class="absolute inset-0 size-full origin-bottom animate-drift-b overflow-visible"
+  preserveAspectRatio="xMidYMax slice"
+  viewBox={viewBox}
+>
+  <path
+    class="fill-blue-600 stroke-blue-600"
+    d={house}
+    stroke-linejoin="round"
+    stroke-width={2 * unit}
+  />
+</svg>

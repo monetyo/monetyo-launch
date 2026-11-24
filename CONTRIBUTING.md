@@ -113,6 +113,7 @@ src/
 ├── pages/[...locale]/                Routes for each language
 ├── pages/sitemap.xml.ts              Sitemap
 ├── pages/robots.txt.ts               robots.txt
+├── pages/favicon.ico.ts              favicon.ico, copied from @monetyo/brand
 ├── content.config.ts                 Schemas for every content collection
 ├── content/                          Pages, settings and email copy
 ├── components/

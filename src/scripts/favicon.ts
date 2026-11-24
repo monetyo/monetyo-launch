@@ -1,20 +1,32 @@
+import tokens from "@monetyo/brand/tokens.json" with { type: "json" }
+
 /**
- * Animates the tab icon: the logo's two coins drift apart and back until they
- * overlap as they do in the mark, two people's money counted as one.
+ * Animates the tab icon: the logo's coin and house drift apart along the
+ * diagonal and back until they overlap as they do in the mark.
  *
  * We decided to draw it on a canvas and swap the icon's href each frame,
  * because browsers don't run animations inside a favicon SVG.
  */
 
 const SIZE = 64
-const RADIUS = 19
-const BLUE = "#2341F5"
-const CORAL = "#FF6A3D"
-const LENS = "#231B3B"
+const BLUE = tokens.color.blue["500"]
+const CORAL = tokens.color.coral["500"]
+const LENS = tokens.color.lens
 
-/** How far apart the centres are, from the mark's overlap to nearly apart. */
-const NEAR = RADIUS
-const FAR = RADIUS * 1.55
+/** The mark's shapes, in the 24-unit grid of @monetyo/brand's `logos/mark.svg`. */
+const COIN = { x: 9, y: 9, radius: 9 }
+const HOUSE = [
+  [9, 23],
+  [9, 14.5],
+  [16, 8.3],
+  [23, 14.5],
+  [23, 23],
+] as const
+const ROUNDING = 2
+
+/** How far the house drifts at the loop's widest, in grid units per axis. */
+const DRIFT = 2.5
+const SCALE = SIZE / (24 + DRIFT)
 
 const FRAMES = 36
 const INTERVAL = 70
@@ -22,52 +34,58 @@ const INTERVAL = 70
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)")
 
 /**
- * Lays out one frame: a full loop eases the coins apart and back together.
+ * Lays out one frame: a full loop eases the shapes apart and back together.
  *
  * @param frame - The frame's index in the loop.
  *
- * @returns The distance between the two centres.
+ * @returns How far the house sits from its place in the mark, in grid units.
  */
-function distance(frame: number): number {
+function offset(frame: number): number {
   const wave = (1 - Math.cos((frame / FRAMES) * Math.PI * 2)) / 2
-  return NEAR + (FAR - NEAR) * wave
+  return DRIFT * wave
 }
 
 /**
- * Draws the two coins and, where they overlap, the dark lens between them.
+ * Draws the coin, the house and, where they overlap, the dark space they
+ * share.
  *
  * @param context - The canvas's 2d context.
- * @param gap - The distance between the two centres.
+ * @param shift - How far the house sits from its place in the mark.
  */
-function draw(context: CanvasRenderingContext2D, gap: number) {
-  const middle = SIZE / 2
-  const left = middle - gap / 2
-  const right = middle + gap / 2
+function draw(context: CanvasRenderingContext2D, shift: number) {
+  const coin = new Path2D()
+  coin.arc(COIN.x, COIN.y, COIN.radius, 0, Math.PI * 2)
+
+  const house = new Path2D()
+  for (const [x, y] of HOUSE) house.lineTo(x + shift, y + shift)
+  house.closePath()
+
+  const margin = (SIZE - (24 + shift) * SCALE) / 2
 
   context.clearRect(0, 0, SIZE, SIZE)
+  context.save()
+  context.translate(margin, margin)
+  context.scale(SCALE, SCALE)
+  context.lineJoin = "round"
+  context.lineWidth = ROUNDING
 
-  for (const [x, colour] of [
-    [left, BLUE],
-    [right, CORAL],
-  ] as const) {
-    context.beginPath()
-    context.arc(x, middle, RADIUS, 0, Math.PI * 2)
-    context.fillStyle = colour
-    context.fill()
-  }
+  context.fillStyle = CORAL
+  context.strokeStyle = CORAL
+  context.fill(house)
+  context.stroke(house)
 
-  // The lens is drawn from both circles' arcs and stroked in its own colour,
-  // so the edges it shares with them don't leave a fringe at tab size.
-  const angle = Math.acos(gap / 2 / RADIUS)
-  context.beginPath()
-  context.arc(left, middle, RADIUS, -angle, angle)
-  context.arc(right, middle, RADIUS, Math.PI - angle, Math.PI + angle)
-  context.closePath()
+  context.fillStyle = BLUE
+  context.fill(coin)
+
+  // The shared space is the house again, cut to the coin. Drawn over the coin
+  // rather than the house, its edges leave no coral fringe.
+  context.clip(coin)
   context.fillStyle = LENS
   context.strokeStyle = LENS
-  context.lineWidth = 1.5
-  context.fill()
-  context.stroke()
+  context.fill(house)
+  context.stroke(house)
+
+  context.restore()
 }
 
 /**
@@ -88,7 +106,7 @@ function animate(
   let timer = 0
 
   const paint = () => {
-    draw(context, distance(frame))
+    draw(context, offset(frame))
     link.href = canvas.toDataURL("image/png")
   }
 

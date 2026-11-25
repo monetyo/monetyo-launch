@@ -1,5 +1,7 @@
 import type { Locale } from "./i18n.js"
 
+import tokens from "@monetyo/brand/tokens.json" with { type: "json" }
+
 /**
  * We decided every email the site sends goes through this one layout, so the
  * brand, the footer the law asks for and the quirks of each mail client are
@@ -48,15 +50,17 @@ export interface RenderedEmail {
   text: string
 }
 
+const { color } = tokens
+
 const COLORS = {
-  blue: "#2341f5",
-  body: "#5f5a52",
-  border: "#e5e2db",
-  coral: "#ff6a3d",
-  footer: "#8a847a",
-  ink: "#1b1916",
-  sand: "#f4f2ee",
-  white: "#ffffff",
+  blue: color.blue["500"],
+  body: color.sand["750"],
+  border: color.sand["300"],
+  coral: color.coral["500"],
+  footer: color.sand["600"],
+  ink: color.ink,
+  sand: color.sand["100"],
+  white: color.white,
 } as const
 
 const FONT = "Helvetica,Arial,sans-serif"
@@ -97,19 +101,22 @@ export function paragraphs(text: string): string[] {
 }
 
 /**
- * Builds the brand mark, two overlapping circles, from markup alone: images
- * are blocked by default in many inboxes, and Gmail drops SVG.
+ * Builds the brand mark, a coin over a house, from markup alone: images are
+ * blocked by default in many inboxes, and Gmail drops SVG. Plain boxes can't
+ * clip, so the house sits on the coin without the dark shared space.
  *
- * Outlook on Windows ignores `border-radius`, so it gets the same circles
- * drawn in VML instead.
+ * The coin's top padding sets the house down, because a margin would collapse
+ * through the coin. Outlook on Windows gets the same shapes drawn in VML.
  *
- * @returns The mark, 30 by 20 pixels.
+ * @returns The mark, 24 by 24 pixels.
  */
 function mark(): string {
-  const circle = (color: string, offset = "") =>
-    `width:20px;height:20px;border-radius:10px;background-color:${color};font-size:0;line-height:0;${offset}`
+  const box = "font-size:0;line-height:0;"
+  const coin = `${box}width:18px;height:11px;padding-top:7px;border-radius:9px;background-color:${COLORS.blue};`
+  const roof = `${box}width:0;height:0;margin-left:8px;border-right:8px solid transparent;border-bottom:7px solid ${COLORS.coral};border-left:8px solid transparent;`
+  const walls = `${box}width:16px;height:10px;margin-left:8px;border-radius:0 0 2px 2px;background-color:${COLORS.coral};`
 
-  return `<!--[if mso]><v:group xmlns:v="urn:schemas-microsoft-com:vml" style="width:30px;height:20px;" coordsize="30,20"><v:oval style="position:absolute;left:0;top:0;width:20;height:20;" fillcolor="${COLORS.blue}" stroked="f"/><v:oval style="position:absolute;left:10;top:0;width:20;height:20;" fillcolor="${COLORS.coral}" stroked="f"/></v:group><![endif]--><!--[if !mso]><!--><div style="${circle(COLORS.blue)}"><div style="${circle(COLORS.coral, "margin-left:10px;")}"></div></div><!--<![endif]-->`
+  return `<!--[if mso]><v:group xmlns:v="urn:schemas-microsoft-com:vml" style="width:24px;height:24px;" coordsize="24,24"><v:oval style="position:absolute;left:0;top:0;width:18;height:18;" fillcolor="${COLORS.blue}" stroked="f"/><v:shape style="position:absolute;left:0;top:0;width:24;height:24;" coordsize="24,24" path="m 8,24 l 8,14 16,7 24,14 24,24 x e" fillcolor="${COLORS.coral}" stroked="f"/></v:group><![endif]--><!--[if !mso]><!--><div style="${coin}"><div style="${roof}"></div><div style="${walls}"></div></div><!--<![endif]-->`
 }
 
 /**
@@ -239,7 +246,7 @@ export function renderEmail(layout: Layout): RenderedEmail {
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;">
 <tr><td style="padding:0 12px 24px;background-color:${COLORS.sand};">
 <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-<td width="30" height="20" valign="middle" style="width:30px;height:20px;">${mark()}</td>
+<td width="24" height="24" valign="middle" style="width:24px;height:24px;">${mark()}</td>
 <td valign="middle" style="padding-left:10px;font-family:${FONT};font-size:24px;line-height:28px;font-weight:700;letter-spacing:-0.03em;color:${COLORS.ink};">monetyo</td>
 </tr></table>
 </td></tr>

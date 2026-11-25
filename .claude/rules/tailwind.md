@@ -10,11 +10,12 @@ paths:
 
 ## Type
 
-Text styles are named `@utility` classes in `_typography.css`, not size utilities: `display-1`, `display-2`,
-`heading-2` through `heading-6`, `eyebrow`, `lead`, `lead-hero`, `quote`, `body-2` through `body-6`, `button-md`,
-`button-sm`. Each one sets size, line height, weight and tracking together, and scales with the viewport. Use one
-of them before reaching for `text-*`/`leading-*`/`tracking-*` by hand; a new text style that repeats becomes a new
-utility there.
+Text styles are named `@utility` classes from `@monetyo/brand` (imported by `global.css`), not size utilities:
+`display-1`, `display-2`, `heading-2` through `heading-6`, `eyebrow`, `lead`, `lead-hero`, `quote`, `body-2` through
+`body-6`, `button-md`, `button-sm`. Each one sets size, line height, weight and tracking together, and scales with the
+viewport. Use one of them before reaching for `text-*`/`leading-*`/`tracking-*` by hand. A new text style every Monetyo
+site would use belongs in `@monetyo/brand`; one only this site needs, like `rich-text` and `prose-legal`, goes in
+`_typography.css`.
 
 ## Values
 
@@ -22,7 +23,7 @@ Before writing an arbitrary value (`w-[16px]`), check for an existing token inst
 
 1. This project's own `@theme` extensions: the containers in `_layout.css` (`max-w-page`, `max-w-band`,
    `max-w-measure`), its vertical rhythm (`pt-section`, `mt-intro`...), the easing and animations in
-   `_animations.css` (`ease-out-expo`, `animate-enter`...), and the palette in `_colors.css`.
+   `_animations.css` (`animate-enter`...), and the brand palette and `ease-out-expo` from `@monetyo/brand`.
 2. Tailwind's own built-in scale.
 
 An arbitrary value is for something with no scale equivalent at all, such as a fluid `clamp()` gutter or an offset
@@ -30,13 +31,14 @@ measured against another element, not a substitute for a scale step that already
 
 ## Colors
 
-`_colors.css` resets Tailwind's palette (`--color-*: initial`), so only this project's colors exist. Prefer the
-semantic role aliases: `background`, `foreground`, `surface`, `muted`, `muted-foreground`, `border`, `accent`,
-`accent-soft`, `danger`, `danger-soft`. Reach for a brand scale step (`sand-*`, `blue-*`, `coral-*`, `green-*`,
-`lemon-*`, `ink`, `white`) only where a fixed brand color is the point, such as a colored band or an app mock-up,
-never a literal hex value in a component. Category and tint colors are looked up through `CATEGORY_BACKGROUNDS` and
-`TINT_CLASSES` (`src/libs/palette.ts`), written out in full so Tailwind finds each class in the source. There is no
-dark mode.
+`@monetyo/brand` resets Tailwind's palette (`--color-*: initial`) and defines the brand's, so only Monetyo's colors
+exist; `_colors.css` adds only the spending category colors of the app mock-ups. Never add a brand color here: it
+belongs in `@monetyo/brand`. Prefer the semantic role aliases: `background`, `foreground`, `surface`, `muted`,
+`muted-foreground`, `border`, `accent`, `accent-soft`, `danger`, `danger-soft`. Reach for a brand scale step (`sand-*`,
+`blue-*`, `coral-*`, `green-*`, `lemon-*`, `ink`, `white`) only where a fixed brand color is the point, such as a
+colored band or an app mock-up, never a literal hex value in a component. Category and tint colors are looked up through
+`CATEGORY_BACKGROUNDS` and `TINT_CLASSES` (`src/libs/palette.ts`), written out in full so Tailwind finds each class in
+the source. There is no dark mode.
 
 ## Custom utilities
 

@@ -11,6 +11,7 @@ This is an Astro application with static output and no server adapter, plus Verc
 Vercel. See Architecture below for details.
 
 - astro — 7
+- @monetyo/brand — 0 (palette, type styles, font, logos, icons, tokens.json)
 - typescript — 6
 - vitest — 5
 - tailwindcss — 4
@@ -31,6 +32,7 @@ Vercel. See Architecture below for details.
 src/
 ├── pages/[...locale]/         routes — getStaticPaths() drives locale routing
 ├── pages/*.xml.ts, *.txt.ts   sitemap.xml and robots.txt
+├── pages/favicon.ico.ts       favicon.ico, copied from @monetyo/brand at build time
 ├── content.config.ts          Zod schema for every collection below
 ├── content/
 │   ├── emails/<name>/<locale>.yaml  fixed copy of the emails api/ sends (confirm, deletion, survey, invite, policy)
@@ -50,7 +52,7 @@ src/
 api/                            Vercel Functions — waitlist, confirm, unsubscribe, cleanup cron, notify
 scripts/notify.ts               `bun run notify`: triggers api/notify from the command line
 notices/                        policy notices sent to the list, kept as a record
-public/                         favicon.svg, sitemap.css, .well-known/security.txt
+public/                         sitemap.css, .well-known/security.txt
 middleware.ts                   Vercel Routing Middleware, on Node.js: locale negotiation
 vercel.json                     Vercel HTTP response headers (CSP, HSTS, …), function files, crons
 rift.yaml                       local dev environment — Rift settings

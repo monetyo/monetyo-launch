@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content"
 
-import BandCircles from "@/components/common/BandCircles.astro"
+import BandMark from "@/components/common/BandMark.astro"
 
 import HeroApp from "@/components/sections/Hero/HeroApp.astro"
 
@@ -18,7 +18,7 @@ const { app, hero } = Astro.props.home
   so the panel's top edge sits 12px down, behind the bar, like its sides. */}
 <section aria-labelledby="hero-heading" class="-mt-[7rem] px-3 pt-3">
   <div class="relative band bg-blue-500 text-white">
-    <BandCircles height={900} inset={330} radius={540} />
+    <BandMark height={900} inset={330} radius={540} />
 
     <div class="relative flex flex-col items-center px-[clamp(1rem,4vw,3rem)] pt-[calc(5.5rem+clamp(3rem,4.6vw,4.125rem))] text-center">
       <h1 class="max-w-[13.5em] animate-enter display-1" id="hero-heading">

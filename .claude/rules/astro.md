@@ -75,6 +75,10 @@ Icons are never their own `.astro` component. They come from `astro-icon`'s `<Ic
 - `ph:<name>` for Phosphor icons (Iconify set `@iconify-json/ph`).
 - `local:<name>` for a hand-authored SVG in `src/icons/`.
 
+Logos are not icons. The mark, the lockup and the favicon come from `@monetyo/brand`, imported with `?url` and
+used as an `<img>` or `<link>` (see `Logo.astro`), never copied into `src/icons/` or `public/`. An image rather than
+inline SVG, so two logos on one page never share the ids inside the file.
+
 ## Content
 
 Copy comes from the YAML content collections, never a hardcoded string. A component that needs a value shared

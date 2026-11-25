@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content"
 
-import BandCircles from "@/components/common/BandCircles.astro"
+import BandMark from "@/components/common/BandMark.astro"
 
 import WaitlistForm from "@/components/sections/Waitlist/WaitlistForm.astro"
 
@@ -20,7 +20,7 @@ const { join } = Astro.props
   id={getAnchor("join", Astro.currentLocale)}
 >
   <div class="relative band bg-blue-500 text-white">
-    <BandCircles height={560} inset={410} radius={420} sink={100} />
+    <BandMark height={560} inset={410} radius={420} sink={100} />
     <div
       class="reveal relative flex flex-col items-center px-[clamp(1rem,4vw,3rem)] py-[clamp(3.25rem,5.4vw,4.875rem)] text-center"
       data-reveal

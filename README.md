@@ -123,7 +123,8 @@ The code is released under the [MIT License](./LICENSE.md): reuse it however you
 The MIT License doesn't cover the Monetyo brand or the site's content, which remain © Luca Pipolo, all rights
 reserved:
 
-- the Monetyo name and logo, including `src/icons/mark.svg` and `public/favicon.svg`,
+- the Monetyo name, logos and design tokens, which come from
+  [`@monetyo/brand`](https://www.npmjs.com/package/@monetyo/brand) under its own licence,
 - the site's copy, legal texts and emails in `src/content/`,
 - the policy notices in `notices/`.
 

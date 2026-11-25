@@ -113,6 +113,7 @@ src/
 ├── pages/[...locale]/                Routes for each language
 ├── pages/sitemap.xml.ts              Sitemap
 ├── pages/robots.txt.ts               robots.txt
+├── pages/favicon.ico.ts              favicon.ico, copied from @monetyo/brand
 ├── content.config.ts                 Schemas for every content collection
 ├── content/                          Pages, settings and email copy
 ├── components/
@@ -134,7 +135,7 @@ api/notify.ts                         Emails to everyone on the waitlist
 api/not-found.ts                      The 404 page in a translated path's language
 scripts/notify.ts                     Triggers api/notify.ts, as bun run notify
 notices/                              The legal page notices sent to the list
-public/                               Favicon, sitemap stylesheet and security.txt
+public/                               Sitemap stylesheet and security.txt
 tests/                                Vitest unit tests
 vitest.config.ts                      Test and coverage configuration
 patches/                              Temporary fixes for dependencies

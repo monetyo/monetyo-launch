@@ -1,6 +1,11 @@
 ---
 import "@/styles/global.css"
 
+import appleTouchIcon from "@monetyo/brand/exports/icons/apple-touch-icon.png?url"
+import shareImage from "@monetyo/brand/exports/social/og-1200x630.png?url"
+import favicon from "@monetyo/brand/logos/favicon.svg?url"
+import tokens from "@monetyo/brand/tokens.json" with { type: "json" }
+
 import SiteFooter from "@/components/sections/SiteFooter/SiteFooter.astro"
 
 import SiteHeader from "@/components/sections/SiteHeader/SiteHeader.astro"
@@ -54,15 +59,22 @@ const fallback = alternates[DEFAULT_LOCALE]
     {fallback && (
       <link href={absolute(fallback)} hreflang="x-default" rel="alternate" />
     )}
-    <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
-    <meta content="#4f46e5" name="theme-color" />
+    {/* The SVG comes first: src/scripts/favicon.ts animates the first icon link. */}
+    <link href={favicon} rel="icon" type="image/svg+xml" />
+    <link href="/favicon.ico" rel="icon" sizes="32x32" />
+    <link href={appleTouchIcon} rel="apple-touch-icon" />
+    <meta content={tokens.semantic.background} name="theme-color" />
     <meta content="website" property="og:type" />
     <meta content={settings.siteName} property="og:site_name" />
     <meta content={title} property="og:title" />
     <meta content={description} property="og:description" />
     <meta content={canonical} property="og:url" />
     <meta content={getOpenGraphLocale(locale)} property="og:locale" />
-    <meta content="summary" name="twitter:card" />
+    <meta content={absolute(shareImage)} property="og:image" />
+    <meta content="1200" property="og:image:width" />
+    <meta content="630" property="og:image:height" />
+    <meta content={settings.siteName} property="og:image:alt" />
+    <meta content="summary_large_image" name="twitter:card" />
   </head>
   <body>
     <a

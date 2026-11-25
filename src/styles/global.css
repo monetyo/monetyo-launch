@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
-@import "@fontsource-variable/host-grotesk";
-@import "./_typography.css";
+@import "@monetyo/brand/theme.css";
 
 @import "./_colors.css";
+@import "./_typography.css";
 @import "./_layout.css";
 @import "./_animations.css";
 

@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content"
 
+import mark from "@monetyo/brand/logos/mark.svg?url"
 import { Icon } from "astro-icon/components"
 
 import Bar from "@/components/common/Bar.astro"
@@ -242,7 +243,7 @@ const STAGGER = [
 
   <div class="hidden flex-[0_0_19rem] flex-col gap-3 border-l border-sand-200 bg-sand-50 px-4 pt-5 pb-4 min-[1181px]:flex">
     <div class="flex items-center gap-[0.5625rem] pb-1">
-      <Icon class="h-4 w-6" name="local:mark" />
+      <img alt="" class="size-4" src={mark} />
       <span class="text-sm font-semibold">{app.assistant.heading}</span>
     </div>
     <span class="appear max-w-[88%] self-end rounded-[1rem_1rem_0.25rem_1rem] delay-[900ms] bg-ink px-[0.8125rem] py-2.5 text-white">

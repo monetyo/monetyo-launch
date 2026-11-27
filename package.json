@@ -35,7 +35,7 @@
     "@monetyo/brand": "^0.1.1",
     "@neondatabase/serverless": "^1.2.2",
     "@tailwindcss/vite": "^4.3.5",
-    "@vercel/functions": "^3.11.3",
+    "@vercel/functions": "^3.11.4",
     "astro": "^7.4.12",
     "astro-icon": "^1.2.0",
     "tailwindcss": "^4.3.5",

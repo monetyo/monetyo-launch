@@ -4,8 +4,8 @@ description: Un presupuesto para toda la familia, con un asistente que ordena tu
 hero:
   heading:
     - ¿Adónde se fue el dinero?
-    - Pregunta a Monetyo.
-  lead: Mira en un solo presupuesto todo lo que gasta tu familia y cuánto queda este mes. Monetyo pone cada pago en su categoría y te avisa con tiempo cuando un presupuesto está a punto de agotarse.
+    - Preguntaselo a Monetyo.
+  lead: Controla en un solo presupuesto todo lo que gasta tu familia y cuánto queda para este mes. Monetyo guarda cada pago en su categoría y te avisa con tiempo cuando un presupuesto está a punto de agotarse.
 
 app:
   label: "La app de Monetyo: el resumen de un hogar con los presupuestos del mes, los últimos movimientos y un asistente que responde a una pregunta sobre comer fuera."
@@ -125,7 +125,7 @@ ai:
   lead: El asistente trabaja con tus propios movimientos, así que si le preguntas cuánto se fue en comer fuera el mes pasado, te da la cifra real.
   ask:
     heading: Pregunta a tu manera
-    body: Sin filtros ni informes que configurar. Escribe la pregunta como la harías en la mesa de la cocina y recibes una cifra con los pagos que hay detrás.
+    body: Sin filtros ni informes que configurar. Escribe la pregunta tal como la harías conversando y recibirás una cifra con los pagos que hay detrás.
     label: "Una conversación con el asistente. Pregunta: ¿qué nos ha costado el coche este año? Respuesta: 2184 euros hasta ahora, repartidos entre gasolina, seguro, una reparación en marzo, y parking y peajes."
     question: ¿Qué nos ha costado el coche este año?
     answer:
@@ -195,7 +195,7 @@ ai:
       meta: 14 nov · ticket adjunto
   insights:
     heading: Un aviso cuando aún estás a tiempo
-    body: Si el súper va camino de pasarse del presupuesto, lo sabrás a mitad de mes, cuando todavía puedes corregirlo. Al cerrar el mes, recibes un breve resumen.
+    body: Si el súper va camino de pasarse del presupuesto, lo sabrás a mitad de mes, cuando todavía puedes corregirlo. Al cerrar el mes, recibirás un breve resumen.
     chart:
       title: Súper, día 18 de 30
       warning: Va a pasarse 40 €
@@ -210,11 +210,11 @@ ai:
         body: Casi todo, del transporte.
 
 household:
-  heading: Un presupuesto que ve toda la familia
-  lead: Reúne en un solo sitio a todas las personas que comparten el dinero de casa, para que todos veáis las mismas cifras.
+  heading: Un presupuesto que puede ver toda la familia
+  lead: Reúne en un mismo sitio a todas las personas que comparten el dinero de casa, para que todos veáis las mismas cifras.
   together:
     heading: A cada uno, el acceso que necesita
-    body: Da a alguien el control total, deja que otros añadan y editen, o comparte solo lo que una persona necesita, como los informes con una asesora financiera. Y cada uno puede montar sus propios widgets, vistas y tablas.
+    body: Da el control total a alguien, deja que otros añadan y editen, o comparte solo lo que una persona necesita, como los informes con una asesora financiera. Cada cual puede montar sus propios widgets, vistas y tablas.
     label: "Miembros del hogar: Marta tiene el control total, Jonas puede añadir y editar, y Clara, asesora financiera, solo ve los informes."
     title: Miembros
     invite: Invitar
@@ -243,8 +243,8 @@ household:
         }
   budgets:
     heading: Traspasos y devoluciones, bien contados
-    body: Mover dinero al ahorro no es gastar, y una devolución no es un ingreso extra. Monetyo los separa, y tu presupuesto refleja lo que de verdad has gastado.
-    label: "Tres movimientos: un traspaso de 400 euros a ahorros que queda fuera de los presupuestos, una devolución de 29,90 euros que vuelve al presupuesto de Ropa y un gasto de 18,45 euros en la farmacia que se descuenta de Salud."
+    label: "Tres movimientos: un traspaso de 400 euros a ahorros que queda fuera de los presupuestos, una devolución de 29,90 € que vuelve al presupuesto de Ropa y un gasto de 18,45 € en la farmacia que se descuenta de Salud."
+    body: Mover dinero al ahorro no es gastar y una devolución no es un ingreso extra. Monetyo los distingue, tu presupuesto refleja lo que de verdad has gastado.
     items:
       - {
           kind: transfer,
@@ -267,18 +267,18 @@ household:
         }
   sources:
     heading: Cuatro formas de añadir gastos
-    body: Llegue como llegue un pago a Monetyo, acaba en el mismo presupuesto y cuenta igual.
+    body: Llegue como llegue un pago a Monetyo, siempre acaba en el mismo presupuesto y se cuenta igual.
     items:
       - {
           id: bank,
           name: Conecta tus bancos,
-          note: Se actualiza solo,
+          note: Se actualizan solos,
           badge: Banco,
         }
       - {
           id: file,
           name: Sube un extracto,
-          note: Con cualquier banco,
+          note: Desde cualquier banco,
           badge: Archivo,
         }
       - {
@@ -293,7 +293,7 @@ household:
           note: Para el efectivo,
           badge: A mano,
         }
-    label: "Cuatro pagos en una misma lista, cada uno añadido de una forma: Lidl desde el banco, Renfe desde un archivo subido, Farmacia Sants desde un ticket escaneado y el mercado a mano."
+    label: "Cuatro pagos en una misma lista, cada uno añadido de una forma: Lidl desde el banco, Renfe desde un archivo subido, Farmacia Sants desde un ticket escaneado y la compra del mercado a mano."
     title: Últimos
     rows:
       - {
@@ -329,22 +329,22 @@ household:
           amount: "−12,00 €",
         }
   currencies:
-    heading: ¿Has gastado en otra moneda?
-    body: ¿De vacaciones en Suecia o pagando algo en el Reino Unido? Aparece en tu presupuesto en euros, al cambio de ese día, y puedes seguir viendo el importe original.
+    heading: ¿Has pagado en otra moneda?
+    body: ¿De vacaciones en Suecia o pagando algo en el Reino Unido? Aparece en tu presupuesto en euros, con el cambio de ese día, y puedes seguir viendo el importe original.
     from: { label: Pagado en Malmö, amount: "420,00 kr" }
     to: { label: En tus informes, amount: "36,72 €" }
 
 roadmap:
   eyebrow: Hazlo con nosotros
   heading: Lo siguiente lo decides tú.
-  lead: Tenemos una larga lista de ideas y solo somos tres para hacerlas, así que preguntamos a quienes se apuntan aquí qué debería ir primero.
+  lead: Tenemos una larga lista de ideas y solo somos tres para realizarlas, así que preguntamos a quienes se apuntan aquí qué deberíamos hacer primero.
   steps:
     - title: Déjanos tu correo y confírmalo.
       body: Así sabemos que quieres que te preguntemos.
     - title: Responde unas preguntas cortas.
       body: Solo si hay una decisión real en juego. Sáltate las que quieras.
-    - title: Mira qué sale de tus respuestas.
-      body: Contamos qué respondió la gente y qué hacemos gracias a ello.
+    - title: Mira qué resulta de tus respuestas.
+      body: Compartimos qué respondió la gente y qué hacemos gracias a ello.
   ideas:
     heading: Solo algunas de las ideas de la lista
     all: Todas
@@ -359,11 +359,11 @@ roadmap:
     items:
       - group: family
         icon: gift
-        title: Un regalo, en secreto
+        title: Un regalo en secreto
         note: Oculta una compra al resto de la familia hasta que se abra el regalo.
       - group: power
         icon: sliders-horizontal
-        title: Decide cuánto hace la IA
+        title: Decide de cuánto se ocupa la IA
         note: Desde solo sugerir hasta ordenarlo todo ella sola. Tú pones el límite.
       - group: money
         icon: users-three
@@ -387,7 +387,7 @@ roadmap:
         note: Haz una foto de un ticket y cada producto irá a parar a su categoría.
       - group: family
         icon: house-line
-        title: Reparte gastos entre casas
+        title: Reparte gastos entre hogares
         note: Para padres separados que se reparten el cole, la ropa y todo lo demás.
       - group: money
         icon: calendar-dots
@@ -399,7 +399,7 @@ roadmap:
         note: Pregunta o apunta un pago en efectivo desde WhatsApp o Telegram.
       - group: family
         icon: target
-        title: Ahorrad juntos para algo
+        title: Ahorrad juntos para compartir algo
         note: Unas vacaciones o un sofá nuevo, y que todos podáis ver cuánto os falta.
       - group: money
         icon: repeat
@@ -415,7 +415,7 @@ roadmap:
         note: Añade tu casa y otros inmuebles para ver todo el patrimonio familiar.
       - group: money
         icon: arrows-split
-        title: Primero, un «¿y si…?»
+        title: Primero un «¿y si…?»
         note: Qué haría con tu presupuesto un coche nuevo o una mudanza, antes de que pase.
     blank:
       title: Aquí cabe tu idea
@@ -426,20 +426,20 @@ status:
   items:
     - stage: Ahora
       title: Recogiendo tus ideas
-      body: Hablamos con familias, recogemos opiniones y vemos qué importa más.
+      body: Hablamos con familias, recogemos opiniones y vemos qué os importa más.
     - stage: Lo siguiente
       title: La app web
       body: En el ordenador o en el navegador del móvil, a mano o con archivos del banco.
     - stage: Después
       title: El asistente IA
-      body: Ordena tus gastos y responde cuando preguntas adónde se fue el dinero.
+      body: Ordena tus gastos y responde cuando le preguntas adónde se fue el dinero.
     - stage: Más adelante
       title: Apps móviles nativas
       body: Apps de verdad para iOS y Android, cuando la app web vaya realmente bien.
   more:
     stage: Y luego
     title: Mucho más en camino
-    body: Cuando salgan las apps, seguiremos con lo que más pidan las familias. Estas son algunas de las ideas que ya tenemos apuntadas.
+    body: Cuando salgan las apps, seguiremos con lo que más nos pidan las familias. Estas son algunas de las ideas que ya tenemos apuntadas.
     cta: Ver todas las ideas
 
 privacy:
@@ -470,10 +470,10 @@ privacy:
       body: Si cierras la cuenta, destruimos la clave de tu familia. Nadie podrá volver a leer tus datos, copias incluidas.
     - icon: download
       heading: Tus datos, contigo
-      body: Descarga cuando quieras todo lo que tenemos de ti, en un formato que puedes llevarte.
+      body: Descarga cuando quieras todo lo que sabemos de ti, en un formato que puedes llevarte donde quieras.
     - icon: shield
-      heading: IA, sí. Improvisar, no.
-      body: La IA nos ayuda a construir más rápido. Décadas en el sector marcan el rumbo, la arquitectura y cada decisión.
+      heading: IA, sí. A ciegas, no.
+      body: La IA nos ayuda a construir más rápido. Nuestra experiencia en el sector marca el rumbo, la arquitectura y cada decisión.
 
 team:
   eyebrow: El equipo
@@ -490,7 +490,7 @@ team:
     - id: joan
       name: Joan
       role: Datos e integraciones
-      bio: Más de 25 años creando plataformas PHP y las bases de datos que hay detrás. Se asegura de que todo vaya rápido y nunca se caiga.
+      bio: Más de 25 años creando soluciones web y las bases de datos que hay detrás. Se asegura de que todo vaya rápido y nunca se caiga.
       owns: [Arquitectura de datos, API, Integraciones]
       url: https://www.linkedin.com/in/juanlopez4691/
     - id: susanna
@@ -519,7 +519,7 @@ faq:
         Sí. Nos conectaremos con bancos de toda Europa a través de
         <a href="https://plaid.com/en-eu/" target="_blank" rel="noopener noreferrer">Plaid</a>,
         que tiene licencia {psd2}, auditoría {soc2} y certificación
-        {iso27001}. Hasta que tu banco esté disponible, puedes subir un archivo
+        {iso27001}. Mientras trabajamos para conectar con tu banco, puedes subir un archivo
         de cualquier banco, escanear tickets o apuntar los pagos a mano.
       terms:
         - id: psd2
@@ -541,15 +541,15 @@ faq:
       answer: >-
         El asistente de IA verá lo mínimo posible. Quitamos los nombres y los
         números de cuenta antes de que nada salga de tu cuenta, ejecutamos
-        modelos pequeños en nuestros propios servidores en Europa y, cuando tu
+        modelos IA pequeños en nuestros propios servidores en Europa y, cuando tu
         móvil lo permite, usamos IA en el propio dispositivo, como Apple
         Intelligence. Es opcional, solo puede leer y ordenar tus gastos, nunca
-        mover dinero, y tus datos nunca se usan para entrenar modelos.
+        mover dinero, y tus datos nunca se usan para entrenar modelos IA.
     - question: ¿Será Monetyo de código abierto?
       answer: >-
-        Nos encantaría, y lo estamos valorando en serio: usamos código abierto a
+        Nos encantaría y lo estamos valorando en serio: usamos código abierto a
         diario y significaría que siempre controlas tus datos. Estamos viendo
-        cómo hacerlo sin que Monetyo deje de ser sostenible, y nos gustaría
+        cómo hacerlo sin que Monetyo deje de ser sostenible y nos gustaría
         saber qué opinas.
     - question: ¿Qué me vais a enviar?
       answer: >-
